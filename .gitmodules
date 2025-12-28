@@ -1,3 +1,24 @@
 [submodule "Mods/smods"]
 	path = Mods/smods
 	url = https://github.com/Steamodded/smods.git
+[submodule "Mods/Bunco"]
+	path = Mods/Bunco
+	url = https://github.com/jumbocarrot0/Bunco.git
+[submodule "Mods/Actions"]
+	path = Mods/Actions
+	url = git@github.com:balatro-mods-cn/Actions.git
+	branch = chinese-localization
+[submodule "Mods/reverie"]
+	path = Mods/reverie
+	url = https://github.com/jumbocarrot0/reverie.git
+[submodule "Mods/Ortalab"]
+	path = Mods/Ortalab
+	url = git@github.com:balatro-mods-cn/Ortalab.git
+	branch = zh_CN
+[submodule "Mods/Cryptid"]
+	path = Mods/Cryptid
+	url = https://github.com/SpectralPack/Cryptid.git
+[submodule "Mods/Balatrostuck"]
+	path = Mods/Balatrostuck
+	url = git@github.com:balatro-mods-cn/Balatrostuck.git
+	branch = zh_cn
