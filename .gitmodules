@@ -22,3 +22,6 @@
 	path = Mods/Balatrostuck
 	url = git@github.com:balatro-mods-cn/Balatrostuck.git
 	branch = zh_cn
+[submodule "Mods/Pokermon"]
+	path = Mods/Pokermon
+	url = https://github.com/InertSteak/Pokermon.git
