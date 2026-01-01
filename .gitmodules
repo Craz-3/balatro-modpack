@@ -25,3 +25,14 @@
 [submodule "Mods/Pokermon"]
 	path = Mods/Pokermon
 	url = https://github.com/InertSteak/Pokermon.git
+[submodule "Mods/amulet"]
+	path = Mods/amulet
+	url = git@github.com:balatro-mods-cn/amulet.git
+	branch = zh_cn
+[submodule "Mods/Galdur"]
+	path = Mods/Galdur
+	url = https://github.com/Eremel/Galdur.git
+[submodule "Mods/MoreFluff"]
+	path = Mods/MoreFluff
+	url = git@github.com:balatro-mods-cn/MoreFluff.git
+	branch = zh_cn

@@ -18,6 +18,11 @@
 | [Cryptid](Mods/Cryptid) | 🎮 大型 | 不平衡的疯狂 Mod，添加大量强力内容 | [SpectralPack/Cryptid](https://github.com/SpectralPack/Cryptid) |
 | [Balatrostuck](Mods/Balatrostuck) | 🎮 大型 | 升格为神！星座系统、黄道系统等独特玩法（汉化版） | [balatro-mods-cn/Balatrostuck](https://github.com/balatro-mods-cn/Balatrostuck) |
 | [Pokermon](Mods/Pokermon) | 🎮 大型 | 宝可梦主题 Mod，每个小丑都是一只宝可梦 | [InertSteak/Pokermon](https://github.com/InertSteak/Pokermon) |
+| [amulet](Mods/amulet) | 🔧 框架 | Talisman 分支，修复高分运行时的数值比较错误，支持更大数字（汉化版） | [balatro-mods-cn/amulet](https://github.com/balatro-mods-cn/amulet) |
+| [Galdur](Mods/Galdur) | ⚡ 玩法 | 增强版游戏设置工具，改善牌组和赌注选择界面 | [Eremel/Galdur](https://github.com/Eremel/Galdur) |
+| [lock-the-deal](Mods/lock-the-deal) | ⚡ 玩法 | 锁定商店物品，保留到下一回合或重抽（汉化版） | [LnxFCA/balatro-mods](https://github.com/LnxFCA/balatro-mods) |
+| [lock-the-deal-common](Mods/lock-the-deal-common) | 🔧 框架 | Lock the Deal 通用库（汉化版） | lock-the-deal 依赖 |
+| [MoreFluff](Mods/MoreFluff) | 📦 内容 | 海量内容扩展，添加 75+ 新小丑、新牌组、新消耗品（汉化版） | [notmario/MoreFluff](https://github.com/balatro-mods-cn/MoreFluff) |
 
 ### 类型说明
 
