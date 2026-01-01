@@ -36,3 +36,10 @@
 	path = Mods/MoreFluff
 	url = git@github.com:balatro-mods-cn/MoreFluff.git
 	branch = zh_cn
+[submodule "Mods/my_balatro_mods"]
+	path = Mods/my_balatro_mods
+	url = git@github.com:balatro-mods-cn/my_balatro_mods.git
+	branch = zh_cn
+[submodule "Mods/CardSleeves"]
+	path = Mods/CardSleeves
+	url = https://github.com/larswijn/CardSleeves.git

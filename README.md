@@ -23,6 +23,8 @@
 | [lock-the-deal](Mods/lock-the-deal) | ⚡ 玩法 | 锁定商店物品，保留到下一回合或重抽（汉化版） | [LnxFCA/balatro-mods](https://github.com/LnxFCA/balatro-mods) |
 | [lock-the-deal-common](Mods/lock-the-deal-common) | 🔧 框架 | Lock the Deal 通用库（汉化版） | lock-the-deal 依赖 |
 | [MoreFluff](Mods/MoreFluff) | 📦 内容 | 海量内容扩展，添加 75+ 新小丑、新牌组、新消耗品（汉化版） | [notmario/MoreFluff](https://github.com/balatro-mods-cn/MoreFluff) |
+| [my_balatro_mods](Mods/my_balatro_mods) | 📦 内容 | Betmma 系列 Mod 合集：能力、小丑、法术、优惠券等扩展（汉化版） | [balatro-mods-cn/my_balatro_mods](https://github.com/balatro-mods-cn/my_balatro_mods) |
+| [CardSleeves](Mods/CardSleeves) | ⚡ 玩法 | 卡牌保护套系统，为卡牌添加额外效果 | [larswijn/CardSleeves](https://github.com/larswijn/CardSleeves) |
 
 ### 类型说明
 
