@@ -5530,6 +5530,22 @@ return {
                 "也会赢得当前局",
               }
             },
+            order_jokers_tooltip = {
+              name = "按图鉴号排序小丑牌",
+              text = {
+                "宝可梦小丑牌",
+                "在收藏中按",
+                "图鉴顺序显示",
+              }
+            },
+            pokemon_only_collection_tooltip = {
+              name = "收藏仅显示宝可梦",
+              text = {
+                "只有宝可梦小丑牌",
+                "会显示在",
+                "收藏中",
+              }
+            },
             legacycontent_tooltip = {
               name = "旧版内容",
               text = {
@@ -5888,8 +5904,12 @@ return {
             poke_settings_enable_animations = "启用动画？",
             poke_settings_pokemon_master = "宝可梦大师模式？",
             poke_settings_pokemon_spritesheet = "默认形象图纸 (重置单个)",
+            poke_settings_pokemon_sprites_right_click_to_change = "右键点击更改",
             poke_settings_pokemon_spritesheet_classic = "经典",
             poke_settings_pokemon_spritesheet_seriesa = "系列 A",
+            poke_settings_pokemon_spritesheet_seriesb = "系列 B",
+            poke_settings_order_jokers = "按图鉴号排序小丑牌？",
+            poke_settings_pokemon_only_collection = "收藏中仅显示宝可梦小丑牌？",
 
             poke_credits_actualcredits = "制作人员名单",
             poke_credits_thanks = "鸣谢",
@@ -5902,6 +5922,29 @@ return {
             poke_credits_special_thanks = "特别鸣谢：",
             poke_credits_localization = "本地化：",
             poke_credits_sound = "音效工程师：",
+            poke_credits_artist = "画师：",
+
+            poke_artist_credits_art_credits = "美术鸣谢",
+            poke_artist_credits_artists = "画师:",
+            poke_artist_credits_basic_sprites_by = "基础宝可梦像素图由:",
+            poke_artist_credits_sprite_resource = "64x64 宝可梦像素图资源",
+            poke_artist_credits_artist_info = "画师信息",
+            poke_artist_credits_art_collection = "美术合集",
+            poke_artist_credits_toggle_shiny = "右键点击切换异色",
+            poke_artist_credits_cycle_draw_layers = "双击循环切换图层",
+            poke_artist_credits_toggle_center_layer = "双击隐藏背景",
+            poke_artist_credits_toggle_soul_layer = "双击隐藏灵魂图层",
+
+            poke_artist_credits_sprite_resource_content = {
+                "基础像素图美术风格使用了来自",
+                "64x64 宝可梦像素图资源及其后续版本的素材。",
+                "虽然计划是最终使用 Series A 作为新标准，",
+                "我们想感谢所有贡献者",
+                "让我们有机会使用这些像素图。",
+                "你可以通过点击相应按钮",
+                "找到这些资源的 Pokecommunity 论坛帖子："
+            },
+
             poke_credits_artist = "画师：",
             poke_credits_designer = "设计师：",
 
@@ -5929,6 +5972,7 @@ return {
             cubone_marowak_infoqueue = "卡拉卡拉和嘎啦嘎啦",
             snorlax_infoqueue = "卡比兽",
             pokeball_variable = "精灵球",
+            greatball_variable = "超级球",
             goodrod_variable = "好钓竿",
             pinkseal_variable = "粉红蜡封",
             silverseal_variable = "白银蜡封",
