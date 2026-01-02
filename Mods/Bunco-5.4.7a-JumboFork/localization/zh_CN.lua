@@ -1991,4 +1991,45 @@ return {
       bunc_Halberds = "戟"
     }
   },
+  descriptions = {
+    Partner = {
+      pnr_bunc_voxel = {
+        name = "积木",
+        text = {
+          "{C:chips}+#1#{}筹码",
+          "每有一张牌被{C:attention}增强{}",
+          "就{C:chips}-#2#{}筹码",
+        },
+        unlock = {
+          "使用{C:attention}#1#{}",
+          "在{V:1}#2#{}难度下",
+          "赢得一局",
+        },
+      },
+      pnr_bunc_roygbiv = {
+        name = "菲茨罗伊",
+        text = {
+          "点击支付{C:money}$#1#{}",
+          "将{C:attention}#2#{}张选中的牌",
+          "增强为{C:dark_edition}多彩{}{C:attention}百搭牌{}",
+        },
+        unlock = {
+          "使用{C:attention}#1#{}",
+          "在{V:1}#2#{}难度下",
+          "赢得一局",
+        },
+      },
+      pnr_bunc_roygbiv_1 = {
+        name = "菲茨罗伊",
+        text = {
+          "点击支付{C:money}$#1#{}",
+          "将{C:attention}#2#{}张选中的牌",
+          "增强为{C:dark_edition}多彩{}{C:attention}百搭牌{}",
+        },
+        unlock = {
+          "不应显示",
+        },
+      }
+    }
+  }
 }
