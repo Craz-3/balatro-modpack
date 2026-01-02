@@ -1,0 +1,19 @@
+{
+	"id": "Amulet",
+	"name": "Amulet",
+	"author": [
+		"frostice482",
+		"..."
+	],
+	"description": "A talisman fork aiming to support high-scoring runs while keeping compat with other mods",
+	"prefix": "talisman",
+	"main_file": "smods.lua",
+	"priority": 0,
+	"badge_colour": "",
+	"badge_text_colour": "",
+	"version": "3.2.6",
+	"provides": [
+		"cdataman",
+		"Talisman (2.6)"
+	]
+}

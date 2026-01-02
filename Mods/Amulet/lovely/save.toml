@@ -1,0 +1,52 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# AAAAAAAAAAAAAA FUCK
+[[patches]]
+[patches.pattern]
+target = "engine/string_packer.lua"
+pattern = 'if type_v == "table" then'
+position = "after"
+payload = '''
+if v.__talisman then
+	for i, val in pairs(v.array) do
+    v.array[i] = string.format("[%s]=%s,", i, val or 0)
+	end
+  v = string.format("(Big and to_big({%s}, %s) or %s)", table.concat(v.array), v.sign, v.val)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "engine/string_packer.lua"
+pattern = 'if v.is and v:is(Object) then'
+position = "at"
+payload = 'elseif v.is and v:is(Object) then'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = 'if G.FILE_HANDLER.progress then'
+position = "after"
+payload = '''
+G.ARGS.save_progress.PROFILE = Talisman.sanitize(Talisman.copy_table(G.ARGS.save_progress.PROFILE))
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = 'if G.FILE_HANDLER.run then'
+position = "after"
+payload = 'Talisman.sanitize(G.ARGS.save_run)'
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = 'save_profile = G.PROFILES[G.SETTINGS.profile]'
+position = "at"
+payload = 'save_profile = Talisman.sanitize(Talisman.copy_table(G.PROFILES[G.SETTINGS.profile]))'
+match_indent = true

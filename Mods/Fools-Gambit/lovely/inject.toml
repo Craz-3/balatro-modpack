@@ -1,0 +1,70 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+# INJECT ALT JOKER DATA
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+for i = 1, 4 do 
+    table.sort(self.P_JOKER_RARITY_POOLS[i], function (a, b) return a.order < b.order end)
+end
+'''
+position = "after"
+payload = '''
+for k,v in pairs(self.P_CENTERS) do
+    v.fg_data = v.fg_data or {
+        is_alternate = false,
+        alternate_key = string.sub(k,1,1).."_fg_"..string.sub(k,3),
+        vars = {}
+    }
+    if string.sub(v.key,1,2) == 'm_' then v.fg_data.base_enhancement = true end
+end
+for k,v in pairs(self.P_SEALS) do
+    v.fg_data = v.fg_data or {
+        is_alternate = false,
+        alternate_key ='fg_'..string.lower(k)
+    }
+end
+self.P_CENTERS['c_base'].fg_data = nil
+'''
+match_indent = false
+times = 1
+
+
+
+# PREVENT REPEAT CENTERS
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+G.GAME.used_jokers[self.config.center.key] = true
+'''
+position = "after"
+payload = '''
+            if self.config and self.config.center and self.config.center.fg_data and 
+            G.P_CENTERS[self.config.center.fg_data.alternate_key] then 
+                G.GAME.used_jokers[self.config.center.fg_data.alternate_key] = true 
+            end
+'''
+match_indent = false
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+    G.GAME.used_jokers[self.config.center.key] = nil
+'''
+position = "after"
+payload = '''
+    if self.config.center.fg_data and not next(find_joker(self.config.center.fg_data.alternate_key, true)) then 
+        G.GAME.used_jokers[self.config.center.key] = nil
+        if self.config.center.fg_data.alternate_key then G.GAME.used_jokers[self.config.center.fg_data.alternate_key] = nil end
+    end
+'''
+match_indent = false
+times = 1
