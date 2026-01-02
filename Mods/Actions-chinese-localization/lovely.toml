@@ -1,0 +1,59 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = 'game.lua'
+pattern = '''chips_text = '0','''
+position = 'after'
+payload = '''passive = 'discard',
+active = 'play_hand','''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''ease_hands_played(-1)'''
+position = 'at'
+payload = '''if not act_custom_decrement then
+    ease_hands_played(-1)
+else
+    if act_custom_decrement.hands then
+        ease_hands_played(-act_custom_decrement.hands)
+    end
+    if act_custom_decrement.discards then
+        ease_discard(-act_custom_decrement.discards)
+    end
+    act_custom_decrement = nil
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''check_for_unlock({type = 'run_card_replays'})'''
+position = 'before'
+payload = '''if act_fall_action then
+    G.E_MANAGER:add_event(Event({
+        func = function()
+            delay(0.3)
+            local _first_dissolve = nil
+            local new_cards = {}
+            local random_card = pseudorandom_element(G.play.cards, pseudoseed("fall"))
+            G.playing_card = (G.playing_card and G.playing_card + 1) or 1
+            local _card = copy_card(random_card, nil, nil, G.playing_card)
+            _card:add_to_deck()
+            G.deck.config.card_limit = G.deck.config.card_limit + 1
+            table.insert(G.playing_cards, _card)
+            G.play:emplace(_card)
+            _card:start_materialize(nil, _first_dissolve)
+            _first_dissolve = true
+            new_cards[#new_cards+1] = _card
+            playing_card_joker_effects(new_cards)
+            return true
+        end
+    }))
+end'''
+match_indent = true

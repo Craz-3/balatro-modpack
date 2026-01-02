@@ -1,0 +1,21 @@
+name: Verify Pull Request
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    verify:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+        - name: Verify Version
+          run: |
+            new_version="$(jq -r .version manifest.json)"
+            old_version="$(git show "origin/main:manifest.json" | jq -r .version)"
+            if [ "$new_version" = "$old_version" ]; then
+                echo "::error file=manifest.json::This pull request did not update the mod's version."
+                exit 1
+            fi

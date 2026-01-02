@@ -1,0 +1,14 @@
+{
+  "id": "reverse_tarot",
+  "name": "Reverse Tarot + Hijinks",
+  "display_name": "Reverse Tarot+",
+  "author": ["SkywawrdTARDIS"],
+  "description": "Adds reversed versions of Tarot Cards, which generally will have opposite or twisted effects of the normal ones.  Adds new hand types, Jokers, Enhancements, Zodiac cards, and more!",
+  "prefix": "reverse",
+  "main_file": "reverse_tarot.lua",
+  "priority": 0,
+  "badge_colour": "0fe0d4",
+  "badge_text_colour": "e00f68",
+  "version": "1.5.5",
+  "dependencies": []
+}

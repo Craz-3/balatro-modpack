@@ -1,0 +1,12 @@
+{
+	"id": "jokerhub",
+	"name": "JokerHub",
+	"author": ["sup3p"],
+	"description": "Jokers from JigglyHub.",
+	"prefix": "jokerhub",
+	"main_file": "main.lua",
+	"priority": -5,
+	"version": "2.0.1",
+	"dependencies": ["Lovely (>=0.8)", "Steamodded (>=1.0.0~BETA-1221a)"],
+	"badge_colour": "ff7df4"
+}

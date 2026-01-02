@@ -1,0 +1,129 @@
+[manifest]
+version = "1.0.1o"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''-- TARGET: effects after hand evaluation'''
+position = "after"
+payload = '''
+G.GAME.history_hands = G.GAME.history_hands or {}
+local current_hand = {}
+current_hand.handname = text
+current_hand.disp_handname = disp_text
+current_hand.level = G.GAME.hands[text].level
+current_hand.chips = hand_chips
+current_hand.mult = mult
+current_hand.chip_total = math.floor(hand_chips*mult)
+G.GAME.preview.chip_target = current_hand.chip_total
+G.GAME.preview.dollar_target = G.GAME.preview.dollar_tran
+current_hand.cards = {}
+for k, v in pairs(G.play.cards) do
+    local score = nil
+    for kk, vv in pairs(scoring_hand) do
+        if v == vv then score = true break end
+    end
+    local cardTable = v:save()
+    if score then cardTable.score = true end
+    table.insert(current_hand.cards, cardTable)
+end
+table.insert(G.GAME.history_hands, current_hand)
+if G.GAME.chips + current_hand.chip_total >= G.GAME.blind.chips then current_hand.filter = true end
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''local high_scores = UIBox_button{ label = {localize('b_stats')}, button = "high_scores", minw = 5}'''
+position = "after"
+payload = '''
+if G.STAGE == G.STAGES.RUN then 
+    high_scores = {n=G.UIT.R, config={align = "cm", padding = 0.05}, nodes={
+        {n=G.UIT.C, config={align = "cm", padding = 0}, nodes={
+            UIBox_button{ label = {localize('b_stats')}, button = "high_scores", minw = 2.44},
+        }},
+        {n=G.UIT.C, config={align = "cm", padding = 0, minw = 0.05}, nodes={}},
+        {n=G.UIT.C, config={align = "cm", padding = 0}, nodes={
+            UIBox_button{ label = {localize('b_quick_load')}, button = "quick_load", minw = 2.44}
+        }},
+    }}
+else
+    high_scores = {n=G.UIT.R, config={align = "cm", padding = 0.05}, nodes={
+        {n=G.UIT.C, config={align = "cm", padding = 0}, nodes={
+            UIBox_button{ label = {localize('b_stats')}, button = "high_scores", minw = 2.44},
+        }},
+        {n=G.UIT.C, config={align = "cm", padding = 0, minw = 0.05}, nodes={}},
+        {n=G.UIT.C, config={align = "cm", padding = 0}, nodes={
+            UIBox_button{ label = {localize('k_achievement')}, button = "achievement_list", minw = 2.44}
+        }},
+    }}
+end
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''--check the hand first'''
+position = "before"
+payload = '''
+    G.GAME.preview.dollar_tran = 0
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))'''
+position = "at"
+payload = '''
+if Portable.config.reduce_animation then
+    G.GAME.dollar_buffer = 0
+else
+    G.E_MANAGER:add_event(Event({func = (function() G.GAME.dollar_buffer = 0; return true end)}))
+end
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = '''G.hand:sort('desc')'''
+position = "before"
+payload = '''
+    if Portable.config.flip_sort then
+        for k, v in ipairs(G.hand.cards) do
+            if v.facing == 'back' then v:flip() end
+        end
+        for k, v in ipairs(G.jokers.cards) do
+            if v.facing == 'back' then v:flip() end
+        end
+    end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = '''G.hand:sort('suit desc')'''
+position = "before"
+payload = '''
+    if Portable.config.flip_sort then
+        for k, v in ipairs(G.hand.cards) do
+            if v.facing == 'back' then v:flip() end
+        end
+        for k, v in ipairs(G.jokers.cards) do
+            if v.facing == 'back' then v:flip() end
+        end
+    end
+'''
+match_indent = false
+overwrite = false

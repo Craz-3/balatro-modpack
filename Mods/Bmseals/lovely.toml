@@ -1,0 +1,62 @@
+[manifest]
+version = "1.0.4h"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''table.insert(cards, G.hand.highlighted[i])'''
+position = "after"
+payload = '''
+            local seal_eval = nil
+            seal_eval = G.hand.highlighted[i]:calculate_seal({pre_remove = true, full_hand = G.hand.highlighted})
+            if seal_eval and seal_eval.remove then
+                removed = true
+                card_eval_status_text(G.hand.highlighted[i], 'jokers', nil, 1, nil, seal_eval)
+            end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''local hand_text_set = false'''
+position = "before"
+payload = '''
+        for i=1, #scoring_hand do
+            local reps = {1}
+            local j = 1
+            local can_reps = false
+            while j <= #reps do
+                if reps[j] ~= 1 then
+                    card_eval_status_text((reps[j].jokers or reps[j].seals).card, 'jokers', nil, nil, nil, (reps[j].jokers or reps[j].seals))
+                end
+                local effects = eval_card(scoring_hand[i], {cardarea = G.play, full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, before = true})
+                if reps[j] == 1 then
+                    for j=1, #G.jokers.cards do
+                        local eval = eval_card(G.jokers.cards[j], {cardarea = G.play, full_hand = G.play.cards, scoring_hand = scoring_hand, scoring_name = text, poker_hands = poker_hands, other_card = scoring_hand[i], repetition = true, callback = function(card, ret) eval = {jokers = ret}
+                        if next(eval) and (effects and effects.seals) then
+                            for h = 1, eval.jokers.repetitions do
+                                reps[#reps+1] = eval
+                        end end end})
+                    end
+                end
+                j = j + 1
+            end
+        end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''if self.seal == 'Gold' then G.shared_seals[self.seal]:draw_shader('voucher', nil, self.ARGS.send_to_shader, nil, self.children.center) end'''
+position = "after"
+payload = '''
+if self.seal == 'bmse_silver' then G.shared_seals[self.seal]:draw_shader('voucher', nil, self.ARGS.send_to_shader, nil, self.children.center) end
+'''
+match_indent = true
+overwrite = false

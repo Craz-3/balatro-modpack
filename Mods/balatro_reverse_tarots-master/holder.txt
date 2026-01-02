@@ -1,0 +1,27 @@
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = '''if _context ~= 'end_of_round' then t[#t+1] = G.play end
+        if _context ~= 'end_of_round' and SMODS.optional_features.cardareas.unscored then t[#t+1] = 'unscored' end
+        t[#t+1] = G.hand'''
+position = 'before'
+match_indent = true
+payload = '''
+if not G.GAME.blind.name == "bl_reverse_ehwaz" then
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = '''if _context ~= 'end_of_round' then t[#t+1] = G.play end
+        if _context ~= 'end_of_round' and SMODS.optional_features.cardareas.unscored then t[#t+1] = 'unscored' end
+        t[#t+1] = G.hand'''
+position = 'after'
+match_indent = true
+payload = '''
+else
+    t[#t+1] = G.hand
+    if _context ~= 'end_of_round' and SMODS.optional_features.cardareas.unscored then t[#t+1] = 'unscored' end
+    if _context ~= 'end_of_round' then t[#t+1] = G.play end
+end
+'''

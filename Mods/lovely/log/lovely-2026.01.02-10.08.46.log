@@ -1,0 +1,928 @@
+INFO - [♥] Lovely 0.8.0
+INFO - [♥] Game directory is at "D:\\Steam\\steamapps\\common\\Balatro"
+INFO - [♥] Writing logs to "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\lovely\\log"
+INFO - [♥] Using mod directory at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods"
+WARN - [♥] Unknown key `patches.34.?.line_prepend` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Balatrostuck-1.0.3\\lovely\\misc.toml", ignoring it
+WARN - [♥] Unknown key `patches.1.?.line_prepend` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Balatrostuck-1.0.3\\lovely\\slabs and caste.toml", ignoring it
+WARN - [♥] Unknown key `patches.18.?.match_indent` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Cryptid-0.5.13\\lovely\\code.toml", ignoring it
+INFO - [♥] Cleaning up dumps directory at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\lovely\\dump"
+INFO - [♥] Initialization complete in 39ms
+INFO - [♥] Applied 1 patch to 'conf.lua'
+INFO - [♥] Applied 14 patches to 'main.lua'
+INFO - [♥] Applied 2 patches to 'engine/string_packer.lua'
+INFO - [♥] Applied 15 patches to 'engine/controller.lua'
+INFO - [♥] Applied 18 patches to 'back.lua'
+WARN - [♥] Pattern 'if self.name == \'Double Tag\' and _context.tag.key ~= \'tag_double\' then' on target 'tag.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'add_tag(Tag(_context.tag.key))' on target 'tag.lua' for pattern patch from reverie-1.5.4b\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'local tag_sprite = Sprite(0,0,_size*1,_size*1,G.ASSET_ATLAS[(not self.hide_ability) and G.P_TAGS[self.key].atlas or \"tags\"], (self.hide_ability) and G.tag_undiscovered.pos or self.pos)' on target 'tag.lua' for pattern patch from Cryptid-0.5.13\lovely\cat.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.orbital_choices and G.GAME.orbital_choices[G.GAME.round_resets.ante][self.ability.blind_type] then\n    self.ability.orbital_hand = G.GAME.orbital_choices[G.GAME.round_resets.ante][self.ability.blind_type]       \nend\n' on target 'tag.lua' for pattern patch from Ortalab-1.0.1a\lovely\decks.toml resulted in no matches
+WARN - [♥] Pattern 'add_tag(Tag(_context.tag.key))' on target 'tag.lua' for pattern patch from Ortalab-1.0.1a\lovely\patches.toml resulted in no matches
+WARN - [♥] Pattern 'if self.name == \'Double Tag\' and _context.tag.key ~= \'tag_double\' then' on target 'tag.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+INFO - [♥] Applied 28 patches to 'tag.lua'
+INFO - [♥] Applied 5 patches to 'engine/event.lua'
+INFO - [♥] Applied 5 patches to 'engine/node.lua'
+INFO - [♥] Applied 2 patches to 'engine/moveable.lua'
+INFO - [♥] Applied 5 patches to 'engine/sprite.lua'
+INFO - [♥] Applied 4 patches to 'engine/animatedsprite.lua'
+WARN - [♥] Pattern 'G.ARGS.score_intensity.earned_score = G.GAME.current_round.current_hand.chips*G.GAME.current_round.current_hand.mult\n' on target 'functions/misc_functions.lua' for pattern patch from Amulet\lovely\anims.toml resulted in no matches
+WARN - [♥] Pattern 'G.ARGS.score_intensity.earned_score = SMODS.calculate_round_score(true)\n' on target 'functions/misc_functions.lua' for pattern patch from Amulet\lovely\anims.toml resulted in no matches
+WARN - [♥] Pattern 'assembled_string = assembled_string..(type(subpart) == \'string\' and subpart or args.vars[tonumber(subpart[1])])' on target 'functions/misc_functions.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'elseif part.control.X then' on target 'functions/misc_functions.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+INFO - [♥] Applied 103 patches to 'functions/misc_functions.lua'
+WARN - [♥] Pattern 'if G.GAME.current_round.voucher and G.P_CENTERS[G.GAME.current_round.voucher] then' on target 'game.lua' for pattern patch from lock-the-deal\lovely\ltdm.toml resulted in no matches
+WARN - [♥] Pattern 'G.FUNCS.evaluate_play()' on target 'game.lua' for pattern patch from MoreFluff-main\lovely\onesliptoolate.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 and #G.play.cards < 1 then\n    end_round()\nend\n' on target 'game.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[\'j_joker\'])' on target 'game.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'G.SPLASH_LOGO = Sprite(0, 0, \n    13*SC_scale, \n    13*SC_scale*(G.ASSET_ATLAS[\"balatro\"].py/G.ASSET_ATLAS[\"balatro\"].px),\n    G.ASSET_ATLAS[\"balatro\"], {x=0,y=0})\n' on target 'game.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Regex 'card\\:start_materialize\\(\\)\\n\\s+G\\.shop_vouchers\\:emplace\\(card\\)\\n\\s+end' on target 'game.lua' for regex patch from Cryptid-0.5.13\lovely\Voucher.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 then' on target 'game.lua' for pattern patch from my_balatro_mods\lovely\ability.toml resulted in no matches
+INFO - [♥] Applied 168 patches to 'game.lua'
+INFO - [♥] Applied 5 patches to 'globals.lua'
+INFO - [♥] Applied 8 patches to 'engine/ui.lua'
+WARN - [♥] Pattern '{n=G.UIT.T, config={text = G.GAME.hands[handname].chips, scale = 0.45, colour = G.C.UI.TEXT_LIGHT}},' on target 'functions/UI_definitions.lua' for pattern patch from Amulet\lovely\numfmt.toml resulted in no matches
+WARN - [♥] Pattern '{n=G.UIT.T, config={text = G.GAME.hands[handname].mult, scale = 0.45, colour = G.C.UI.TEXT_LIGHT}}' on target 'functions/UI_definitions.lua' for pattern patch from Amulet\lovely\numfmt.toml resulted in no matches
+WARN - [♥] Pattern 'local card = create_card(v.type, area, nil, nil, nil, nil, nil, \'sho\')' on target 'functions/UI_definitions.lua' for pattern patch from Balatrostuck-1.0.3\lovely\contexts.toml resulted in no matches
+WARN - [♥] Pattern '{n=G.UIT.R, config={align = \"cm\",padding = 0.15}, nodes={\n          {n=G.UIT.O, config={object = G.GAME.blind, draw_layer = 1}},\n          {n=G.UIT.C, config={align = \"cm\",r = 0.1, padding = 0.05, emboss = 0.05, minw = 2.9, colour = G.C.BLACK}, nodes={\n            {n=G.UIT.R, config={align = \"cm\", maxw = 2.8}, nodes={\n              {n=G.UIT.T, config={text = localize(\'ph_blind_score_at_least\'), scale = 0.3, colour = G.C.WHITE, shadow = true}}\n            }},\n            {n=G.UIT.R, config={align = \"cm\", minh = 0.6}, nodes={\n              {n=G.UIT.O, config={w=0.5,h=0.5, colour = G.C.BLUE, object = stake_sprite, hover = true, can_collide = false}},\n              {n=G.UIT.B, config={h=0.1,w=0.1}},\n              {n=G.UIT.T, config={ref_table = G.GAME.blind, ref_value = \'chip_text\', scale = 0.001, colour = G.C.RED, shadow = true, id = \'HUD_blind_count\', func = \'blind_chip_UI_scale\'}}\n            }},\n            {n=G.UIT.R, config={align = \"cm\", minh = 0.45, maxw = 2.8, func = \'HUD_blind_reward\'}, nodes={\n              {n=G.UIT.T, config={text = localize(\'ph_blind_reward\'), scale = 0.3, colour = G.C.WHITE}},\n              {n=G.UIT.O, config={object = DynaText({string = {{ref_table = G.GAME.current_round, ref_value = \'dollars_to_be_earned\'}}, colours = {G.C.MONEY},shadow = true, rotate = true, bump = true, silent = true, scale = 0.45}),id = \'dollars_to_be_earned\'}},\n            }},\n          }},\n        }},\n' on target 'functions/UI_definitions.lua' for pattern patch from Ortalab-1.0.1a\lovely\artists.toml resulted in no matches
+WARN - [♥] Pattern '{n=G.UIT.T, config={text = string.rep(localize(\"$\"), blind_choice.config.dollars)..\'+\', scale = 0.35, colour = disabled and G.C.UI.TEXT_INACTIVE or G.C.MONEY, shadow = not disabled}}\n' on target 'functions/UI_definitions.lua' for pattern patch from Ortalab-1.0.1a\lovely\coupons.toml resulted in no matches
+WARN - [♥] Pattern 'local card = create_card(v.type, area, nil, nil, nil, nil, nil, \'sho\')\n' on target 'functions/UI_definitions.lua' for pattern patch from Ortalab-1.0.1a\lovely\stakes.toml resulted in no matches
+WARN - [♥] Pattern 'function add_tag(_tag)' on target 'functions/UI_definitions.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if _stake_center then localize{type = \'descriptions\', key = _stake_center.key, set = _stake_center.set, nodes = ret_nodes} end' on target 'functions/UI_definitions.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+INFO - [♥] Applied 201 patches to 'functions/UI_definitions.lua'
+WARN - [♥] Pattern 'if reps[j] ~= 1 then' on target 'functions/state_events.lua' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'limit = limit - 1 + (not card.debuff and card.edition and card.edition.card_limit or 0)' on target 'functions/state_events.lua' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.round_resets.blind == G.P_BLINDS.bl_small then\n  G.GAME.round_resets.blind_states.Small = \'Defeated\' ' on target 'functions/state_events.lua' for pattern patch from MoreFluff-main\lovely\superboss.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.round_resets.ante == G.GAME.win_ante and G.GAME.blind:get_type() == \'Boss\' then\n  game_won = true\n  G.GAME.won = true\nend' on target 'functions/state_events.lua' for pattern patch from MoreFluff-main\lovely\superboss.toml resulted in no matches
+WARN - [♥] Pattern 'G.FUNCS.draw_from_hand_to_discard()\nif G.GAME.blind:get_type() == \'Boss\' then' on target 'functions/state_events.lua' for pattern patch from MoreFluff-main\lovely\superboss.toml resulted in no matches
+WARN - [♥] Pattern 'if effects.jokers.Xmult_mod then mult = mod_mult(mult*effects.jokers.Xmult_mod);extras.mult = true  end' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if effect.Xmult_mod then mult = mod_mult(mult*effect.Xmult_mod);extras.mult = true  end' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if effects[ii].message then' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern '--calculate the card edition effects' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if effects[ii].edition.p_dollars_mod then' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if edition_effects.jokers.x_mult_mod then' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if effects[ii].card then' on target 'functions/state_events.lua' for pattern patch from Amulet\lovely\noanims.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.blind:get_type() == \'Boss\' then' on target 'functions/state_events.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'G.GAME.won = true' on target 'functions/state_events.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in 3 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern 'check_and_set_high_score(\'hand\', hand_chips*mult)\n' on target 'functions/state_events.lua' for pattern patch from Cryptid-0.5.13\lovely\Ascended.toml resulted in no matches
+WARN - [♥] Pattern 'func = (function()  update_hand_text({delay = 0, immediate = true}, {mult = 0, chips = 0, chip_total = G.GAME.blind.cry_cap_score and G.GAME.blind:cry_cap_score(math.floor(hand_chips*mult)) or math.floor(hand_chips*mult), level = \'\', handname = \'\'});play_sound(\'button\', 0.9, 0.6);return true end)\n' on target 'functions/state_events.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'if next(find_joker(\'Splash\')) then' on target 'functions/state_events.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Regex 'if eval.saved then\n  game_over = false\nend' on target 'functions/state_events.lua' for regex patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if not G.GAME.blind:debuff_hand(G.play.cards, poker_hands, text) then' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\curses.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.round_resets.ante == G.GAME.win_ante and G.GAME.blind:get_type() == \'Boss\' then\n' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\stakes.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.blind:get_type() == \'Boss\' then\n' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\stakes.toml resulted in no matches
+WARN - [♥] Pattern 'hand_chips = mod_chips(G.GAME.hands[text].chips)' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\zodiac.toml resulted in no matches
+WARN - [♥] Pattern 'delay = G.GAME.current_round.current_hand.handname ~= disp_text and 0.4 or 0}, {handname=disp_text, level=G.GAME.hands[text].level, mult = G.GAME.hands[text].mult, chips = G.GAME.hands[text].chips})\n' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\zodiac.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.round_resets.blind == G.P_BLINDS.bl_small then\n' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\blinds.toml resulted in no matches
+WARN - [♥] Pattern 'elseif G.GAME.round_resets.blind == G.P_BLINDS.bl_big then\n' on target 'functions/state_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\blinds.toml resulted in no matches
+WARN - [♥] Pattern 'if SMODS.has_enhancement(scoring_hand[i], \'m_glass\') and scoring_hand[i]:can_calculate() and pseudorandom(\'glass\') < G.GAME.probabilities.normal/(scoring_hand[i].ability.name == \'Glass Card\' and scoring_hand[i].ability.extra or G.P_CENTERS.m_glass.config.extra) then' on target 'functions/state_events.lua' for pattern patch from Cryptid-0.5.13\lovely\Probability.toml resulted in no matches
+WARN - [♥] Pattern 'G.GAME.hands[text].played = G.GAME.hands[text].played + 1' on target 'functions/state_events.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)if destroyed then \\n' on target 'functions/state_events.lua' for regex patch from Cryptid-0.5.13\lovely\seal.toml resulted in no matches
+INFO - [♥] Applied 168 patches to 'functions/state_events.lua'
+WARN - [♥] Pattern '   end\n\n    if main_end then \n        desc_nodes[#desc_nodes+1] = main_end \n    end' on target 'functions/common_events.lua' for pattern patch from MoreFluff-main\lovely\complexitycreep.toml resulted in no matches
+WARN - [♥] Pattern 'if num_dollars > 60 then' on target 'functions/common_events.lua' for pattern patch from Amulet\lovely\fixes.toml resulted in no matches
+WARN - [♥] Pattern 'local delta = (type(vals.chips) == \'number\' and type(G.GAME.current_round.current_hand.chips) == \'number\') and (vals.chips - G.GAME.current_round.current_hand.chips) or 0' on target 'functions/common_events.lua' for pattern patch from Amulet\lovely\typefix.toml resulted in no matches
+WARN - [♥] Pattern 'local delta = (type(vals.mult) == \'number\' and type(G.GAME.current_round.current_hand.mult) == \'number\')and (vals.mult - G.GAME.current_round.current_hand.mult) or 0' on target 'functions/common_events.lua' for pattern patch from Amulet\lovely\typefix.toml resulted in no matches
+WARN - [♥] Pattern 'ease_background_colour{new_colour = G.C.BLIND['Small'], contrast = 1}' on target 'functions/common_events.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in 2 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern '{n=G.UIT.O, config={object = DynaText({string = {\' \'..localize(\'ph_mr_bones\')..\' \'}, colours = {G.C.FILTER}, shadow = true, pop_in = 0, scale = 0.5*scale, silent = true})}}' on target 'functions/common_events.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'G.GAME.hands[hand].level = math.max(0, G.GAME.hands[hand].level + amount)\nG.GAME.hands[hand].mult = math.max(G.GAME.hands[hand].mult + G.GAME.hands[hand].l_mult*amount, 1)\nG.GAME.hands[hand].chips = math.max(G.GAME.hands[hand].chips + G.GAME.hands[hand].l_chips*amount, 1)\n' on target 'functions/common_events.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'if chip > 0 then' on target 'functions/common_events.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if mult > 0 then' on target 'functions/common_events.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if p_dollars > 0 then' on target 'functions/common_events.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if amt > 0 or amt < 0 then' on target 'functions/common_events.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'elseif not v.boss.showdown and (v.boss.min <= math.max(1, G.GAME.round_resets.ante) and ((math.max(1, G.GAME.round_resets.ante))%G.GAME.win_ante ~= 0 or G.GAME.round_resets.ante < 2)) then\n    eligible_bosses[k] = res and true or nil\nelseif v.boss.showdown and (G.GAME.round_resets.ante)%G.GAME.win_ante == 0 and G.GAME.round_resets.ante >= 2 then\n    eligible_bosses[k] = res and true or nil\nend\n' on target 'functions/common_events.lua' for pattern patch from Ortalab-1.0.1a\lovely\stakes.toml resulted in no matches
+INFO - [♥] Applied 267 patches to 'functions/common_events.lua'
+WARN - [♥] Pattern 'if area == G.consumeables then' on target 'functions/button_callbacks.lua' for pattern patch from Cryptid-0.5.13\lovely\ccd.toml resulted in no matches
+WARN - [♥] Pattern 'if not v.demo and not v.wip then' on target 'functions/button_callbacks.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in 3 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern 'G.GAME.round_resets.blind_tags.Big = get_next_tag_key()' on target 'functions/button_callbacks.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern '    not (card.ability.consumeable and #G.consumeables.cards < G.consumeables.config.card_limit + ((card.edition and card.edition.negative) and 1 or 0)) then' on target 'functions/button_callbacks.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'not (card.ability.set == \'Joker\' and #G.jokers.cards < G.jokers.config.card_limit + ((card.edition and card.edition.negative) and 1 or 0)) and' on target 'functions/button_callbacks.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if area == G.consumeables then' on target 'functions/button_callbacks.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'add_tag(_tag.config.ref_table)' on target 'functions/button_callbacks.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+INFO - [♥] Applied 122 patches to 'functions/button_callbacks.lua'
+WARN - [♥] Pattern 'if not v.custom_draw and k ~= \'focused_ui\' and k ~= \"front\" and k ~= \"back\" and k ~= \"soul_parts\" and k ~= \"center\" and k ~= \'floating_sprite\' and k~= \"shadow\" and k~= \"use_button\" and k ~= \'buy_button\' and k ~= \'buy_and_use_button\' and k~= \"debuff\" and k ~= \'price\' and k~= \'particles\' and k ~= \'h_popup\' then v:draw() end\n' on target 'card.lua' for pattern patch from lock-the-deal\lovely\ltdm.toml resulted in no matches
+WARN - [♥] Pattern 'if self.edition.type == \'negative\' and self.ability.consumeable then\n    badges[#badges + 1] = \'negative_consumable\'\nelseif self.edition.type == \'negative\' and (self.ability.set == \'Enhanced\' or self.ability.set == \'Default\') then\n    badges[#badges + 1] = \'negative_playing_card\'\n' on target 'card.lua' for pattern patch from Cryptid-0.5.13\lovely\ccd.toml resulted in no matches
+WARN - [♥] Pattern 'if self.ability.name == \'Sixth Sense\' and #context.full_hand == 1 and context.full_hand[1]:get_id() == 6 and G.GAME.current_round.hands_played == 0 then' on target 'card.lua' for pattern patch from Cryptid-0.5.13\lovely\stake.toml resulted in no matches
+WARN - [♥] Pattern 'if self.joker_added_to_deck_but_debuffed then' on target 'card.lua' for pattern patch from Cryptid-0.5.13\lovely\sticker.toml resulted in no matches
+WARN - [♥] Pattern 'if self.ability.rental then self.cost = 1 end' on target 'card.lua' for pattern patch from MoreFluff-main\lovely\superboss.toml resulted in no matches
+WARN - [♥] Pattern 'x_mult = center.config.Xmult or 1,' on target 'card.lua' for pattern patch from Amulet\lovely\card.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.blind then G.E_MANAGER:add_event(Event({ func = function() G.GAME.blind:set_blind(nil, true, nil); return true end })) end' on target 'card.lua' for pattern patch from Amulet\lovely\noanims.toml resulted in no matches
+WARN - [♥] Pattern 'if self.ability.name == \'Swashbuckler\' and self.ability.mult > 0 then' on target 'card.lua' for pattern patch from Balatrostuck-1.0.3\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if context.cardarea == G.play then
+WARN - [♥] ' on target 'card.lua' for pattern patch from Balatrostuck-1.0.3\lovely\unlocks.toml resulted in 2 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern 'level_up_hand(context.blueprint_card or self, text, nil, 1)\nupdate_hand_text({sound = \'button\', volume = 0.7, pitch = 1.1, delay = 0}, {mult = 0, chips = 0, handname = \'\', level = \'\'})\nreturn nil, true\n' on target 'card.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'level_up_hand(used_tarot, self.ability.consumeable.hand_type)\nupdate_hand_text({sound = \'button\', volume = 0.7, pitch = 1.1, delay = 0}, {mult = 0, chips = 0, handname = \'\', level = \'\'})\n' on target 'card.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'if self.ability.x_mult <= 1 then return 0 end' on target 'card.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'self.sell_cost_label = self.facing == \'back\' and \'?\' or self.sell_cost' on target 'card.lua' for pattern patch from Ortalab-1.0.1a\lovely\jokers.toml resulted in no matches
+WARN - [♥] Pattern 'if G.consumeables.cards[1] then\n' on target 'card.lua' for pattern patch from Ortalab-1.0.1a\lovely\jokers.toml resulted in no matches
+WARN - [♥] Pattern 'local card = copy_card(pseudorandom_element(G.consumeables.cards, pseudoseed(\'perkeo\')), nil)\n' on target 'card.lua' for pattern patch from Ortalab-1.0.1a\lovely\jokers.toml resulted in no matches
+WARN - [♥] Pattern 'SMODS.calculate_context({open_booster = true, card = self})' on target 'card.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'G.GAME.pack_choices = *' on target 'card.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in 7 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern 'local currentBack = self.params.viewed_back and G.GAME.viewed_back or G.GAME.selected_back' on target 'card.lua' for pattern patch from Galdur-1.2.1d\lovely.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)(?<pre>if self.edition and self.edition.card_limit then.*)\\n[\\t ]*(?<cond>if self.ability.consumeable then)\\n[\\t ]*G\\.consumeables\\.config\\.card_limit = G\\.consumeables\\.config\\.card_limit \\+ self\\.edition\\.card_limit(?<post>(\\n.*?)*end)' on target 'card.lua' for regex patch from reverie-1.5.4b\lovely\risky_patches.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)(?<pre>self.edition = \\{\\}\\n.*if self.added_to_deck then.*)\\n[\\t ]*(?<cond>if self.ability.consumeable then)\\n[\\t ]*G\\.consumeables\\.config\\.card_limit = G\\.consumeables\\.config\\.card_limit \\+ 1(?<post>(\\n.*?)*end)' on target 'card.lua' for regex patch from reverie-1.5.4b\lovely\risky_patches.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)(?<pre>if self.edition and self.edition.card_limit then.*)\\n[\\t ]*(?<cond>if self.ability.consumeable then)\\n[\\t ]*G\\.consumeables\\.config\\.card_limit = G\\.consumeables\\.config\\.card_limit - self\\.edition\\.card_limit(?<post>(\\n.*?)*end)' on target 'card.lua' for regex patch from reverie-1.5.4b\lovely\risky_patches.toml resulted in no matches
+INFO - [♥] Applied 417 patches to 'card.lua'
+WARN - [♥] Pattern 'if not card.debuff and card.edition and card.edition.card_limit and (self == G.hand) then' on target 'cardarea.lua' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern '{n=G.UIT.T, config={ref_table = self.config, ref_value = \'card_limit\', scale = 0.3, colour = G.C.WHITE}},' on target 'cardarea.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if card.facing == \'back\' and self.config.type ~= \'discard\' and self.config.type ~= \'deck\' and not stay_flipped then\n' on target 'cardarea.lua' for pattern patch from Ortalab-1.0.1a\lovely\jokers.toml resulted in no matches
+WARN - [♥] Pattern 'update_hand_text({immediate = true, nopulse = nil, delay = 0}, {handname=disp_text, level=G.GAME.hands[text].level, mult = G.GAME.hands[text].mult, chips = G.GAME.hands[text].chips})\n' on target 'cardarea.lua' for pattern patch from Ortalab-1.0.1a\lovely\zodiac.toml resulted in no matches
+WARN - [♥] Pattern 'update_hand_text({immediate = true, nopulse = nil, delay = 0}, {handname=disp_text, level=G.GAME.hands[text].level, mult = G.GAME.hands[text].mult, chips = G.GAME.hands[text].chips})' on target 'cardarea.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+INFO - [♥] Applied 52 patches to 'cardarea.lua'
+WARN - [♥] Pattern 'G.GAME.current_round.dollars_to_be_earned = self.dollars > 0 and (string.rep(localize(\'$\'), self.dollars)..\'\') or (\'\')\n' on target 'blind.lua' for pattern patch from Ortalab-1.0.1a\lovely\coupons.toml resulted in no matches
+INFO - [♥] Applied 57 patches to 'blind.lua'
+WARN - [♥] Pattern 'self.children.card = Card(self.T.x, self.T.y, G.CARD_W, G.CARD_H, G.P_CARDS.empty, args.center or G.P_CENTERS.j_joker, {bypass_discovery_center = true})' on target 'card_character.lua' for pattern patch from Cryptid-0.5.13\lovely\lib_gameset.toml resulted in no matches
+WARN - [♥] Pattern 'colours = {G.C.RED, G.C.BLUE, G.C.ORANGE},' on target 'card_character.lua' for pattern patch from Cryptid-0.5.13\lovely\lib_gameset.toml resulted in no matches
+INFO - [♥] Applied 10 patches to 'card_character.lua'
+INFO - [♥] Applied 15 patches to 'engine/text.lua'
+WARN - [♥] Pattern 'if eff.retrigger_flag then SMODS.calculate_effect(eff, eff.card); j = j+1; _, eff = next(reps[j]) end' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if (key == \'chips\' or key == \'h_chips\' or key == \'chip_mod\') and amount then\n' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if (key == \'mult\' or key == \'h_mult\' or key == \'mult_mod\') and amount then\n' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if (key == \'x_chips\' or key == \'xchips\' or key == \'Xchip_mod\') and amount ~= 1 then\n' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern 'if (key == \'x_mult\' or key == \'xmult\' or key == \'Xmult\' or key == \'x_mult_mod\' or key == \'Xmult_mod\') and amount ~= 1 then\n' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Cryptid-0.5.13\lovely\misc.toml resulted in no matches
+WARN - [♥] Pattern '-- TARGET: add your own individual scoring targets' on target '=[SMODS _ "src/utils.lua"]' for pattern patch from Balatrostuck-1.0.3\lovely\slabs and caste.toml resulted in 1 matches, wanted 3
+INFO - [♥] Applied 19 patches to '=[SMODS _ "src/utils.lua"]'
+WARN - [♥] Pattern 'if self.ability.consumeable then' on target '=[SMODS _ "src/overrides.lua"]' for pattern patch from Cryptid-0.5.13\lovely\ccd.toml resulted in no matches
+WARN - [♥] Pattern 'elseif self.ability.set == \'Joker\' and self.area == G.jokers then' on target '=[SMODS _ "src/overrides.lua"]' for pattern patch from reverie-1.5.4b\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'elseif self.ability.set == \'Joker\' then' on target '=[SMODS _ "src/overrides.lua"]' for pattern patch from reverie-1.5.4b\lovely.toml resulted in no matches
+INFO - [♥] Applied 16 patches to '=[SMODS _ "src/overrides.lua"]'
+WARN - [♥] Pattern 'hand[self.key] = math.max(hand[\'s_\'..self.key] + hand[\'l_\'..self.key]*(hand.level - 1), 0)\n' on target '=[SMODS _ "src/game_object.lua"]' for pattern patch from Cryptid-0.5.13\lovely\universum.toml resulted in no matches
+INFO - [♥] Applied 9 patches to '=[SMODS _ "src/game_object.lua"]'
+INFO - [G] Failed to connect to the debug server 
+INFO - [G] 2026-01-02 10:08:51 :: DEBUG :: DebugConsole :: Steamodded Debug Socket started ! 
+INFO - [G] 2026-01-02 10:08:51 :: INFO  :: SMODS :: Steamodded v1.0.0~BETA-1224a 
+INFO - [♥] Applied 9 patches to 'engine/sound_manager.lua'
+INFO - [♥] Applied 1 patch to 'engine/save_manager.lua'
+INFO - [♥] Applied 2 patches to 'engine/string_packer.lua'
+WARN - [♥] Pattern 'if (self.edition and self.edition.negative) or (self.ability.name == \'Antimatter\' and (self.config.center.discovered or self.bypass_discovery_center)) then' on target '=[SMODS _ "src/card_draw.lua"]' for pattern patch from Cryptid-0.5.13\lovely\lib_ui.toml resulted in no matches
+WARN - [♥] Pattern 'if not self.no_shadow and G.SETTINGS.GRAPHICS.shadows == \'On\' and((layer == \'shadow\' or layer == \'both\') and (self.ability.effect ~= \'Glass Card\' and not self.greyed) and ((self.area and self.area ~= G.discard and self.area.config.type ~= \'deck\') or not self.area or self.states.drag.is)) then' on target '=[SMODS _ "src/card_draw.lua"]' for pattern patch from my_balatro_mods\lovely\shader.toml resulted in no matches
+WARN - [♥] Pattern 'if self.debuff then' on target '=[SMODS _ "src/card_draw.lua"]' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)if self\\.edition(?<cond>.* then)(?<post>\\n[\\t ]*for k, v in pairs\\(G\\.P_CENTER_POOLS\\.Edition\\) do\\n[\\t ]*if self\\.edition\\[v\\.key:sub\\(3\\)\\] and v\\.shader then)' on target '=[SMODS _ "src/card_draw.lua"]' for regex patch from reverie-1.5.4b\lovely\card_draw_patches.toml resulted in no matches
+WARN - [♥] Regex '(?<indent>[\\t ]*)if \\(self\\.edition and self\\.edition\\.negative\\)(?<post>.*)' on target '=[SMODS _ "src/card_draw.lua"]' for regex patch from reverie-1.5.4b\lovely\card_draw_patches.toml resulted in no matches
+WARN - [♥] Pattern 'if self.debuff then\n' on target '=[SMODS _ "src/card_draw.lua"]' for pattern patch from Ortalab-1.0.1a\lovely\blinds.toml resulted in no matches
+INFO - [♥] Applied 13 patches to '=[SMODS _ "src/card_draw.lua"]'
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Actions.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: ACT 
+INFO - [G] 2026-01-02 10:08:52 :: ERROR :: Loader :: Found invalid metadata JSON file at C:\Users\xuech\AppData\Roaming\Balatro\Mods/Amulet/manifest.json, ignoring: [SMODS _ "src/loader.lua"]:226: id 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: ERROR :: Loader :: Found invalid metadata JSON file at C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/.vscode/settings.json, ignoring: [SMODS _ "src/loader.lua"]:226: id 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): MoreFluff.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: MoreFluff 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: ERROR :: Loader :: Found invalid metadata JSON file at C:\Users\xuech\AppData\Roaming\Balatro\Mods/lock-the-deal/.luarc.json, ignoring: [SMODS _ "src/loader.lua"]:226: id 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): 5_legendary_challenges.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: legendaryChallenges 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Betmma_Abilities.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetmmaAbilities 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Betmma_Jokers.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetmmaJokers 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Betmma_Spells.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetmmaSpells 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Betmma_Voucher_Pack.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetmmaVoucherPack 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): Betmma_Vouchers.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetmmaVouchers 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Processing Mod file (Legacy header): better_vouchers_this_run_ui.lua 
+INFO - [G] 2026-01-02 10:08:52 :: TRACE :: Loader :: Saving Mod Info: BetterVouchersThisRunUI 
+INFO - [G] 2026-01-02 10:08:52 :: INFO  :: Loader :: Valid JSON file found 
+INFO - [G] :: Initializing shared module. 
+INFO - [G] [TEOcean] TEOcean 本地化框架mod加载完成 
+INFO - [G] [TEOcean Language Packs] TEOcean 适配的汉化语言包预处理完成 尽情享受游戏吧！ 
+INFO - [G] betmma config not found 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_j_poke_unown_swarm 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_j_poke_unown_swarm_shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_j_poke_unown_swarm_soul 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_j_poke_unown_swarm_shiny_soul 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen01 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen01Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen01 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen01Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen02 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen02Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen02 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen02Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen03 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen03Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen03 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen03Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen04 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen04Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen04 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen04Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen05 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen05Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen05 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen05Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen06 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen06Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen06 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen06Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen07 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen07Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen07 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen07Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen08 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen08Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen08 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen08Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen09 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicGen09Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen09 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAGen09Shiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicNatdex 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicNatdexShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesANatdex 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesANatdexShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicOthers 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersBasicOthersShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesBNatdex 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesBNatdexShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasBoosterpacksBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasBoosterpacksSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasBossblinds 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_blind 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasConsumablesBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasConsumablesBirdEnergy 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasConsumablesSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasDecksBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasDecksSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasEnhancementsBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasEnhancementsSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersVanillaShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasStickersBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasStickersSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasTags 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasVouchersBasic 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasVouchersSeriesA 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAVoltorb 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAVoltorbShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAElectrode 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_AtlasJokersSeriesAElectrodeShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_item 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_deck 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_sleeve 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_joker 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_placeholder_jokerShiny 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_unergy 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_unitem 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_smeargle_logo 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Atlas :: Detected duplicate register call on object poke_logo 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Sound :: Detected duplicate register call on object poke_e_shiny 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_01.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_02.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_03.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_04.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_05.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: AtlasJokersBasicNatdex 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_06.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_07.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_08.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_09.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_10.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_11.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_12.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_13.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_14.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_15.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_16.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_17.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_18.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_19.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_20.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_21.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_22.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_23.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_24.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_25.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_26.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_27.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_28.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_29.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_30.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_31.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_32.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_33.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_34.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokejokers_35.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: zmissingno.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: zotherjokers.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: type1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: mart1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: mart2.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: mart3.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: martz.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: zberryjuice.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: zmachine.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: packs1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: seals1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: stickers.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: editions1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: enhancement1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokevouchers.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: pokebossblind.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: tags1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: DEBUG :: DefaultLogger :: The file is: backs1.lua 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on dark is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on light is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on earth is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on air is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on water is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on fire is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on shadow is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on inferno is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on abyss is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on cavern is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on smoke is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on radiance is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on reflection is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on crystal is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on halo is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on steam is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on magma is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on ember is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on mud is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on dust is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on cloud is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on ripple is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] 2026-01-02 10:08:52 :: WARN  :: Spell :: The field `raw_key` on lava is deprecated.
+Set `prefix_config.key = false` on your object instead. 
+INFO - [G] basepaul_card 
+INFO - [G] blahaj 
+INFO - [G] clownfish 
+INFO - [G] expansion_pack 
+INFO - [G] hollow 
+INFO - [G] jackofalltrades 
+INFO - [G] jester 
+INFO - [G] lollipop 
+INFO - [G] luckycharm 
+INFO - [G] mspaint 
+INFO - [G] philosophical 
+INFO - [G] simplified 
+INFO - [G] spiral 
+INFO - [G] treasuremap 
+INFO - [G] unregisteredhypercam 
+INFO - [G] dropkick 
+INFO - [G] bladedance 
+INFO - [G] hyperbeam 
+INFO - [G] blasphemy 
+INFO - [G] dramaticentrance 
+INFO - [G] badlegaldefence 
+INFO - [G] blunder 
+INFO - [G] brilliant 
+INFO - [G] broomcloset 
+INFO - [G] clipart 
+INFO - [G] coupon_catalogue 
+INFO - [G] css 
+INFO - [G] cueball 
+INFO - [G] flintandsteel 
+INFO - [G] gemstonejoker 
+INFO - [G] globe 
+INFO - [G] goldencarrot 
+INFO - [G] hallofmirrors 
+INFO - [G] impostor 
+INFO - [G] farmmerge 
+INFO - [G] friendinsideme 
+INFO - [G] junkmail 
+INFO - [G] onesliptoolate 
+INFO - [G] tonersoup 
+INFO - [G] unpleasantcard 
+INFO - [G] lightningstrikesthrice 
+INFO - [G] loadeddisk 
+INFO - [G] missingjoker 
+INFO - [G] paintcan 
+INFO - [G] rot_cartomancer 
+INFO - [G] sapling 
+INFO - [G] snake 
+INFO - [G] slotmachine 
+INFO - [G] stylemeter 
+INFO - [G] stonejokerjoker 
+INFO - [G] sudoku 
+INFO - [G] talljoker 
+INFO - [G] teacup 
+INFO - [G] tealjoker 
+INFO - [G] thewayhome 
+INFO - [G] recycling 
+INFO - [G] virtual 
+INFO - [G] wilddrawfour 
+INFO - [G] yuckyrat 
+INFO - [G] allicantdo 
+INFO - [G] bloodpact 
+INFO - [G] bookmove 
+INFO - [G] brass 
+INFO - [G] bowlingball 
+INFO - [G] cba 
+INFO - [G] complexitycreep 
+INFO - [G] fleshprison 
+INFO - [G] hugejoker 
+INFO - [G] hyperjimbo 
+INFO - [G] jankman 
+INFO - [G] mashupalbum 
+INFO - [G] pixeljoker 
+INFO - [G] rainbowjoker 
+INFO - [G] rosetinted 
+INFO - [G] the_solo 
+INFO - [G] top10 
+INFO - [G] widejoker 
+INFO - [G] triangle 
+INFO - [G] marigold 
+INFO - [G] lessfluff 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/jokers 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_abraxas.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_aceDick.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_ahabscrosshairs.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_aimlessrenegade.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_alltheirons.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_amberfirefly.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_applejuice.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_ascend.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_backseater.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_balletslippers.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_batterwitch.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_betacopy.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_beyondcanon.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_bigkahuna.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_biscuits.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_caledfwlch.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_captchacard.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_cascade.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_cloudwatching.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_clover.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_clownincar.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_collide.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_commandervantas.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_complacencyofthelearned.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_conditionalimmortality.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_consortconcierge.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_conventioncenter.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_courtyarddroll.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_crowbarsfelt.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_cruxiteapple.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_cruxitedowel.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_cueball.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_culling.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_dadswallet.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_dark_carnival.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_darkscholar.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_dead_shuffle.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_descend.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_descendascend.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_dolorosa.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_donotship.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_draconiandignitary.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_echeladder.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_echidna.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_ectobiology.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_enterthemedium.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_faygo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_fluoriteoctet.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_frogbreeding.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_frustration.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_gamebro.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_genejoker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_gristtorrent.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_hegemonicbrute.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_hephaestus.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_horrorterrors.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_hotdogjuggler.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_impetuscombcharging.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_innapropriatebucket.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_jetpack.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_jocker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_joker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_jokermode.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_kernelsprite.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lofaf.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lohac.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lolar.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lonegunbird.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lordoftime.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lowas.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_lucky_break.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_magnificent.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_mirthful.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_misspaint.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_mobiusdoublereacharound.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_museofspace.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_nepetajoker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_note_desolation.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_objectduality.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_oldsecret.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_operation_regisurp.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_paintseal.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_pairing_grid.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_parcelmistress.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_pawnrevolution.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_pickleinspector.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_porkhollow.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_problemsleuth.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_purrfectwarrior.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_questbed.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_ringoflife.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_ringofvoid.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_roundtwo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_sepulcritude.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_signofthesignless.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_skaia.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_smallerbutterflies.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_snowman.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_soporpie.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_sovereignslayer.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_stress.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_strifespecibus.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_stump.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_sucker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_synchronization.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_tanglebuddies.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_theplotpoint.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_therapture.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_trolltrain.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_tumor.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_twinarmageddons.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_typheus.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_vasterror.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_verticlemovements.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_vodkamutini.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_wake.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_waywardvagabond.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_whatpumpkin.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_whitequeen.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_whoisthis.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_yaldabaoth.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: j_yourlordandmaster.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR jokers 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/aspects 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_blood.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_breath.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_doom.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_heart.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_hope.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_life.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_light.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_mind.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_piss.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_rage.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_space.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_time.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_aspect_void.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR aspects 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/zodiacs 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_aquarius.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_aries.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_cancer.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_capricorn.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_gemini.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_leo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_libra.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_ophiucus.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_pisces.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_saggitarius.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_scorpio.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_taurus.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_zodiac_virgo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR zodiacs 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/boosters 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: aspect.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: aspect_alt.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: aspect_jumbo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: sburb.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: zodiac.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: zodiac_alt.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: zodiac_jumbo.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: zodiac_mega.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR boosters 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/editions 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: e_paradox.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR editions 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/tags 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_matriorb.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_parcelpyxis.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_perfectlygeneric.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_sburb.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_scratch.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: t_spirograph.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR tags 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/spectrals 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_spectral_13ofstars.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_spectral_jailkey.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_spectral_juju.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_spectral_lotuscapsule.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: c_spectral_scratchconstruct.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR spectrals 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/seals 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: seal_felt.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR seals 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/blinds 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_bettycrocker.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_demoness.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_disciple.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_dolorosa.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_executioner.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_helmsman.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_legislacerator.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_manipulator.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_orphaner.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_subjuggulator.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_sufferer.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: bl_summoner.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR blinds 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/vouchers 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: v_aspect_mastery.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: v_giftofgab.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: v_godtier.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: v_riseup.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR vouchers 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/decks 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: b_alternian.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: b_dersite.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: b_frog.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: b_prospitan.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR decks 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Balatrostuck-1.0.3/data/challenges 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_01_littlemonsters.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_02_contrivance.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_03_bootstrapparadox.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_04_alchemy.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_05_likeaseer.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_06_shippingwars.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_07_lylacrapsody.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_08_blackholesun.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_09_flarp.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_10_plurality.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: challange_11_chamlang.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: DefaultLogger :: FINISHED BATCH LOAD FOR challenges 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckJokers 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckZodiacs 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckAspects 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_modicon 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckAspectBooster 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckTags 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckSpectrals 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckSeals 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckParadox 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckJokersAnimated 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_TheCalibornJoker 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckBlinds 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckVouchers 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckDecks 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_HomestuckSlabs 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_logo 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_howhigh 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Detected duplicate register call on object bstuck_scrollbar 
+INFO - [G] [CRYPTID] Loading library file ascended.lua 
+INFO - [G] [CRYPTID] Loading library file calculate.lua 
+INFO - [G] [CRYPTID] Loading library file content.lua 
+INFO - [G] [CRYPTID] Loading library file cross-mod.lua 
+INFO - [G] Table:
+colour: Table:
+  1: 0.65490196078431
+  2: 0.50980392156863
+  3: 0.81960784313725
+  4: 1
+
+voucher_key: v_cry_tacclimator
+localization_key: b_tarot_rate
+ref_value: tarot
+ 
+INFO - [G] Table:
+colour: Table:
+  1: 0.074509803921569
+  2: 0.68627450980392
+  3: 0.8078431372549
+  4: 1
+
+voucher_key: v_cry_pacclimator
+localization_key: b_planet_rate
+ref_value: planet
+ 
+INFO - [G] [CRYPTID] Loading library file d20.lua 
+INFO - [G] [CRYPTID] Loading library file event.lua 
+INFO - [G] [CRYPTID] Loading library file forcetrigger.lua 
+INFO - [G] [CRYPTID] Loading library file gameset.lua 
+INFO - [G] [CRYPTID] Loading library file https.lua 
+INFO - [G] 2026-01-02 10:08:53 :: DEBUG :: SMODS.https :: Using https module backend 
+INFO - [G] [CRYPTID] Loading library file misc.lua 
+INFO - [G] [CRYPTID] Loading library file misprintize.lua 
+INFO - [G] [CRYPTID] Loading library file modifiers.lua 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Sticker :: Detected duplicate register call on object perishable 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Sticker :: Detected duplicate register call on object pinned 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Sticker :: Detected duplicate register call on object eternal 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Sticker :: Detected duplicate register call on object rental 
+INFO - [G] [CRYPTID] Loading library file notifications.lua 
+INFO - [G] [CRYPTID] Loading library file overrides.lua 
+INFO - [G] [CRYPTID] Loading library file pointerlib.lua 
+INFO - [G] [CRYPTID] Loading library file ui.lua 
+INFO - [G] [CRYPTID] Loading file achievement.lua 
+INFO - [G] [CRYPTID] Loading file blind.lua 
+INFO - [G] [CRYPTID] Loading file challenge.lua 
+INFO - [G] [CRYPTID] Loading file code.lua 
+INFO - [G] [CRYPTID] Loading file deck.lua 
+INFO - [G] [CRYPTID] Loading file enhanced.lua 
+INFO - [G] [CRYPTID] Loading file epic.lua 
+INFO - [G] [CRYPTID] Loading file exotic.lua 
+INFO - [G] [CRYPTID] Loading file joker_display.lua 
+INFO - [G] [CRYPTID] Loading file m.lua 
+INFO - [G] [CRYPTID] Loading file misc.lua 
+INFO - [G] [CRYPTID] Loading file misc_joker.lua 
+INFO - [G] [CRYPTID] Loading file planet.lua 
+INFO - [G] [CRYPTID] Loading file pointer.lua 
+INFO - [G] [CRYPTID] Loading file sleeve.lua 
+INFO - [G] [CRYPTID] Loading file spectral.lua 
+INFO - [G] [CRYPTID] Loading file spooky.lua 
+INFO - [G] [CRYPTID] Loading file stake.lua 
+INFO - [G] [CRYPTID] Loading file tag.lua 
+INFO - [G] [CRYPTID] Loading file test.lua 
+INFO - [G] [CRYPTID] Loading file voucher.lua 
+INFO - [G] [CRYPTID] Loading file colours.lua from MoreFluff 
+INFO - [G] [CRYPTID] Loading file farmmergecivilisation.lua from MoreFluff 
+INFO - [G] [CRYPTID] Loading Cryptid.lua from BetmmaVouchers 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: Object cry_effarcire has the same key as an existing object, not registering. 
+INFO - [G] 2026-01-02 10:08:53 :: WARN  :: Atlas :: If you want to modify an existing object, use take_ownership() 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: TIMER :: [0000] Injected Fonts in 0.001 ms 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: TIMER :: [0000] Injected DynaTextEffects in 0.000 ms 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: TIMER :: [0000] Injected Language in 0.001 ms 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: galdur 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lnxfca-common 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lock-the-deal 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: teocean 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVouchers 
+INFO - [G] [TEOcean Language Packs] 生成缺失翻译: Bunco -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/todo/Bunco/missing_zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 备份已存在，跳过: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/Bunco/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 写入合并本地化: Bunco -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Bunco-5.4.7a-JumboFork/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Pokermon 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: ACT 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Amulet 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaAbilities 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaJokers 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaSpells 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVoucherPack 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetterVouchersThisRunUI 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: DebugPlus 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: MoreFluff 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: legendaryChallenges 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lovely-compat-my_balatro_mods 
+INFO - [G] [TEOcean Language Packs] 备份已存在，跳过: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/ortalab/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 写入合并本地化: ortalab -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Ortalab-1.0.1a/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Reverie 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: balatrostuck 
+INFO - [G] [TEOcean Language Packs] 生成缺失翻译: Cryptid -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/todo/Cryptid/missing_zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 备份已存在，跳过: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/Cryptid/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 写入合并本地化: Cryptid -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Cryptid-0.5.13/localization/zh_CN.lua 
+INFO - [G] 2026-01-02 10:08:53 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 48.113 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0451] Injected Atlas in 1811.726 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0092] Injected Sound in 27.202 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0004] Injected nil in 0.011 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0044] Injected Stake in 1.027 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0010] Injected Rarity in 0.031 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0025] Injected ObjectType in 0.213 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [1966] Injected Center in 10.997 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0024] Injected Undiscovered Sprite in 0.043 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0112] Injected Blind in 0.310 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0011] Injected Seal in 0.525 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0006] Injected Suit in 0.230 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0013] Injected Rank in 0.243 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0046] Injected DeckSkin in 0.485 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0061] Injected JimboQuip in 0.318 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0025] Injected PokerHand in 0.244 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0069] Injected Challenge in 0.405 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0105] Injected Tag in 0.743 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0027] Injected Sticker in 1.911 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0038] Injected Shader in 212.961 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0003] Injected Keybind in 0.067 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0028] Injected Achievement in 0.114 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0002] Injected Scoring_Parameters in 0.085 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0009] Injected Scoring_Calculations in 0.026 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0048] Injected Draw Step in 0.064 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 23.404 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0004] Injected Curse in 0.052 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0013] Injected Slabs in 0.038 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0013] Injected Castes in 0.023 ms 
+INFO - [G] 2026-01-02 10:08:55 :: INFO  :: TIMER :: [0010] Injected Other in 0.018 ms 
+INFO - [G] [DebugPlus] Press [/] to toggle console and press [shift] + [/] to toggle new log previews 
+INFO - [♥] Applied 0 patches to '=[SMODS _ "smods-https-thread.lua"]'
+INFO - [G] 2026-01-02 10:09:00 :: DEBUG :: SMODS.https(1) :: Using https module backend 
+INFO - [G] [TEOcean] 开始为 ortalab 恢复原始本地化 
+INFO - [G] [TEOcean Language Packs] 删除合并本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Ortalab-1.0.1a/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 恢复原始本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/ortalab/localization/zh_CN.lua -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Ortalab-1.0.1a/localization/zh_CN.lua 
+INFO - [G] [TEOcean] ortalab 本地化恢复完成 
+INFO - [G] [TEOcean] 配置已保存到SMODS配置系统 
+INFO - [G] [TEOcean] 开始为 Bunco 恢复原始本地化 
+INFO - [G] [TEOcean Language Packs] 删除合并本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Bunco-5.4.7a-JumboFork/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 恢复原始本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/Bunco/localization/zh_CN.lua -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Bunco-5.4.7a-JumboFork/localization/zh_CN.lua 
+INFO - [G] [TEOcean] Bunco 本地化恢复完成 
+INFO - [G] [TEOcean] 配置已保存到SMODS配置系统 
+INFO - [G] [TEOcean] 开始为 Cryptid 恢复原始本地化 
+INFO - [G] [TEOcean Language Packs] 删除合并本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/Cryptid-0.5.13/localization/zh_CN.lua 
+INFO - [G] [TEOcean Language Packs] 恢复原始本地化: C:\Users\xuech\AppData\Roaming\Balatro\Mods/TEOcean-1.0.6/impl/backup/Cryptid/localization/zh_CN.lua -> C:\Users\xuech\AppData\Roaming\Balatro\Mods/Cryptid-0.5.13/localization/zh_CN.lua 
+INFO - [G] [TEOcean] Cryptid 本地化恢复完成 
+INFO - [G] [TEOcean] 配置已保存到SMODS配置系统 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: galdur 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lnxfca-common 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lock-the-deal 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: teocean 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVouchers 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: Bunco 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Pokermon 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: ACT 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Amulet 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaAbilities 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaJokers 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaSpells 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVoucherPack 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetterVouchersThisRunUI 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: DebugPlus 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: MoreFluff 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: legendaryChallenges 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lovely-compat-my_balatro_mods 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: ortalab 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Reverie 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: balatrostuck 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: Cryptid 
+INFO - [G] 2026-01-02 10:09:09 :: INFO  :: TIMER :: [0000] Injected Fonts in 0.001 ms 
+INFO - [G] 2026-01-02 10:09:09 :: INFO  :: TIMER :: [0000] Injected DynaTextEffects in 0.001 ms 
+INFO - [G] 2026-01-02 10:09:09 :: INFO  :: TIMER :: [0000] Injected Language in 0.001 ms 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: galdur 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lnxfca-common 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lock-the-deal 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: teocean 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVouchers 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: Bunco 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Pokermon 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: ACT 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Amulet 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaAbilities 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaJokers 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaSpells 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetmmaVoucherPack 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: BetterVouchersThisRunUI 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: DebugPlus 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: MoreFluff 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: legendaryChallenges 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: lovely-compat-my_balatro_mods 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: ortalab 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: Reverie 
+INFO - [G] [TEOcean Language Packs] 跳过未适配 mod: balatrostuck 
+INFO - [G] [TEOcean Language Packs] 跳过未勾选 mod: Cryptid 
+INFO - [G] 2026-01-02 10:09:09 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 2.103 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0451] Injected Atlas in 1796.254 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0092] Injected Sound in 0.119 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0004] Injected nil in 0.011 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0044] Injected Stake in 0.286 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0010] Injected Rarity in 0.067 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0025] Injected ObjectType in 0.215 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [1966] Injected Center in 6.707 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0024] Injected Undiscovered Sprite in 0.022 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0112] Injected Blind in 0.180 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0011] Injected Seal in 0.163 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0006] Injected Suit in 0.086 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0013] Injected Rank in 0.067 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0046] Injected DeckSkin in 0.380 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0061] Injected JimboQuip in 0.061 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0025] Injected PokerHand in 0.077 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0069] Injected Challenge in 0.109 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0105] Injected Tag in 0.216 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0027] Injected Sticker in 0.163 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0038] Injected Shader in 93.462 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0003] Injected Keybind in 0.006 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0028] Injected Achievement in 0.095 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0002] Injected Scoring_Parameters in 0.105 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0009] Injected Scoring_Calculations in 0.009 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0048] Injected Draw Step in 0.077 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0000] Injected [INTERNAL] in 22.523 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0004] Injected Curse in 0.049 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0013] Injected Slabs in 0.017 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0013] Injected Castes in 0.020 ms 
+INFO - [G] 2026-01-02 10:09:11 :: INFO  :: TIMER :: [0010] Injected Other in 0.011 ms 

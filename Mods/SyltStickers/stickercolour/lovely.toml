@@ -1,0 +1,19 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = 'functions/UI_definitions.lua'
+pattern = '''pinned_left = G.C.ORANGE,'''
+position = 'after'
+payload = '''
+st_stic_wall = HEX("dbdb70"),
+st_stic_overreroll = HEX("5c4033"),
+st_stic_mplanet = HEX("70dbdb"),
+st_stic_splucky = HEX("8e6b23"),
+st_stic_shadow = HEX("00009c"),
+st_stic_sppinned = HEX("8e2323"),
+'''
+match_indent = true

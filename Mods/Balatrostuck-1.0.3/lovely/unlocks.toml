@@ -1,0 +1,167 @@
+
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+#Jetpack
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+G.STATE = G.STATES.GAME_OVER
+'''
+position = "after"
+payload = '''
+check_for_unlock({type = 'bstuck_jetpack'})
+'''
+match_indent = true
+times = 1
+
+#SoporPie1
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+G.STATE = G.STATES.GAME_OVER; G.STATE_COMPLETE = false 
+'''
+position = "after"
+payload = '''
+check_for_unlock({type = 'bstuck_soporpie'})
+'''
+match_indent = true
+times = 1
+
+#SoporPie2
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+if #G.hand.cards < 1 and #G.deck.cards < 1 and #G.play.cards < 1 then
+'''
+position = "after"
+payload = '''
+if #G.deck.cards < 1 then
+check_for_unlock({type = 'bstuck_soporpie'})
+end
+'''
+match_indent = true
+times = 1
+
+#Signless
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "function Card:use_consumeable(area, copier)"
+position = "after"
+payload = '''
+local test_for_signless = true
+for k, v in pairs(G.P_CENTER_POOLS['Zodiac']) do
+    if not v.discovered then test_for_signless = nil end
+end
+if test_for_signless then check_for_unlock({type = 'bstuck_signless'}) end
+'''
+match_indent = true
+times = 1
+
+#Questbed
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "function Card:use_consumeable(area, copier)"
+position = "after"
+payload = '''
+local test_for_questbed = true
+for k, v in pairs(G.P_CENTER_POOLS['Aspect']) do
+    if not v.no_collection then
+        if not v.discovered then test_for_questbed = nil end
+    end
+end
+if test_for_questbed then check_for_unlock({type = 'bstuck_questbed'}) end
+'''
+match_indent = true
+times = 1
+
+#Frost and Frogs
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+pattern = "SMODS.calculate_context({paradox_created = true, cards = self})"
+position = "after"
+payload = '''    
+    G.paradoxCounter = G.paradoxCounter and (G.paradoxCounter + 1) or 1
+    if G.paradoxCounter >= 100 then check_for_unlock({type = 'bstuck_frostandfrogs'}) end
+'''
+match_indent = true
+times = 1
+
+#FL1P
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''
+unlock_achievement('_100000k')
+        end
+'''
+position = "after"
+payload = '''
+ if args.chips >= 16777216 then
+            check_for_unlock({type = 'bstuck_luckybreak'})
+        end
+'''
+match_indent = true
+times = 1
+
+#tanglehorrorbuddiesterrors
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+check_for_unlock({type = 'round_win'})
+'''
+position = "after"
+payload = '''
+ if G.GAME.round_resets.ante == 12 and G.GAME.blind:get_type() == 'Boss' then
+            if #G.vouchers.cards == 0 then
+            check_for_unlock({type = 'bstuck_tanglebuddies'})
+            check_for_unlock({type = 'bstuck_horrorterrors'})
+            end
+        end
+'''
+match_indent = true
+times = 1
+
+#CHALLENGESTRIPLEBLINDSIZE
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''
+self.chips = get_blind_amount(G.GAME.round_resets.ante)*self.mult*G.GAME.starting_params.ante_scaling
+'''
+position = "after"
+payload = '''
+ if G.GAME.modifiers.tripleblindsize then
+    self.chips = self.chips * 3
+ end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if context.cardarea == G.play then
+'''
+position = "after"
+payload = '''
+if self.ability.name == 'Pareidolia' then
+    if context.other_card:get_id() == 8 then
+        check_for_unlock({type = 'bstuck_snowman'})
+    end
+ end
+'''
+match_indent = true
+times = 1
+

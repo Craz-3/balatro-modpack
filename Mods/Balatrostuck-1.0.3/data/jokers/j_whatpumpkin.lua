@@ -1,0 +1,95 @@
+function Balatrostuck.INIT.Jokers.j_whatpumpkin()
+    SMODS.Joker{
+        name = "What Pumpkin",
+        key = "whatpumpkin",
+        config = {
+            extra = {
+                odds = 2,
+                remaining = 15
+            }
+        },
+        loc_txt = {
+            ['name'] = 'What Pumpkin?',
+            ['text'] = {
+                'Each played card has',
+                'a {C:green}#1# in #2#{} chance to',
+                'create a {C:paradox}Paradox{} copy',
+                'of itself when scored',
+                '{C:inactive}({C:attention}#3#{C:inactive} copies remaining)'
+            },
+            unlock = {'Unlocked by',
+                    'finishing Act 1'}
+        },
+        pos = {
+            x = 7,
+            y = 11
+         },
+        soul_pos = {
+            x = 6,
+            y = 11
+        },
+        cost = 4,
+        rarity = 1,
+        blueprint_compat = true,
+        eternal_compat = false,
+        unlocked = false,
+        atlas = 'HomestuckJokers',
+
+        loc_vars = function(self, info_queue, card)
+            info_queue[#info_queue + 1] = G.P_CENTERS['e_bstuck_paradox']
+            art_credit('akai', info_queue)
+            return {vars = {G.GAME.probabilities.normal, card.ability.extra.odds, card.ability.extra.remaining}}
+        end,
+    
+        calculate = function(self, card, context)
+            if context.cardarea == G.play and context.individual and card.ability.extra.remaining > 0 then
+                if pseudorandom('-fiy!') < G.GAME.probabilities.normal / card.ability.extra.odds then
+                    G.playing_card = (G.playing_card and G.playing_card + 1) or 1
+                        local _card = copy_card(context.other_card, nil, nil, G.playing_card, true)
+                        _card:set_edition("e_bstuck_paradox", false)
+                        _card:add_to_deck()
+                        G.deck.config.card_limit = G.deck.config.card_limit + 1
+                        table.insert(G.playing_cards, _card)
+                        G.hand:emplace(_card)
+                        _card.states.visible = nil
+
+                        G.E_MANAGER:add_event(Event({
+                            func = function()
+                                _card:start_materialize()
+                                return true
+                            end
+                        })) 
+                        card_eval_status_text(context.blueprint_card or card, 'extra', nil, nil, nil, {message = "Appear-ify!",colour = G.C.GREEN})
+                    if not context.blueprint then
+                        card.ability.extra.remaining = card.ability.extra.remaining - 1
+                        if card.ability.extra.remaining <= 0 then
+                            delay(0.3)
+                            G.E_MANAGER:add_event(Event({
+                                func = function()
+                                    play_sound('tarot1')
+                                    card.T.r = -0.2
+                                    card:juice_up(0.3, 0.4)
+                                    card.states.drag.is = true
+                                    card.children.center.pinch.x = true
+                                    G.E_MANAGER:add_event(Event({trigger = 'after', delay = 0.3, blockable = false,
+                                        func = function()
+                                                G.jokers:remove_card(self)
+                                                card:remove()
+                                                card = nil
+                                            return true; end})) 
+                                    return true
+                                end
+                            }))
+                            card_eval_status_text(context.blueprint or card, 'extra', nil, nil, nil, {message = "-ify!",colour = G.C.GREEN})
+                        end
+                    end
+                end
+            end
+        end,
+        check_for_unlock = function(self,args)
+            if args.type == 'bstuck_apple_eaten' then
+                unlock_card(self)
+            end
+        end
+    }
+end

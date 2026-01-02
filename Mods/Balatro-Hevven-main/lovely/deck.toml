@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 1
+
+[[patches]]
+[patches.pattern]
+target = "back.lua"
+pattern = "if not args then return end"
+position = "after"
+payload = '''
+if ((G.GAME.selected_back.name == "b_rh_flow") or (CardSleeves and G.GAME.selected_sleeve and G.GAME.selected_sleeve == "sleeve_rh_flow")) and args.context == 'eval' then
+rh_gift_flow()
+end'''
+match_indent = true
+overwrite = true

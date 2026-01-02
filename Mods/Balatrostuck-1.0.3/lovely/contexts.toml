@@ -1,0 +1,171 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+
+# Context.Ace_Dick
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "hand_chips = mod_chips(nu_chip or hand_chips)"
+position = "after"
+payload = '''
+SMODS.calculate_context({ace_dick = true})
+'''
+match_indent = true
+times = 1
+
+# start_of_shop context (before shop initialization)
+# also only compatible with jokers i think -lyra
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "if not shop_exists then"
+position = "after"
+payload = '''
+for i=1, #G.jokers.cards do
+    eval_card(G.jokers.cards[i], {start_of_shop = true})
+end
+'''
+match_indent = true
+times = 1
+
+
+
+# Store Joker Modify 
+# NOTE: ONLY COMPATIABLE WITH JOKERS RIGHT NOW, WILL NEED TO BE UPDATED TO NEW CALC IF WE NEED IT FOR ANYTHING ELSE
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "G.GAME.spectral_rate = G.GAME.spectral_rate or 0"
+position = "after"
+payload = '''
+local forced_joker = nil
+for j = 1, #G.jokers.cards do
+    if not forced_joker then
+        forced_joker = G.jokers.cards[j]:calculate_joker({store_joker_create = true, shop_card = card, debugstring = 'Apple'})
+    if forced_joker then
+        for j = 1, #G.jokers.cards do
+            if G.jokers.cards[j]:calculate_joker({store_joker_modify = true, shop_card = forced_joker, debugstring = 'Cherry'}) then break end
+        end
+        return forced_joker end
+    end
+end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.regex]
+target = "functions/UI_definitions.lua"
+pattern = '''(?<indent>[\t ]*)                    for k, v in ipairs\(G\.GAME\.tags\) do'''
+position = "before"
+line_prepend = '$indent'
+payload = '''
+for j = 1, #G.jokers.cards do
+    if G.jokers.cards[j]:calculate_joker({store_joker_modify = true, shop_card = card, debugstring = 'Banana'}) then break end
+end
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "for _kk, vvv in ipairs(G.GAME.tags) do"
+position = "before"
+payload = '''
+for j = 1, #G.jokers.cards do
+    if G.jokers.cards[j]:calculate_joker({store_joker_modify = true, shop_card = v, debugstring = 'Kiwi'}) then break end
+end
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "local card = create_card(v.type, area, nil, nil, nil, nil, nil, 'sho')"
+position = "after"
+payload = '''
+SMODS.calculate_context({store_joker_replace = true, shop_card = card})
+if G.GAME.TIMETRAVEL_TIMER and G.GAME.TIMETRAVEL_KEY and G.GAME.TIMETRAVEL_TIMER <= G.GAME.round_resets.ante and card.ability.set == 'Joker' then
+    card:set_ability(G.P_CENTERS[G.GAME.TIMETRAVEL_KEY])
+    G.GAME.TIMETRAVEL_TIMER = 100000
+
+    G.E_MANAGER:add_event(Event({trigger = 'after',delay = 1,
+        func = function()
+            john_2 = SMODS.create_card({key = "j_joker"}) 
+            john_2.states.visible = false
+            john_2.children.center:set_sprite_pos({ x = 6, y = 4 })
+            john_2.children.floating_sprite:set_sprite_pos({ x = 5, y = 4 })
+            G.shop_jokers:emplace(john_2)
+            john_2:start_materialize({G.C.BLUE, G.C.WHITE}, nil, 1.3)
+            john_2:add_dialogue("john_loop", "tm")
+            john_2.no_ui = true
+            return true
+        end}))
+
+    G.E_MANAGER:add_event(Event({trigger = 'after',delay = 7, blocking = false,
+        func = function()
+            john_2:start_dissolve({G.C.BLUE, G.C.WHITE}, nil, 1.3)
+            card:start_dissolve({G.C.BLUE, G.C.WHITE}, nil, 1.3)
+            return true
+        end}))
+end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+pattern = "if type(edition) == 'string' then"
+position = "before"
+payload = '''
+if edition == 'e_bstuck_paradox' and G.jokers then
+    G.GAME.BALATROSTUCK.last_paradox_created = self
+    SMODS.calculate_context({paradox_created = true, cards = self})
+end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "function Card:remove_from_deck(from_debuff)"
+position = "after"
+payload = '''
+if self.ability.set == 'Joker' and not from_debuff and self.added_to_deck then
+    SMODS.calculate_context({other_card = self, BSTUCK_joker_destroyed = true,})
+end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "G.deck:shuffle('nr'..G.GAME.round_resets.ante)"
+position = "after"
+payload = '''
+SMODS.calculate_context({bstuck_post_shuffle_deck = true})
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "G.deck:shuffle('nr'..G.GAME.round_resets.ante)"
+position = "before"
+payload = '''
+SMODS.calculate_context({bstuck_pre_shuffle_deck = true})
+'''
+match_indent = true
+times = 1

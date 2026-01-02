@@ -1,0 +1,65 @@
+[manifest]
+version = "1.0.4"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''table.sort(card_protos, function (a, b) return'''
+position = "before"
+payload = '''
+        if self.GAME.starting_params.dichotomy then
+            local rank_list = {}
+            for _, card in ipairs(card_protos) do
+                local rank = card.r
+                if rank_list[rank] then
+                    rank_list[rank] = rank_list[rank] + 1
+                else
+                    rank_list[rank] = 1
+                end
+            end
+            for rank, count in pairs(rank_list) do
+                if count > 1 then
+                    local cards_to_remove = math.floor(count/2)
+                    local cards = {}
+                    for _, card in ipairs(card_protos) do
+                        if card.r == rank then
+                            table.insert(cards, card)
+                        end
+                    end
+                    pseudoshuffle(cards, pseudoseed('dichotomy'))
+                    for i = #cards, cards_to_remove + 1, -1 do
+                        table.remove(card_protos, table.indexOf(card_protos, cards[i]))
+                    end
+                end
+            end
+        end
+
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''for i=1, hand_space do --draw cards from deckL'''
+position = "before"
+payload = '''
+    if G.GAME.draw_serpainted and (G.GAME.current_round.hands_played > 0 or G.GAME.current_round.discards_used > 0) then
+        hand_space = math.min(#G.deck.cards, hand_space + G.GAME.draw_serpainted)
+    end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''local max_stake = get_deck_win_stake(G.GAME.viewed_back.effect.center.key)'''
+position = "after"
+payload = '''
+if G.bmbacks_key[G.GAME.viewed_back.effect.center.key] then max_stake = #G.P_CENTER_POOLS['Stake'] end
+'''
+match_indent = true
+overwrite = false

@@ -1,0 +1,41 @@
+SMODS.Consumable({
+    key = 'going_under',
+    set = 'travel',
+    atlas = 'consumables',
+    pos = {
+        x = 3,
+        y = 3
+    },
+    discovered = false,
+    config = {},
+    keep_on_use = function(self, card)
+        return false
+    end,
+    loc_vars = function(self, info_queue)
+        info_queue[#info_queue + 1] = {
+            key = 'tag_voucher',
+            set = 'Tag'
+        }
+        return {
+            vars = {}
+        }
+    end,
+    cost = 3,
+    can_use = function(self, card)
+        return true
+    end,
+
+    use = function(self, card, area, copier)
+        G.E_MANAGER:add_event(Event({
+            trigger = 'after',
+            delay = 0.4,
+            func = function()
+                play_sound('generic1', 0.9 + math.random() * 0.1, 0.8)
+                play_sound('holo1', 1.2 + math.random() * 0.1, 0.4)
+                card:juice_up(0.3, 0.5)
+                add_tag(Tag('tag_voucher'))
+                return true
+            end
+        }))
+    end
+})

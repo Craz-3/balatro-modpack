@@ -1,0 +1,21 @@
+
+# Entropy
+A chaotic Balatro mod
+
+[Download CryptLib](https://github.com/SpectralPack/Cryptlib)
+
+Entropy currently adds:
+
+<img width="791" height="607" alt="image" src="https://github.com/user-attachments/assets/50f7baf4-1ba8-4aa5-a58f-83f43618c722" />
+<img width="590" height="342" alt="image" src="https://github.com/user-attachments/assets/79d8b0e4-5e35-4b3e-b580-25eeb960d975" />
+<img width="365" height="111" alt="image" src="https://github.com/user-attachments/assets/9fcab4f0-67cf-402e-adca-62e4dc3df7eb" />
+
+## Wheres all the Other Content?
+Due to me wanting to depart from this mod as a Cryptid addon but not wanting the content to go to waste a lot of existing content has been moved into CrossMod territory, where it will only show up if you have Cryptid enabled. This includes entropic Jokers which are based on Exotics
+
+## What about Ascension Power
+Ascension Power will stay around even without Cryptid enabled due to how much Entropy content relies on it
+I could rename ascension power to further seperate it from Cryptid however I think this is unnecessary as the mechanics will remain the same
+
+## Contact
+For enquiries please join the [Entropy Discord](https://discord.gg/beqqy4Bb7m)

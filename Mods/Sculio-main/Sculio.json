@@ -1,0 +1,13 @@
+{
+  "id": "Sculio",
+  "name": "Sculio",
+  "author": ["crmykybord", "BrandonE", "chily"],
+  "description": "Vanilla-esque mod for Balatro.",
+  "prefix": "Sculio",
+  "main_file": "Sculio.lua",
+  "badge_colour": "7851A9",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0312b)"
+  ],
+  "version": "1.0.0"
+}

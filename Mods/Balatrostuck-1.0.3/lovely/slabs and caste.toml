@@ -1,0 +1,171 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# # setup for Zodiac/Aspect calculations hook NOT NEEDED ANYMORE LMAOOOOOO
+# [[patches]]
+# [patches.pattern]
+# target = 'functions/state_events.lua'
+# # not sure yet so leaving this empty
+# pattern = '' 
+# # again not sure so leaving this empty
+# payload = '''
+
+# '''
+# position = 'after'
+# match_indent = true
+# overwrite = false
+
+# Slabs and Castes
+[[patches]]
+[patches.regex]
+target = "game.lua"
+pattern = "(?<indent>[\t ]*)self.P_TAGS = \\{"
+position = "before"
+line_prepend = '$indent'
+payload = '''
+self.P_SLABS = {}
+self.P_CASTES = {}
+'''
+
+# Slabs and Castes Calculation
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = "-- TARGET: add your own individual scoring targets"
+position = "before"
+times = 3
+line_prepend = '$indent'
+match_indent = true
+payload = '''
+-- Castes
+if G.GAME.slab then
+    t[#t+1] = {object = G.GAME.slab}
+end
+
+if G.GAME.BALATROSTUCK.active_castes and #G.GAME.BALATROSTUCK.active_castes > 0 then
+    for c = 1, #G.GAME.BALATROSTUCK.active_castes do
+        t[#t+1] = {object = G.GAME.BALATROSTUCK.active_castes[c]}
+    end
+end
+'''
+
+
+
+[[patches]]
+[patches.regex]
+target = "game.lua"
+pattern = "(?<indent>[\t ]*)self.P_CENTER_POOLS = \\{\\n"
+position = "after"
+line_prepend = '$indent$indent'
+payload = '''
+Slabs = {},
+Castes = {},
+'''
+
+[[patches]]
+[patches.regex]
+target = "game.lua"
+pattern = "(?<indent>[\t ]*)G\\.GAME\\.tags = \\{\\}\\n"
+position = "after"
+line_prepend = '$indent'
+payload = '''
+G.GAME.slab = nil
+'''
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "amount = amount or 1"
+position = "after"
+match_indent = true
+payload = '''
+if G.GAME.slab ~= nil then
+    local eval = nil
+    eval = G.GAME.slab:calculate({level_up_hand, amount = amount},true)
+    if eval then amount = eval.amount end
+end
+SMODS.calculate_context({bstuck_level_up_hand = true})
+'''
+times = 1
+
+
+# MIND 
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "function add_tag(_tag)"
+position = "at"
+match_indent = true
+payload = '''
+function add_tag(_tag,fromMind)
+'''
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "_tag.HUD_tag = G.HUD_tags[#G.HUD_tags]"
+position = "after"
+match_indent = true
+payload = '''
+if G.GAME.slab ~= nil and not fromMind then
+    local slab_eval = nil
+    slab_eval = G.GAME.slab:calculate({tag = _tag})
+end
+'''
+
+
+
+
+# HEART
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "amount = amount or 1"
+position = "after"
+match_indent = true
+payload = '''
+if G.GAME.slab ~= nil then
+    local eval = nil
+    eval = G.GAME.slab:calculate({level_up_hand = true, amount = amount},false)
+    if eval then amount = eval.amount end
+end
+'''
+times = 1
+
+
+# ARIES BODGE
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.added_to_deck = nil"
+position = "after"
+match_indent = true
+payload = '''
+self.ignore_aries = false
+'''
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.seal = cardTable.seal"
+position = "after"
+match_indent = true
+payload = '''
+self.ignore_aries = cardTable.ignore_aries
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "seal = self.seal,"
+position = "after"
+match_indent = true
+payload = '''
+ignore_aries = self.ignore_aries,
+'''
+times = 1

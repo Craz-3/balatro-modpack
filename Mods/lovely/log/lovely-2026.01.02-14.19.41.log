@@ -1,0 +1,120 @@
+INFO - [♥] Lovely 0.8.0
+INFO - [♥] Game directory is at "D:\\Steam\\steamapps\\common\\Balatro"
+INFO - [♥] Writing logs to "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\lovely\\log"
+INFO - [♥] Using mod directory at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods"
+WARN - [♥] Unknown key `patches.0.?.match_indent` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\3xCredits-main\\lovely\\card_credits.toml", ignoring it
+WARN - [♥] Unknown key `patches.34.?.line_prepend` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Balatrostuck-1.0.3\\lovely\\misc.toml", ignoring it
+WARN - [♥] Unknown key `patches.1.?.line_prepend` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Balatrostuck-1.0.3\\lovely\\slabs and caste.toml", ignoring it
+WARN - [♥] Unknown key `patches.3.?.count` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\BetterTags-master\\lovely.toml", ignoring it
+WARN - [♥] Unknown key `patches.5.?.count` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\BetterTags-master\\lovely.toml", ignoring it
+WARN - [♥] Unknown key `patches.18.?.match_indent` found in patch file at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\Cryptid-0.5.13\\lovely\\code.toml", ignoring it
+INFO - [♥] Cleaning up dumps directory at "C:\\Users\\xuech\\AppData\\Roaming\\Balatro\\Mods\\lovely\\dump"
+INFO - [♥] Initialization complete in 45ms
+INFO - [♥] Applied 1 patch to 'conf.lua'
+WARN - [♥] Pattern '        if ante < 1 then return to_big(100) end\n        if ante <= 8 then return amounts[ante] end\n        local a, b, c, d = amounts[8],1.6,ante-8, 1 + 0.2*(ante-8)\n        local amount = a*(b+(k*c)^d)^c\n        if to_big(amount) < to_big(R and R.E_MAX_SAFE_INTEGER or 9e15) then\n          local exponent = to_big(10)^(math.floor(amount:log10() - to_big(1))):to_number()\n          amount = math.floor(amount / exponent):to_number() * exponent\n        end\n        amount:normalize()\n        return amount\n' on target 'main.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern '        local amounts = {\n          to_big(300),  to_big(900), to_big(2600),  to_big(8000), to_big(20000),  to_big(36000),  to_big(60000),  to_big(100000)\n          --300,  900, 2400,  7000,  18000,  32000,  56000,  90000\n        }\n        if ante < 1 then return to_big(100) end\n        if ante <= 8 then return amounts[ante] end\n        local a, b, c, d = amounts[8],1.6,ante-8, 1 + 0.2*(ante-8)\n        local amount = a*(b+(k*c)^d)^c\n        if to_big(amount) < to_big(R and R.E_MAX_SAFE_INTEGER or 9e15) then\n          local exponent = to_big(10)^(math.floor(amount:log10() - to_big(1))):to_number()\n          amount = math.floor(amount / exponent):to_number() * exponent\n        end\n        amount:normalize()\n        return amount\n' on target 'main.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern '        local amounts = {\n          to_big(300),  to_big(1000), to_big(3200),  to_big(9000),  to_big(25000),  to_big(60000),  to_big(110000),  to_big(200000)\n          --300,  1000, 3000,  8000,  22000,  50000,  90000,  180000\n        }\n        if ante < 1 then return to_big(100) end\n        if ante <= 8 then return amounts[ante] end\n        local a, b, c, d = amounts[8],1.6,ante-8, 1 + 0.2*(ante-8)\n        local amount = a*(b+(k*c)^d)^c\n        if to_big(amount) < to_big(R and R.E_MAX_SAFE_INTEGER or 9e15) then\n          local exponent = to_big(10)^(math.floor(amount:log10() - to_big(1))):to_number()\n          amount = math.floor(amount / exponent):to_number() * exponent\n        end\n        amount:normalize()\n        return amount\n' on target 'main.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern '      if ante < 1 then return to_big(100) end\n      if ante <= 8 then \n' on target 'main.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+INFO - [♥] Applied 20 patches to 'main.lua'
+INFO - [♥] Applied 2 patches to 'engine/string_packer.lua'
+WARN - [♥] Pattern '                    G.challenge_tab = G.CHALLENGES[get_challenge_int_from_id(G.GAME.challenge or \'\') or \'\'] or {name = \'ERROR\'}' on target 'engine/controller.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\challenges.toml resulted in no matches
+WARN - [♥] Pattern '                    G.challenge_tab = G.CHALLENGES[get_challenge_int_from_id(G.GAME.challenge or \'\') or \'\'] or {name = \'ERROR\'}' on target 'engine/controller.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\challenges.toml resulted in no matches
+INFO - [♥] Applied 25 patches to 'engine/controller.lua'
+INFO - [♥] Applied 22 patches to 'back.lua'
+WARN - [♥] Pattern 'self.HUD_tag.states.visible = false\n' on target 'tag.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern 'if self.name == \'Double Tag\' and _context.tag.key ~= \'tag_double\' then' on target 'tag.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'add_tag(Tag(_context.tag.key))' on target 'tag.lua' for pattern patch from reverie-1.5.4b\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'local tag_sprite = Sprite(0,0,_size*1,_size*1,G.ASSET_ATLAS[(not self.hide_ability) and G.P_TAGS[self.key].atlas or \"tags\"], (self.hide_ability) and G.tag_undiscovered.pos or self.pos)' on target 'tag.lua' for pattern patch from Cryptid-0.5.13\lovely\cat.toml resulted in no matches
+WARN - [♥] Pattern 'if G.GAME.orbital_choices and G.GAME.orbital_choices[G.GAME.round_resets.ante][self.ability.blind_type] then\n    self.ability.orbital_hand = G.GAME.orbital_choices[G.GAME.round_resets.ante][self.ability.blind_type]       \nend\n' on target 'tag.lua' for pattern patch from Ortalab-1.0.1a\lovely\decks.toml resulted in no matches
+WARN - [♥] Pattern 'add_tag(Tag(_context.tag.key))' on target 'tag.lua' for pattern patch from Ortalab-1.0.1a\lovely\patches.toml resulted in no matches
+WARN - [♥] Pattern 'if self.name == \'Double Tag\' and _context.tag.key ~= \'tag_double\' then' on target 'tag.lua' for pattern patch from Bunco-5.4.7a-JumboFork\lovely.toml resulted in no matches
+INFO - [♥] Applied 39 patches to 'tag.lua'
+INFO - [♥] Applied 6 patches to 'engine/event.lua'
+WARN - [♥] Pattern '    if self.config and self.config.h_popup then\n        if not self.children.h_popup then \n            self.config.h_popup_config.instance_type = \'POPUP\'\n            self.children.h_popup = UIBox{\n                definition = self.config.h_popup,\n                config = self.config.h_popup_config,\n            }\n            self.children.h_popup.states.collide.can = false\n            self.children.h_popup.states.drag.can = true\n        end\n    end' on target 'engine/node.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\ui.toml resulted in no matches
+WARN - [♥] Pattern '    if self.config and self.config.h_popup then\n        if not self.children.h_popup then \n            self.config.h_popup_config.instance_type = \'POPUP\'\n            self.children.h_popup = UIBox{\n                definition = self.config.h_popup,\n                config = self.config.h_popup_config,\n            }\n            self.children.h_popup.states.collide.can = false\n            self.children.h_popup.states.drag.can = true\n        end\n    end' on target 'engine/node.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\ui.toml resulted in no matches
+INFO - [♥] Applied 6 patches to 'engine/node.lua'
+INFO - [♥] Applied 3 patches to 'engine/moveable.lua'
+INFO - [♥] Applied 5 patches to 'engine/sprite.lua'
+INFO - [♥] Applied 4 patches to 'engine/animatedsprite.lua'
+WARN - [♥] Pattern '  elseif args.type == \'name\' then\n    local temp_target = args and G.localization.descriptions[(args.set or (args.node and args.node.config and args.node.config.center and args.node.config.center.set))]\n    loc_target = temp_target and temp_target[args.key or (args.node and args.node.config and args.node.config.center and args.node.config.center.key)] or \"ERROR\"\n  end\n' on target 'functions/misc_functions.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern 'G.ARGS.score_intensity.earned_score = G.GAME.current_round.current_hand.chips*G.GAME.current_round.current_hand.mult\n' on target 'functions/misc_functions.lua' for pattern patch from Amulet\lovely\anims.toml resulted in no matches
+WARN - [♥] Pattern 'G.ARGS.score_intensity.earned_score = SMODS.calculate_round_score(true)\n' on target 'functions/misc_functions.lua' for pattern patch from Amulet\lovely\anims.toml resulted in no matches
+WARN - [♥] Pattern 'assembled_string = assembled_string..(type(subpart) == \'string\' and subpart or args.vars[tonumber(subpart[1])])' on target 'functions/misc_functions.lua' for pattern patch from my_balatro_mods\lovely\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'elseif part.control.X then' on target 'functions/misc_functions.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if hand[i]:is_suit(suit, nil, true) then flush_count = flush_count + 1;  t[#t+1] = hand[i] end' on target 'functions/misc_functions.lua' for pattern patch from Cryptid-0.5.13\lovely\abstracted.toml resulted in no matches
+WARN - [♥] Pattern 'if hand[i]:is_suit(suit, nil, true) then flush_count = flush_count + 1;  t[#t+1] = hand[i] end' on target 'functions/misc_functions.lua' for pattern patch from Cryptid-0.5.13\lovely\abstracted.toml resulted in no matches
+WARN - [♥] Pattern 'local four_fingers = next(find_joker(\'Four Fingers\'))' on target 'functions/misc_functions.lua' for pattern patch from BalatroBakery-main\lovely.toml resulted in no matches
+INFO - [♥] Applied 120 patches to 'functions/misc_functions.lua'
+WARN - [♥] Pattern 'if G.GAME.current_round.voucher and G.P_CENTERS[G.GAME.current_round.voucher] then' on target 'game.lua' for pattern patch from lock-the-deal\lovely\ltdm.toml resulted in no matches
+WARN - [♥] Pattern 'Cryptid.profile_prefix = Jen and \"J\" or \"M\"' on target 'game.lua' for pattern patch from Entropy-main\lovely\core.toml resulted in no matches
+WARN - [♥] Pattern 'G.FUNCS.evaluate_play()' on target 'game.lua' for pattern patch from MoreFluff-main\lovely\onesliptoolate.toml resulted in no matches
+WARN - [♥] Pattern 'for k, v in pairs(self.MOVEABLES) do' on target 'game.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\cardarea.toml resulted in 2 matches, wanted 1
+WARN - [♥] Ignoring excess matches
+WARN - [♥] Pattern '                if _ch.restrictions.banned_other then\n                    for k, v in ipairs(_ch.restrictions.banned_other) do\n                        G.GAME.banned_keys[v.id] = true\n                    end\n                end\n            end' on target 'game.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\challenges.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 and #G.play.cards < 1 then\n    end_round()\nend\n' on target 'game.lua' for pattern patch from Cryptid-0.5.13\lovely\none.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 and #G.play.cards < 1 then\n    end_round()' on target 'game.lua' for pattern patch from Hit-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 then\n            end_round()' on target 'game.lua' for pattern patch from Hit-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'shader = \'splash\',\n' on target 'game.lua' for pattern patch from Ortalab-1.0.1a\lovely\menu.toml resulted in no matches
+WARN - [♥] Pattern '{name = \'colour_1\', ref_table = G.C, ref_value = \'RED\'},\n{name = \'colour_2\', ref_table = G.C, ref_value = \'BLUE\'},\n' on target 'game.lua' for pattern patch from Ortalab-1.0.1a\lovely\menu.toml resulted in no matches
+WARN - [♥] Pattern 'SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[\'j_joker\'])' on target 'game.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'G.SPLASH_LOGO = Sprite(0, 0, \n    13*SC_scale, \n    13*SC_scale*(G.ASSET_ATLAS[\"balatro\"].py/G.ASSET_ATLAS[\"balatro\"].px),\n    G.ASSET_ATLAS[\"balatro\"], {x=0,y=0})\n' on target 'game.lua' for pattern patch from Pokermon-main\lovely.toml resulted in no matches
+WARN - [♥] Regex '[ \\t]*G\\.SPLASH_LOGO = Sprite\\(0, 0, \n[ \\t]*13\\*SC_scale, \n[ \\t]*13\\*SC_scale\\*\\(G.ASSET_ATLAS\\[\"balatro\"\\]\\.py/G.ASSET_ATLAS\\[\"balatro\"\\]\\.px\\),\n[ \\t]*G\\.ASSET_ATLAS\\[\"balatro\"\\], \\{x=0,y=0\\}\\)' on target 'game.lua' for regex patch from balatro-plus-main\lovely\misc.toml resulted in no matches
+WARN - [♥] Regex 'card\\:start_materialize\\(\\)\\n\\s+G\\.shop_vouchers\\:emplace\\(card\\)\\n\\s+end' on target 'game.lua' for regex patch from Cryptid-0.5.13\lovely\Voucher.toml resulted in no matches
+WARN - [♥] Pattern 'if #G.hand.cards < 1 and #G.deck.cards < 1 then' on target 'game.lua' for pattern patch from my_balatro_mods\lovely\ability.toml resulted in no matches
+WARN - [♥] Pattern 'for i = 1, G.GAME.shop.joker_max - #G.shop_jokers.cards do\n    G.shop_jokers:emplace(create_card_for_shop(G.shop_jokers))\nend\n' on target 'game.lua' for pattern patch from Ortalab-1.0.1a\lovely\patches.toml resulted in no matches
+WARN - [♥] Pattern '\"m_glass =   {max = 500, order = 5, name = \"Glass Card\", set = \"Enhanced\", pos = {x=5,y=1}, effect = \"Glass Card\", label = \"Glass Card\", config = {Xmult = 2, extra = 4}},\"\n' on target 'game.lua' for pattern patch from Revos-Vault---Balatro-Mod-main\lovely\glass_gun.toml resulted in no matches
+WARN - [♥] Pattern 'local replace_card = Card(self.title_top.T.x, self.title_top.T.y, 1.2*G.CARD_W*SC_scale, 1.2*G.CARD_H*SC_scale, G.P_CARDS.S_A, G.P_CENTERS.c_base)' on target 'game.lua' for pattern patch from Revos-Vault---Balatro-Mod-main\lovely\title_screen.toml resulted in no matches
+WARN - [♥] Pattern 'SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[\'j_joker\'])' on target 'game.lua' for pattern patch from Revos-Vault---Balatro-Mod-main\lovely\title_screen.toml resulted in no matches
+WARN - [♥] Pattern '{n=G.UIT.O, config={object = DynaText({scale = 0.7, string = localize(\'ph_unscored_hand\'), maxw = 9, colours = {G.C.WHITE},float = true, shadow = true, silent = true, pop_in = 0, pop_in_rate = 6})}},' on target 'game.lua' for pattern patch from Ortalab-1.0.1a\lovely\blinds.toml resulted in no matches
+WARN - [♥] Pattern 'local replace_card = Card(self.title_top.T.x, self.title_top.T.y, 1.2*G.CARD_W*SC_scale, 1.2*G.CARD_H*SC_scale, G.P_CARDS.S_A, G.P_CENTERS.c_base)' on target 'game.lua' for pattern patch from GARBSHIT-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern 'SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[\'j_joker\'])' on target 'game.lua' for pattern patch from GARBSHIT-main\lovely.toml resulted in no matches
+WARN - [♥] Pattern '        if to_big(G.GAME.chips) >= to_big(G.GAME.blind.chips) or G.GAME.current_round.hands_left < 1 then\n            G.STATE = G.STATES.NEW_ROUND\n\n        else\n            G.STATE = G.STATES.DRAW_TO_HAND\n        end' on target 'game.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\talisman-fixes.toml resulted in no matches
+WARN - [♥] Pattern '        if to_big(G.GAME.chips) >= to_big(G.GAME.blind.chips) or G.GAME.current_round.hands_left < 1 then\n            G.STATE = G.STATES.NEW_ROUND\n\n        else\n            G.STATE = G.STATES.DRAW_TO_HAND\n        end' on target 'game.lua' for pattern patch from Balatro-Aikoyoris-Shenanigans-main\lovely\talisman-fixes.toml resulted in no matches
+INFO - [♥] Applied 248 patches to 'game.lua'
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] file not found: main.lua: No such file or directory
+INFO - [G] Oops! The game crashed
+Syntax error: game.lua:3777: '<eof>' expected near 'end'
+
+Stack Traceback
+===============
+(1) Lua local 'handler' at file 'main.lua:612'
+	Local variables:
+	 msg = string: "Syntax error: game.lua:3777: '<eof>' expected near 'end'\
+"
+	 (*temporary) = Lua function '?' (defined at line 602 of chunk main.lua)
+	 (*temporary) = string: "Oops! The game crashed\
+"
+(2) LÖVE function at file 'boot.lua:352' (best guess)
+	Local variables:
+	 errhand = Lua function '?' (defined at line 598 of chunk main.lua)
+	 handler = Lua function '?' (defined at line 598 of chunk main.lua)
+(3)  C function 'function: 0x1e0f7888'
+(4) global C function 'require'
+(5) main chunk of file 'main.lua' at line 895
+(6) global C function 'require'
+(7) LÖVE function at file 'boot.lua:323' (best guess)
+	Local variables:
+	 c = table: 0x1e128e40  {identity:false, version:11.5, accelerometerjoystick:true, modules:table: 0x1e129338, gammacorrect:false, title:Balatro, externalstorage:false (more...)}
+	 openedconsole = boolean: false
+	 confok = boolean: true
+	 conferr = nil
+(8) global C function 'xpcall'
+(9) LÖVE function at file 'boot.lua:362' (best guess)
+	Local variables:
+	 result = boolean: true
+(10) global C function 'xpcall'
+(11) LÖVE function at file 'boot.lua:377' (best guess)
+	Local variables:
+	 func = Lua function '(LÖVE Function)' (defined at line 355 of chunk [love "boot.lua"])
+	 inerror = boolean: true
+	 deferErrhand = Lua function '(LÖVE Function)' (defined at line 348 of chunk [love "boot.lua"])
+	 earlyinit = Lua function '(LÖVE Function)' (defined at line 355 of chunk [love "boot.lua"])
+ 
+INFO - [G] Additional Context:
+Balatro Version: 1.0.1o-FULL (best guess)
+Modded Version: 1.0.0~BETA-1224a-STEAMODDED
+LÖVE Version: 11.5.0
+Lovely Version: 0.8.0
+Platform: Windows 

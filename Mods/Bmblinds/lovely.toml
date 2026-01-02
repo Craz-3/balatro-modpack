@@ -1,0 +1,148 @@
+[manifest]
+version = "1.0.3c"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''local percent = 0.3'''
+position = "before"
+payload = '''
+    G.GAME.blind:debuff_scoring_card(scoring_hand, true)
+
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''{n=G.UIT.ROOT, config = {align = 'cm', colour = G.C.CLEAR, padding = 0.2}, nodes={'''
+position = "after"
+payload = '''
+        UIBox_button({label = {localize('b_additional_blind'), localize('$')..(G.GAME.additional_minus or 50)}, button = "additional_blind", func = 'additional_blind_button'}) or nil,
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''elseif self.name and self.name ~= '' then'''
+position = "before"
+payload = '''
+    elseif self.config.prize then
+        return 'Additional'
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''function Blind:load(blindTable)'''
+position = "after"
+payload = '''
+    self.config.prize = blindTable.prize
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''return blindTable'''
+position = "before"
+payload = '''
+    blindTable.prize = self.config.prize
+
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "blind.lua"
+pattern = '''function Blind:set_blind(blind, reset, silent)'''
+position = "after"
+payload = '''
+    if not reset then
+        self.config.prize = nil
+    end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''G.GAME.round_resets.blind_states.Big = 'Defeated''''
+position = "after"
+payload = '''
+                        elseif G.GAME.blind_on_deck == 'Additional' then
+                            additional_present(G.GAME.blind.config.prize)
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''if v.boss.showdown then'''
+position = "at"
+payload = '''
+if v.boss and v.boss.showdown then
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''G.GAME.round_resets.boss_rerolled = false'''
+position = "before"
+payload = '''
+        G.GAME.additional_minus = 50
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "tag.lua"
+pattern = '''G.shop_vouchers:emplace(card)'''
+position = "after"
+payload = '''
+                    if G.GAME.additional_coupon_voucher and G.GAME.additional_coupon_voucher >= 1 then
+                        card.ability.couponed = true
+                        card:set_cost()
+                        G.GAME.additional_coupon_voucher = G.GAME.additional_coupon_voucher - 1
+                    end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "tag.lua"
+pattern = '''add_tag(Tag(_context.tag.key))'''
+position = "after"
+payload = '''
+                    if _context.tag.key == 'tag_voucher' and G.GAME.additional_coupon_voucher and G.GAME.additional_coupon_voucher >= 1 then
+                        G.GAME.additional_coupon_voucher = G.GAME.additional_coupon_voucher + 1
+                    end
+'''
+match_indent = false
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''self.cost = math.max(1, math.floor((self.base_cost + self.extra_cost + 0.5)*(100-G.GAME.discount_percent)/100))'''
+position = "after"
+payload = '''
+    if self.area and self.ability.couponed and (self.area == G.shop_vouchers) then self.cost = 0 end
+'''
+match_indent = false
+overwrite = false

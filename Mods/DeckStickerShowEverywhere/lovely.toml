@@ -1,0 +1,109 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+            if self.sticker and G.shared_stickers[self.sticker] then
+                G.shared_stickers[self.sticker].role.draw_major = self
+                G.shared_stickers[self.sticker]:draw_shader('dissolve', nil, nil, true, self.children.center)
+                if self.sticker == 'Gold' then G.shared_stickers[self.sticker]:draw_shader('voucher', nil, self.ARGS.send_to_shader, true, self.children.center) end
+            end
+'''
+position = "at"
+payload = '''
+            if self.sticker and G.shared_stickers[self.sticker] then
+				
+                G.shared_stickers[self.sticker].role.draw_major = self
+                G.shared_stickers[self.sticker]:draw_shader('dissolve', nil, nil, true, self.children.center)
+                if self.sticker == 'Gold' then G.shared_stickers[self.sticker]:draw_shader('voucher', nil, self.ARGS.send_to_shader, true, self.children.center) end
+				
+            elseif G.GAME.selected_back and not (self.area and self.area.prevent_stickers) then
+				
+				--self.VT.x self.VT.y
+				--not (G.IN_RESTART and ((self.VT.x > G.ROOM.T.x + 0.2*G.ROOM.T.w/2) and (self.VT.x < G.ROOM.T.x + 0.2*G.ROOM.T.w/2 + G.CARD_W*3)))
+				-- Should also account for deck & sleeve collection menus
+				
+				if self.area and self.area.config.type == 'deck' then
+					
+					local sticker = get_deck_win_sticker(G.GAME.selected_back.effect.center)
+					if sticker and G.shared_stickers[sticker] then
+						G.shared_stickers[sticker].role.draw_major = self
+						G.shared_stickers[sticker]:draw_shader('dissolve', nil, nil, true, self.children.center) -- no wobble
+					end
+					
+				else
+					
+					local sticker = get_deck_win_sticker(G.GAME.selected_back.effect.center)
+					if sticker and G.shared_stickers[sticker] then
+						G.shared_stickers[sticker].role.draw_major = self
+						G.shared_stickers[sticker]:draw_shader('dissolve', nil, nil, nil, self.children.center) -- wobble
+					end
+					
+				end
+				
+			end
+'''
+match_indent = true
+
+
+
+
+
+## Flag to disable additional stickers on the "New Run" screen
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''
+  local area = CardArea(
+    G.ROOM.T.x + 0.2*G.ROOM.T.w/2,G.ROOM.T.h,
+    G.CARD_W,
+    G.CARD_H, 
+    {card_limit = 5, type = 'deck', highlight_limit = 0, deck_height = 0.75, thin_draw = 1})
+'''
+position = "at"
+payload = '''
+  local area = CardArea(
+    G.ROOM.T.x + 0.2*G.ROOM.T.w/2,G.ROOM.T.h,
+    G.CARD_W,
+    G.CARD_H, 
+    {card_limit = 5, type = 'deck', highlight_limit = 0, deck_height = 0.75, thin_draw = 1})
+  area.prevent_stickers = true
+'''
+match_indent = true
+
+
+
+## Flag to disable additional stickers on the deck collection screen
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''
+  local area = CardArea(
+    G.ROOM.T.x + 0.2*G.ROOM.T.w/2,G.ROOM.T.h,
+    1.2*G.CARD_W,
+    1.2*G.CARD_H, 
+    {card_limit = 52, type = 'deck', highlight_limit = 0})
+'''
+position = "at"
+payload = '''
+  local area = CardArea(
+    G.ROOM.T.x + 0.2*G.ROOM.T.w/2,G.ROOM.T.h,
+    1.2*G.CARD_W,
+    1.2*G.CARD_H, 
+    {card_limit = 52, type = 'deck', highlight_limit = 0})
+  area.prevent_stickers = true
+'''
+match_indent = true
+
+
+
+
+
+
+

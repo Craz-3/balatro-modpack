@@ -1,0 +1,13 @@
+{
+	"id": "Sticker Sheet",
+	"name": "Sticker Sheet",
+	"display_name": "Sticker Sheet",
+	"author": ["Squidguset"],
+	"description": "Adds 5 new stickers!",
+	"prefix": "SNS",
+	"main_file": "stickers.lua",
+	"priority": 0,
+	"badge_colour": "84FF57",
+	"version": "1.0.0",
+	"dependencies": [],
+}

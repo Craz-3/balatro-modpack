@@ -1,0 +1,38 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "function add_round_eval_row(config)"
+position = "after"
+match_indent = true
+payload = """
+	for i = 1, #G.jokers.cards do
+		if G.jokers.cards[i] ~= nil and G.jokers.cards[i].ability and G.jokers.cards[i].ability.temporary == true then
+			G.jokers.cards[i]:start_dissolve(nil, i ~= #G.deck.cards)
+		end
+        end
+	for i = 1, #G.deck.cards do
+                if G.deck.cards[i].ability and G.deck.cards[i].ability.temporary == true then
+                	G.deck.cards[i]:start_dissolve(nil, i ~= #G.deck.cards)
+		end
+        end
+	for i = 1, #G.hand.cards do
+                if G.hand.cards[i].ability and G.hand.cards[i].ability.temporary == true then
+                	G.hand.cards[i]:start_dissolve(nil, i ~= #G.hand.cards)
+		end
+        end
+	for i = 1, #G.play.cards do
+		if G.play.cards[i].ability and G.play.cards[i].ability.temporary == true then
+                	G.play.cards[i]:start_dissolve(nil, i ~= #G.play.cards)
+		end
+        end
+	for i = 1, #G.consumeables.cards do
+        	if G.consumeables.cards[i].ability and G.consumeables.cards[i].ability.temporary == true then
+                	G.consumeables.cards[i]:start_dissolve(nil, i ~= #G.consumeables.cards)
+		end
+        end
+"""

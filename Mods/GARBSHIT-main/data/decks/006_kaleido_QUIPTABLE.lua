@@ -1,0 +1,33 @@
+    G.KaleidoQuips = {
+        "WARNING: Rainbow Jokers may spontaneously combust",
+        "WARNING: The following video may be over-exaggerated",
+        "WARNING: Rainbow Jokers may or may not exist",
+        "WARNING: The following warning may be randomized",
+        "WARNING: You might be playing the wrong deck",
+        "WARNING: A Rainbow Joker might be behind you right now",
+        "WARNING: This may or may not be the first warning you read",
+        "WARNING: This may or may not be the last warning you read",
+        "WARNING: You might not be playing Balatro",
+        "WARMING: Thanks for turning on the heating",
+        "WARNING: Spectrals might not replace Tarots and Planets entirely",
+        "WARNING: May contain gameplay",
+        "WARNING: May not contain gameplay",
+        "WARNING: May contain large amounts of warnings",
+        "WARNING: The end is near",
+        "WARNING: May not be casino legal",
+        "WARNING: May not be tournament legal",
+        "WARNING: attempt to compare number with table",
+        "WARNING: You lost the game.",
+        "WARNING: This is not a place of honor",
+        "WARNING: Placeholder warning ignore this",
+        "WARNING: Might not be Cryptid",
+        "WARNING: No actually there is no warning",
+        "WARNING: This text is only a distraction",
+        "WARNING: Rainbow Jokers may bite",
+        "warning: wait why is this one lowercase",
+        "WARNING: Shoot the Jimbo high score too low",
+        "WARNING: Battery Low",
+        "WARNING: Peak might have been attained"
+    }
+
+return {G.KaleidoQuips}

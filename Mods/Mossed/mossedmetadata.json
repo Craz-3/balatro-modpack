@@ -1,0 +1,16 @@
+{
+	"id": "mossed",
+	"name": "Mossed",
+	"display_name": "Mossed",
+	"author": ["Larantula", "Jetziel"],
+	"description": "woha",
+	"prefix": "moss",
+	"main_file": "mossed.lua",
+	"priority": -20,
+	"badge_colour": "348a1a",
+	"badge_text_colour": "c4ffb3",
+	"version": "1.0.0",
+	"dependencies": [
+		"Steamodded (>=1.0.0~ALPHA-1220a)"
+	]
+}

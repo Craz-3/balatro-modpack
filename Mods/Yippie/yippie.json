@@ -1,0 +1,14 @@
+{
+    "id": "Yippie",
+    "name": "Yippie",
+    "author": ["Coo29"],
+    "description": "Yippie! Currently adds 4 new jokers and one deck!",
+    "prefix": "Coo29",
+    "main_file": "core.lua",
+    "badge_colour": "10a8c7",
+    "display_name": "Yippie",
+    "dependencies": [
+        "Steamodded (>=1.0.0~ALPHA-1225a)"
+    ],
+    "version": "0.0.6"
+}

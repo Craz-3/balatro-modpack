@@ -1,0 +1,14 @@
+[manifest]
+version = "1.2"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS Qualatro "Qualatro.lua"]'
+pattern = """		G.qualatro_found_joker_music_sound_codes = {}"""
+position = "after"
+payload = """AKYRS.qualatro_add_sounds(G.qualatro_found_joker_music_sound_codes)"""
+overwrite = true
+match_indent = true
+

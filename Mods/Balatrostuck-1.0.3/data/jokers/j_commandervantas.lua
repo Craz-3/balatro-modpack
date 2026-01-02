@@ -1,0 +1,50 @@
+function Balatrostuck.INIT.Jokers.j_commandervantas()
+    SMODS.Joker{
+        name = "Commander Vantas",
+        key = "commandervantas",
+        config = {
+            extra = {
+            }
+        },
+        loc_txt = {
+            ['name'] = 'Commander Vantas',
+            ['text'] = {
+                '{C:attention}Wild Cards{} have' , '{C:attention}+2 {C:zodiac}Zodiac{} levels'
+            }
+        },
+        pos = {
+            x = 2,
+            y = 1
+        },
+        cost = 3,
+        rarity = 2,
+        blueprint_compat = false,
+        eternal_compat = true,
+        unlocked = true,
+        atlas = 'HomestuckJokers',
+
+        in_pool = function(self, args)
+            for _, playing_card in ipairs(G.playing_cards or {}) do
+                if SMODS.has_enhancement(playing_card, 'm_wild') then
+                    return true
+                end
+            end
+        return false
+        end,   
+
+        add_to_deck = function(self,card,from_debuff)
+            if not next(SMODS.find_card('j_bstuck_commandervantas')) then
+                for k,v in pairs(G.GAME.BALATROSTUCK.zodiac_levels) do 
+                    if v < 1 then
+                        local newCaste = Caste('caste_bstuck_' .. k,G.P_CASTES['caste_bstuck_' .. k])
+                        table.insert(G.GAME.BALATROSTUCK.active_castes, newCaste)
+                    end
+                end
+            end
+        end,
+        loc_vars = function(self, info_queue, card)
+            art_credit('akai', info_queue)
+            info_queue[#info_queue + 1] = G.P_CENTERS['m_wild']
+        end
+    }
+end

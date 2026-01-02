@@ -1,0 +1,1 @@
+=[SMODS JokerDisplay "src/config_tab.lua"]

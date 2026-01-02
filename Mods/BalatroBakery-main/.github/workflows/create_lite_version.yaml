@@ -1,0 +1,74 @@
+name: Create Lite Version
+
+on:
+    push:
+        branches:
+            - main
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        concurrency:
+          group: update-lite
+          cancel-in-progress: true
+        steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
+          with:
+            ref: 'lite'
+        - name: Install moreutils (for sponge)
+          run: sudo apt update && sudo apt install moreutils
+        - name: Switch branch
+          run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git fetch origin main
+            git merge origin/main -s ours --no-ff --allow-unrelated-histories
+            git checkout origin/main -- .
+        - name: Strip functionality
+          run: |
+            shopt -s globstar
+            for file in **/*.lua; do
+                keep=0
+                while IFS="" read -r line || [ -n "$line" ]
+                do
+                    case "$line" in
+                        *'-- KEEP_LITE'*)
+                            keep=1
+                        ;;
+                        *'-- END_KEEP_LITE'*)
+                            keep=0
+                        ;;
+                        *)
+                            if [ "$keep" = 1 ]; then
+                                printf '%s\n' "$line"
+                            fi
+                        ;;
+                    esac
+                done < "$file" | sponge "$file"
+            done
+
+            for file in assets/**/*.*; do
+                if [ "$(basename "$file")" != Icon.png -a "$(basename "$file")" != BakeryCharmsUtil.png ]; then
+                    git rm -f "$file"
+                    rm -f "$file"
+                fi
+            done
+
+            git rm -rf .github || true
+            rm -rf .github || true
+        - name: Update metadata
+          run: |
+            jq '.id = "Bakery_Lite" | .name = "Bakery (Lite)" | .display_name = "Bakery (Lite)" | .description = "The API-only version of Bakery." | .provides[0] = "Bakery (" + .version + ")"' manifest.json | sponge manifest.json
+            printf '# Bakery Lite Version\n\nA version of [Bakery](https://github.com/BakersDozenBagels/BalatroBakery) with no content. This can be used as a dependency for other mods. Note that both versions can be installed together without issue so long as both are up-to-date.\n\n## Installation\n\n1. Bakery requires [Steamodded](https://github.com/Steamodded/smods). Follow the instructions to install it if you haven'"'"'t already.\n2. Clone this repository into your mods folder, or download it as a zip and place it there.' > README.md
+        - name: Commit results
+          run: |
+            git commit -a --amend -m "Update lite version to $(jq '.version' manifest.json)"
+            git push origin lite --force-with-lease
+            git tag -a -m "Version $(jq -r '.version' manifest.json)-lite" "$(jq -r '.version' manifest.json)-lite"
+            git checkout origin/main
+            git tag -a -m "Version $(jq -r '.version' manifest.json)" "$(jq -r '.version' manifest.json)"
+            git push origin --tags

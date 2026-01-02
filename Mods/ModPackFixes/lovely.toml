@@ -1,0 +1,65 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = '''if not SMODS.UndiscoveredSprites[self.ability.set].no_overlay then'''
+position = 'at'
+match_indent = true
+payload = '''
+if not SMODS.UndiscoveredSprites[self.ability.set] or not SMODS.UndiscoveredSprites[self.ability.set].no_overlay then
+'''
+
+# compat between cryptid and bonus blinds
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''elseif G.consumeables.cards[1] then'''
+position = "after"
+payload = '''
+local eligibleJokers = {}
+for i = 1, #G.consumeables.cards do
+    if G.consumeables.cards[i].ability.consumeable then
+        eligibleJokers[#eligibleJokers + 1] = G.consumeables.cards[i]
+    end
+end
+if #eligibleJokers == 0 then
+    return
+end'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "engine/sprite.lua"
+pattern = '''G.SHADERS[_shader]:send(v.name, v.val or (v.func and v.func()) or v.ref_table[v.ref_value])'''
+position = "at"
+payload = '''
+if v.val or (v.func and v.func()) or v.ref_table[v.ref_value] then
+    G.SHADERS[_shader]:send(v.name, v.val or (v.func and v.func()) or v.ref_table[v.ref_value])
+end
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "if (#G.hand.highlighted <= 0 or G.GAME.blind.block_play or #G.hand.highlighted > 5) and not (group_size > 5) then"
+position = "at"
+payload = '''
+if (G.GAME.current_round.hands_left <= 0 or #G.hand.highlighted <= (G.GAME.blind and G.GAME.blind.name == 'cry-Sapphire Stamp' and 1 or 0) or G.GAME.blind.block_play) and not (group_size > 5) then
+'''
+match_indent = true
+
+#a bit of a hack to get past the rank error
+[[patches]]
+[patches.pattern]
+target = 'card.lua'
+pattern = '''function Card:is_face(from_boss)'''
+position = 'after'
+payload = '''
+if not SMODS.Ranks[self.base.value] then return end
+'''
+match_indent = true

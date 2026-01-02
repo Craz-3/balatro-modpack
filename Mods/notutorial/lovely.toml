@@ -1,0 +1,91 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# yichu1
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''['en-us'] = {font = 1, label = "English", key = 'en-us', button = "Language Feedback", warning = {'This language is still in Beta. To help us','improve it, please click on the feedback button.', 'Click again to confirm'}},'''
+position = "before"
+payload = '''
+--[[
+'''
+match_indent = true
+overwrite = false
+
+# yichu2
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''['all2'] = {font = 9, label = "English", key = 'all', omit = true},'''
+position = "after"
+payload = '''
+]]
+['zh_CN'] = {font = 2, label = "简体中文", key = 'zh_CN', beta = nil, button = "意见反馈", warning = {"Balasclo"}},
+['en-us'] = {font = 1, label = "English", key = 'en-us', beta = true, button = "Language Feedback", warning = {'ONLY CHINESE IS ALLOWED WHEN USING MODS'}},
+['all1'] = {font = 8, label = "English", key = 'all', omit = true},
+['all2'] = {font = 9, label = "English", key = 'all', omit = true},
+'''
+match_indent = true
+overwrite = false
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = '''definition = create_UIBox_card_alert({no_bg = true, text = 'BETA', scale = 0.35}),'''
+position = "at"
+payload = '''
+definition = create_UIBox_card_alert({no_bg = true, text = '', scale = 0.35}),
+'''
+match_indent = true
+overwrite = true
+
+# qiangzhi
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''G.SETTINGS.language = 'en-us''''
+position = "at"
+payload = '''
+G.SETTINGS.language = 'zh_CN'
+'''
+match_indent = true
+overwrite = true
+
+# TUTORIAL
+[[patches]]
+[patches.pattern]
+target = "globals.lua"
+pattern = '''self.F_SKIP_TUTORIAL = false            --Completely skip the tutorial on fresh save'''
+position = "at"
+payload = '''
+self.F_SKIP_TUTORIAL = true
+'''
+match_indent = true
+overwrite = true
+
+# confirm1
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''{n=G.UIT.T, config={id = 'warning_text', text = localize('ph_click_confirm'), scale = 0.4, colour = G.C.CLEAR}}'''
+position = "at"
+payload = '''
+{n=G.UIT.T, config={id = 'warning_text', text = "再次点击确认,由于MOD加载量过大,需要先经历一次崩溃,再次重进游戏后才能完全重置", scale = 0.4, colour = G.C.CLEAR}}
+'''
+match_indent = true
+overwrite = true
+
+# confirm2
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = '''{n=G.UIT.C, config={align = "cm", minw = lwidth}, nodes={{n=G.UIT.T, config={text = localize('k_wins'),colour = G.C.UI.TEXT_LIGHT, scale = scale*0.7}}}},'''
+position = "at"
+payload = '''
+{n=G.UIT.C, config={align = "cm", minw = lwidth}, nodes={{n=G.UIT.T, config={text = "(注:MOD加载量大,切换或重设配置时游戏崩溃为正常现象,再次重进游戏即能成功切换或重设) 获胜数",colour = G.C.UI.TEXT_LIGHT, scale = scale*0.28}}}},
+'''
+match_indent = true
+overwrite = true

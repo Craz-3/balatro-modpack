@@ -1,0 +1,601 @@
+
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+#Echidna Tags
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.FUNCS.unlock_all = function(e)"
+position = "after"
+payload = '''
+G.BStuck_acts_unlocked = {true, true, true, true, true, true, true}
+'''
+match_indent = true
+times = 1
+overwrite = false
+
+#Piss is now hidden
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "if not v.demo and not v.wip then"
+position = "at"
+payload = '''
+if not v.demo and not v.wip and v.key ~= "c_bstuck_piss" then
+'''
+match_indent = true
+times = 1
+overwrite = true
+
+#Act Tracking
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+G.STATE = G.STATES.GAME_OVER
+'''
+position = "after"
+payload = '''
+G.BStuck_acts_unlocked =  (not G.BStuck_acts_unlocked and {}) or G.BStuck_acts_unlocked
+for i = 1, G.GAME.pool_flags.bstuck_actprogress do
+    G.BStuck_acts_unlocked[i] = true
+end
+'''
+match_indent = true
+times = 1
+
+#Make Act Structure Easier
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "_pool[#_pool + 1] = v.key"
+position = "before"
+payload = '''
+G.BStuck_acts_unlocked = not G.BStuck_acts_unlocked and {} or G.BStuck_acts_unlocked
+local act_joker_keys = {"j_bstuck_cruxiteapple", "j_bstuck_ascend", "j_bstuck_enterthemedium", "j_bstuck_descend", "j_bstuck_cascade", "j_bstuck_collide"}
+
+    if v.key == act_joker_keys[G.GAME.pool_flags.bstuck_actprogress+1] then
+        for i=1, 4 do
+            _pool[#_pool + 1] = v.key
+            _pool_size = _pool_size + 1
+        end
+    end
+
+'''
+match_indent = true
+
+
+#Title Screen - Colors
+[[patches]]
+[patches.pattern]
+target = "globals.lua"
+pattern = '''
+RENTAL = HEX('b18f43'),
+'''
+position = "after"
+payload = '''
+BSTUCK_T1 = HEX("5B648C"),
+BSTUCK_T2 = HEX("409040"),
+'''
+match_indent = true
+times = 1
+
+#Title screen
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "replace_card:start_materialize({G.C.WHITE,G.C.WHITE}, nil, 1.2)"
+position = "after"
+payload = '''replace_card.states.visible = false'''
+match_indent = true
+overwrite = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "if #viable_unlockables > 0 then"
+position = "at"
+payload = '''if false then'''
+match_indent = true
+overwrite = true
+
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "replace_card:start_materialize({G.C.WHITE,G.C.WHITE}, true, 2.5)"
+position = "after"
+payload = '''replace_card.states.visible = false'''
+match_indent = true
+overwrite = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = 'local SC_scale = 1.1*(G.debug_splash_size_toggle and 0.8 or 1)'
+position = "at"
+payload = '''local SC_scale = 1.1*(G.debug_splash_size_toggle and 0.8 or 1.3)'''
+match_indent = true
+overwrite = true
+
+#Splash Screen
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_joker'])"
+
+position = "at"
+payload = '''
+SC = Card(G.ROOM.T.w/2 - SC_scale*G.CARD_W/2, 10. + G.ROOM.T.h/2 - SC_scale*G.CARD_H/2, SC_scale*G.CARD_W, SC_scale*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS['j_bstuck_cruxiteapple'])
+'''
+match_indent = true
+overwrite = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "card_size*G.CARD_W, card_size*G.CARD_H, pseudorandom_element(G.P_CARDS), G.P_CENTERS.c_base)"
+
+position = "at"
+payload = '''
+card_size*G.CARD_W, card_size*G.CARD_H, G.P_CARDS.empty, G.P_CENTERS[pseudorandom_element(bstuck_title_jokers)], {bypass_discovery_center = true, bypass_discovery_ui = true})
+'''
+match_indent = true
+overwrite = true
+
+#Echidna Tags
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.GAME.round_resets.blind_tags.Big = get_next_tag_key()"
+position = "at"
+payload = '''
+G.GAME.round_resets.blind_tags.Big = next(SMODS.find_card("j_bstuck_echidna")) and 'tag_bstuck_scratch' or get_next_tag_key() 
+'''
+match_indent = true
+times = 1
+overwrite = true
+
+#Alchemy Tags
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "if G.FORCE_TAG then return G.FORCE_TAG end"
+position = "before"
+payload = '''
+G.FORCE_TAG = G.GAME.challenge and (G.GAME.challenge == "c_bstuck_alchemy") and "tag_bstuck_perfecltygeneric" or nil
+'''
+match_indent = true
+times = 1
+
+#Scratch and sburb tags shall not be doubled
+[[patches]]
+[patches.pattern]
+target = "tag.lua"
+pattern = "if self.name == 'Double Tag' and _context.tag.key ~= 'tag_double' then"
+position = "at"
+payload = '''
+if self.name == 'Double Tag' and _context.tag.key ~= 'tag_double' and _context.tag.key ~= 'tag_bstuck_scratch' and  _context.tag.key ~= 'sburb' then'''
+match_indent = true
+times = 1
+overwrite = true
+
+#Scratch colors
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "ease_background_colour{new_colour = G.C.BLIND['Small'], contrast = 1}"
+position = "at"
+payload = '''
+if G.GAME.BALATROSTUCK.scratched then
+ease_background_colour{new_colour = G.GAME.BALATROSTUCK.scratchcolors[G.GAME.BALATROSTUCK.scratched], special_colour = darken(G.C.BLACK, 0.1), contrast = 2}
+else
+ease_background_colour{new_colour = G.C.BLIND['Small'], contrast = 1}
+end
+'''
+match_indent = true
+times = 1
+overwrite = true
+
+
+#Debuff functionality
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if self.ability.perishable and self.ability.perish_tally <= 0 then 
+    if not self.debuff then
+        self.debuff = true
+        if self.area == G.jokers then self:remove_from_deck(true) end
+    end
+    return
+end
+'''
+position = "after"
+payload = '''
+if next(find_joker("Commander Vantas")) and self.ability.name == "Wild Card" then should_debuff = false end
+'''
+match_indent = true
+
+#Negative bonus chips UI
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+                    bonus_chips = (self.ability.bonus + (self.ability.perma_bonus or 0)) > 0 and (self.ability.bonus + (self.ability.perma_bonus or 0)) or nil,
+'''
+position = "at"
+payload = '''
+                    bonus_chips = (self.ability.bonus + (self.ability.perma_bonus or 0)) ~= 0 and (self.ability.bonus + (self.ability.perma_bonus or 0)) or nil,
+'''
+match_indent = true
+
+
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = 'function Card:set_debuff(should_debuff)'
+position = "after"
+payload = '''
+if next(find_joker("Commander Vantas")) and self.playing_card then
+    local hasWild = false
+    for k, v in pairs(G.playing_cards) do
+        if v.config.center == G.P_CENTERS.m_wild then 
+            hasWild = true
+            break
+        end
+    end
+    if hasWild then should_debuff = false end
+end
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = 'function Card:is_suit(suit, bypass_debuff, flush_calc)'
+position = "after"
+payload = '''
+if next(SMODS.find_card("j_bstuck_innapropriatebucket")) then
+    if (self.base.suit == G.GAME.BALATROSTUCK.bucket_suits[1] and suit == G.GAME.BALATROSTUCK.bucket_suits[2]) or (suit == G.GAME.BALATROSTUCK.bucket_suits[1] and self.base.suit == G.GAME.BALATROSTUCK.bucket_suits[2]) then
+        return true
+    end
+end
+'''
+match_indent = true
+times = 1
+
+
+# Info Queue Fix for Todo List
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''elseif self.ability.name == 'To Do List' then loc_vars = {self.ability.extra.dollars, localize(self.ability.to_do_poker_hand, 'poker_hands')}'''
+position = "at"
+payload = '''
+elseif self.ability.name == 'To Do List' then loc_vars = {self.ability.extra.dollars, localize(self.ability.to_do_poker_hand or 'High Card', 'poker_hands')}
+'''
+match_indent = true
+times = 1
+
+        
+## Biscuits
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "function Card:start_dissolve(dissolve_colours, silent, dissolve_time_fac, no_juice)"
+position = "after"
+payload = '''
+if (self.edition and self.edition.key == 'e_bstuck_paradox' and not self.being_used and next(SMODS.find_card('j_bstuck_biscuits'))) or 
+    (self.edition and self.edition.key == 'e_bstuck_paradox' and self.ability.consumeable and not self.being_used and next(SMODS.find_card('j_bstuck_oldsecret'))) then
+    self.getting_sliced = nil
+    play_sound('bstuck_HomestuckParadoxSaved',0.7,0.7)
+    card_eval_status_text(self, 'extra', nil, nil, nil, {message = localize('k_safe_ex')})
+    for j=1, #G.jokers.cards do
+        local card = G.jokers.cards[j]
+        if card.config.center.key == 'j_bstuck_biscuits' then
+            card:juice_up()
+        end
+    end
+    return false
+end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "        self.area.config.type == 'joker' and"
+position = "after"
+payload = '''
+not (self.edition and self.edition.key == 'e_bstuck_paradox' and (next(SMODS.find_card('j_bstuck_biscuits')) or next(SMODS.find_card('j_bstuck_oldsecret')))) and 
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "function Card:use_consumeable(area, copier)"
+position = "after"
+payload = '''
+self.being_used = true
+'''
+match_indent = true
+times = 1
+
+
+## Scratch Tag
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "G.GAME.round_resets.blind_tags.Big = get_next_tag_key()"
+position = "at"
+payload = '''
+G.GAME.round_resets.blind_tags.Big = get_next_tag_key(nil,true)
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "function get_next_tag_key(append)"
+position = "at"
+payload = '''
+function get_next_tag_key(append,Scratch)
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if G.GAME.blind:get_type() == 'Boss' then"
+position = "after"
+payload = '''
+if G.GAME.challenge and (G.GAME.challenge == "c_bstuck_lylacrapsody") then
+    for k, v in pairs(G.jokers.cards) do 
+        v:start_dissolve()
+    end
+end
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "G.GAME.won = true"
+position = "after"
+payload = '''
+if (G.GAME.selected_back.effect.center.key == 'b_bstuck_prospitan') or (G.GAME.selected_back.effect.center.key == 'b_bstuck_dersite') then
+    G.PROFILES[G.SETTINGS.profile].progress.bstuck_wins = G.PROFILES[G.SETTINGS.profile].progress.bstuck_wins and (G.PROFILES[G.SETTINGS.profile].progress.bstuck_wins + 1) or 1
+    if G.PROFILES[G.SETTINGS.profile].progress.bstuck_wins >= 3 then check_for_unlock({ type = "bstuck_altdeck" }) end
+    G:save_progress()
+end
+'''
+match_indent = true
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "if (self.ability.set == 'Planet' or (self.ability.set == 'Booster' and self.ability.name:find('Celestial'))) and #find_joker('Astronomer') > 0 then self.cost = 0 end"
+position = "after"
+payload = '''
+if (self.ability.set == 'Joker' and G.GAME.challenge and (G.GAME.challenge == "c_bstuck_lylacrapsody")) then self.cost = 2 end
+'''
+match_indent = true
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "{n=G.UIT.O, config={object = DynaText({string = {' '..localize('ph_mr_bones')..' '}, colours = {G.C.FILTER}, shadow = true, pop_in = 0, scale = 0.5*scale, silent = true})}}"
+position = "at"
+payload = '''
+    {n=G.UIT.O, config={object = DynaText({string = {' '..localize('k_saved_ex')..' '}, colours = {G.C.FILTER}, shadow = true, pop_in = 0, scale = 0.5*scale, silent = true})}}
+'''
+match_indent = true
+times = 1
+
+
+
+
+
+
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "self.seal = cardTable.seal"
+position = "after"
+match_indent = true
+payload = '''
+self.irons_triggers = cardTable.irons_triggers
+'''
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "seal = self.seal,"
+position = "after"
+match_indent = true
+payload = '''
+irons_triggers = self.irons_triggers,
+'''
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "{n=G.UIT.T, config={text = localize('ph_blind_score_at_least'), scale = 0.3, colour = G.C.WHITE, shadow = true}}"
+position = "after"
+match_indent = true
+payload = '''
+
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "    not (card.ability.consumeable and #G.consumeables.cards < G.consumeables.config.card_limit + ((card.edition and card.edition.negative) and 1 or 0)) then"
+position = "at"
+match_indent = true
+payload = '''
+    not (card.ability.consumeable and #G.consumeables.cards < G.consumeables.config.card_limit + ((card.edition and card.edition.card_limit and card.edition.card_limit >= 1) and 1 or 0)) then
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/button_callbacks.lua"
+pattern = "not (card.ability.set == 'Joker' and #G.jokers.cards < G.jokers.config.card_limit + ((card.edition and card.edition.negative) and 1 or 0)) and"
+position = "at"
+match_indent = true
+payload = '''
+    not (card.ability.set == 'Joker' and #G.jokers.cards < G.jokers.config.card_limit + ((card.edition and card.edition.card_limit and card.edition.card_limit >= 1) and 1 or 0)) and
+'''
+times = 1
+
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/overrides.lua"]'
+pattern = "v.current_weight = v.get_weight and v:get_weight() or v.weight or 1"
+position = "after"
+times = 1
+line_prepend = '$indent'
+match_indent = true
+payload = '''
+if next(SMODS.find_card('v_bstuck_riseup')) then
+    if v.kind ~= 'aspect' and v.kind ~= 'zodiac' then
+        v.current_weight = v.current_weight * 0.5
+    end
+end
+
+if G.GAME.selected_back.effect.center.key == 'b_bstuck_dersite' then
+    if v.kind == 'Celestial' then
+        v.current_weight = 0 
+    end
+end
+'''
+
+
+		
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "G.playing_cards = {}"
+position = "after"
+match_indent = true
+payload = '''
+self.ui_slab = SlabIcon(0,0,0.8,0.8)
+'''
+times = 1
+
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "G.hand:hard_set_VT()"
+position = "before"
+match_indent = true
+payload = '''
+G.ui_slab.T.x = 19
+G.ui_slab.T.y = 3
+
+G.ui_slab:hard_set_VT()
+
+
+'''
+times = 1
+
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/UI_definitions.lua"
+pattern = "  if card.area and card.area.config.type == 'joker' then"
+position = "after"
+match_indent = true
+payload = '''
+    if card.config.center.key == 'j_bstuck_problemsleuth' then
+        local cost = card:activate_cost()
+        use = BSUI.Modules.Buttons.CardButton(card,'activate_joker','can_activate_joker',true,'BUY-OUT',localize('$')..cost)
+    end
+'''
+times = 1
+
+
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "if (not v.shattered) and (not v.destroyed) then"
+position = "at"
+match_indent = true
+payload = '''if ((not v.shattered) and (not v.destroyed)) or (v.edition and v.edition.key == 'e_bstuck_paradox' and next(SMODS.find_card('j_bstuck_biscuits'))) then'''
+times = 1
+
+
+#snowman face cards
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = '''
+if (id > 0 and rank and rank.face) or next(find_joker("Pareidolia")) then
+    return true
+end
+'''
+position = "after"
+payload = '''
+if next(SMODS.find_card('j_bstuck_snowman')) and rank and id == 8 then return true end
+'''
+match_indent = true
+
+
+#allow swashbuckler to go negative
+[[patches]]
+[patches.pattern]
+target = "card.lua"
+pattern = "if self.ability.name == 'Swashbuckler' and self.ability.mult > 0 then"
+position = "at"
+match_indent = true
+payload = '''if self.ability.name == 'Swashbuckler' and self.ability.mult ~= 0 then'''
+times = 1
+
+#purple xmult for rage
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = "elseif (eval_type == 'x_mult') or (eval_type == 'h_x_mult') then "
+position = "before"
+payload = '''
+elseif (eval_type == 'x_mult_rage') or (eval_type == 'h_x_mult_rage') then 
+    sound = 'multhit2'
+    volume = 0.7
+    amt = amt
+    text = localize{type='variable',key='a_xmult'..(amt<0 and '_minus' or ''),vars={math.abs(amt)}}
+    colour = G.C.RAGE
+    config.type = 'fade'
+    config.scale = 0.7
+'''
+match_indent = true
+times = 1

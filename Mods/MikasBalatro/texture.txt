@@ -1,0 +1,19 @@
+j_mmc_special_edition.png
+source: discord
+channel: #fan-art
+user: @Hat Stack #FixTF2
+
+j_mmc_blackjack.png
+source: discord
+channel: fan-art
+user: @TakingRoanth
+
+j_mmc_investor.png
+source: discord
+channel: fan-art
+user: @StrokedFraMe
+
+j_mmc_fisherman.png
+source: discord
+channel: suggestions/New Joker: Go Fish
+user: @Dr. K. J. Schuester

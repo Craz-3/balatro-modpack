@@ -1,0 +1,13 @@
+{
+	"id": "deck_sticker_show_everywhere",
+	"name": "Deck Stickers Show Everywhere",
+	"display_name": "",
+	"author": ["qwerty9118"],
+	"description": "Makes stickers on the backs of your deck show up everywhere.",
+	"prefix": "dsse_",
+	"priority": -11,
+	"badge_colour": "F6E27F",
+	"badge_text_colour": "251605",
+	"version": "1.1.0",
+	"dependencies": [],
+}

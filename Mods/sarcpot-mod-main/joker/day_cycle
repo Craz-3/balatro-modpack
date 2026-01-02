@@ -1,0 +1,51 @@
+SMODS.Joker {
+
+    discovered = true,
+    key = 'day_cycle',
+
+    config = {
+        extra = {
+            retriggers = 0
+        }
+    },
+    loc_vars = function(self, info_queue, card)
+
+        return {
+            vars = {}
+        }
+    end,
+    rarity = 1,
+    atlas = 'sarcpot_atlas',
+    pos = {
+        x = 4,
+        y = 0
+    },
+    cost = 7,
+
+    calculate = function(self, card, context)
+        local count = {}
+
+        if context.before and context.scoring_hand then
+            card.ability.extra.retriggers = 0
+            for _, v in pairs(context.full_hand) do
+                if not SMODS.has_no_rank(v) then
+                    local rank = v:get_id()
+                    count[rank] = (count[rank] or 0) + 1
+
+                    if count[rank] > card.ability.extra.retriggers then
+                        card.ability.extra.retriggers = count[rank]
+                    end
+                end
+            end
+        end
+        if context.repetition and context.cardarea == G.play and card.ability.extra.retriggers >= 3 then
+            if context.other_card == context.scoring_hand[#context.scoring_hand] then
+                return {
+                    message = localize('k_again_ex'),
+                    repetitions = card.ability.extra.retriggers,
+                    card = card
+                }
+            end
+        end
+    end
+}

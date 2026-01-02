@@ -1,0 +1,59 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# New/Edited functions used for all sorts of things
+[[patches]]
+[patches.copy]
+target = "main.lua"
+position = "append"
+sources = [
+	"misc/inject_functions.lua"
+]
+
+# Add a beat anim to the main menu
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "replace_card.states.visible = false"
+position = "before"
+payload = "rh_beat_anim(replace_card)"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = '''
+                    card:start_materialize()
+                    self.title_top:emplace(card)'''
+position = "after"
+payload = "rh_beat_anim(card)"
+match_indent = true
+
+# We somehow have a few ways of keeping the cards in your hand huh
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "G.FUNCS.draw_from_play_to_discard = function(e)"
+position = "after"
+payload = "local to_hand = rh_draw_from_play_to_hand()"
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "draw_card(G.play,G.discard, it*100/play_count,'down', false, v)"
+position = "at"
+payload = '''
+local to_discard = true
+for kh, vh in ipairs(to_hand) do
+    if v == vh then
+        to_discard = false
+    end
+end
+if to_discard then
+    draw_card(G.play,G.discard, it*100/play_count,'down', false, v)
+end 
+'''
+match_indent = true

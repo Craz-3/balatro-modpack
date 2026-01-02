@@ -1,0 +1,83 @@
+SMODS.Atlas {
+    key = 'prismdecks',
+    path = "decks.png",
+    px = 71,
+    py = 95
+}
+
+function G.PRISM.Back(table)
+	if table.dependency or table.dependency == nil then
+		SMODS.Back(table)
+	end
+end
+
+G.PRISM.Back({
+	key = "purple", 
+	atlas = "prismdecks",
+	pos = {x = 2, y = 0},
+    unlocked = false,
+	apply = function(self)
+		G.GAME.modifiers.purple_deck = true
+	end,
+    unlock_condition = {type = 'discover_amount', amount = 150}
+})
+local orig_can_discard = G.FUNCS.can_discard
+G.FUNCS.can_discard = function(e)
+	if G.GAME.modifiers.purple_deck and G.GAME.current_round.discards_left < 1 and #G.hand.highlighted > 0 and
+	(G.GAME.current_round.hands_left > 1 or G.GAME.current_round.discards_left > 1) then 
+		e.config.colour = G.C.RED
+        e.config.button = 'discard_cards_from_highlighted'
+	elseif G.GAME.current_round.hands_left > 0 or G.GAME.current_round.discards_left > 1 then
+		orig_can_discard(e)
+	else
+		e.config.colour = G.C.UI.BACKGROUND_INACTIVE
+        e.config.button = nil
+	end
+end
+G.PRISM.Back({
+	dependency = G.PRISM.config.myth_enabled,
+	key = "ancient", 
+	atlas = "prismdecks",
+	pos = {x = 0, y = 0},
+	config = { vouchers = { "v_prism_myth_merchant","v_prism_booster_box"}},
+    unlocked = false,
+    unlock_condition = {type = 'win_stake', stake=6}
+})
+G.PRISM.Back({
+	key = "market", 
+	atlas = "prismdecks",
+	pos = {x = 1, y = 0},
+	config = { vouchers = { "v_overstock_norm","v_reroll_surplus"}},
+    unlocked = false,
+    unlock_condition = {type = 'win_stake', stake=8}
+})
+G.PRISM.Back({
+	key = "alchemy", 
+	atlas = "prismdecks",
+	pos = {x = 3, y = 0},
+    unlocked = false,
+	apply = function(self)
+		G.GAME.modifiers.alchemy_deck = true
+	end,
+    unlock_condition = {type = 'win_deck', deck = 'b_prism_ancient'},
+})
+
+--[[ local orig_update_shop = Game.update_shop
+function Game:update_shop(dt) 
+	orig_update_shop(self,dt)
+	if G.GAME.prism_opus_in_shop and G.STATE_COMPLETE then
+		G.GAME.prism_opus_in_shop = false
+		G.E_MANAGER:add_event(Event({
+			trigger = 'after',
+			delay = 0.2,
+			blockable = false,
+			func = function()
+				local opus = create_card("Myth",G.shop_jokers,nil,nil,true,false,"c_prism_myth_opus")
+				G.shop_jokers:emplace(opus)
+				create_shop_card_ui(opus)
+				opus:start_materialize()
+				return true 
+			end
+		}))
+	end
+end ]]

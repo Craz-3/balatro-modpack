@@ -1,0 +1,146 @@
+[manifest]
+version = "1.2"
+dump_lua = true
+priority = 0
+
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "    boot_timer('prep stage', 'splash prep',1)"
+position = "before"
+payload = """
+if not AKYRS then
+    AKYRS_LOAD_FAIL = true
+end
+assert(not AKYRS_LOAD_FAIL,[[ 
+(X^X)
+
+Hey! If you're reading this message, that means Aikoyori's Shenanigans has crashed due to outdated dependencies :<
+(In simple words, your Steamodded and/or Lovely Injector that you have is too old for the mod)
+
+Update your **Steamodded** and **Lovely Injector** to latest stable version.
+
+Generally, every major update of the mod bumps the requirements to the latest available stable version of these.
+
+To Update Steamodded, download AND replace your existing Steamodded folder with a new one
+
+To Update Lovely Injector, replace the `version.dll` in your installation (i.e. where you open the game) with a newer version
+>>> LOVELY INJECTOR IS NOT SUPPOSED TO BE IN THE MODS FOLDER. IT SHOULD BE NEXT THE BALATRO.EXE <<<
+
+P.S. If you report the crash to me and I see either of those being outdated you are going to be strapped on a rocket to Mars >:>
+
+======================================================================================================================================================
+]])
+AKYRS.aiko_mod_startup(self)"""
+overwrite = true
+match_indent = true
+
+
+
+[[patches]]
+[patches.pattern]
+target = "main.lua"
+pattern = "            background = G.C.BLACK"
+position = "after"
+payload = """
+if AKYRS_LOAD_FAIL then
+    background = G.C.AKYRS_AIKOYORI_BG
+end
+
+"""
+overwrite = true
+match_indent = true
+
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "        for k, v in ipairs(card_protos) do"
+position = "before"
+payload = """
+card_protos = customDeckHooks(self,card_protos)
+
+"""
+overwrite = true
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = """                if G.GAME.blind and G.GAME.blind.config.blind then """
+position = "before"
+payload = """
+        G.GAME.word_todo = nil
+"""
+overwrite = true
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''=[SMODS _ "src/utils.lua"]'''
+pattern = '''                card_eval_status_text(card, 'debuff')
+            end'''
+position = "after"
+payload = '''
+eval_card(card, context)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''engine/event.lua'''
+pattern = '''        other = {}'''
+position = "after"
+payload = ''',
+akyrs_desc = {},
+akyrs_misc = {}
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''functions/common_events.lua'''
+pattern = '''func = (function(t) return math.floor(t) end)'''
+position = "at"
+payload = '''func = (function(t) return AKYRS.adjust_rounding(t) end)
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''card.lua'''
+pattern = '''                if self.ability.name == 'Mr. Bones' and context.game_over and '''
+position = "before"
+payload = '''
+if self.ability.name == 'Mr. Bones' and context.game_over then
+    if #SMODS.find_card('j_akyrs_story_of_undertale') > 0 then
+        G.E_MANAGER:add_event(Event({
+            func = function()
+                G.hand_text_area.blind_chips:juice_up()
+                G.hand_text_area.game_chips:juice_up()
+                play_sound('tarot1')
+                self:start_dissolve()
+                return true
+            end
+        })) 
+        return {
+            message = localize('k_saved_ex'),
+            saved = true,
+            colour = G.C.RED
+        }
+    end
+else
+'''
+match_indent = true
+
+[[patches]]
+[patches.pattern]
+target = '''card.lua'''
+pattern = '''            end
+        elseif context.individual then'''
+position = "before"
+payload = '''
+end
+'''
+match_indent = true

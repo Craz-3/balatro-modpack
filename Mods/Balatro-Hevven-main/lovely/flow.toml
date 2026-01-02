@@ -1,0 +1,149 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+# Some of this stolen and slightly edited from Cryptid
+# Pity Skip - don't lose
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''G.RESET_JIGGLES = true'''
+position = 'after'
+match_indent = true
+payload = '''
+if G.GAME.current_round.rh_flow_pity_skip then
+    game_over = false
+end
+'''
+
+# Some Good Parts - don't lose
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''G.RESET_JIGGLES = true'''
+position = 'after'
+match_indent = true
+payload = '''
+game_over = rh_flow_good_parts_save()
+'''
+
+# Some Good Parts - SFX
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''table.insert(left_text, {n=G.UIT.O, config={w=1.2,h=1.2 , object = blind_sprite, hover = true, can_collide = false}})'''
+position = 'after'
+match_indent = true
+payload = '''
+if G.GAME.current_round.rh_flow_good_parts_saved then
+    play_sound('rh_some_good_parts', 1, 5)
+end
+'''
+
+# Pity Skip - end screen text
+[[patches]]
+[patches.regex]
+target = "functions/common_events.lua"
+pattern = '''or 'ph_mr_bones'\)..' '}, colours = \{G.C.FILTER'''
+position = 'at'
+# match_indent = true
+line_prepend = ''
+payload = '''or rh_saved_run_text() or 'ph_mr_bones')..' '}, colours = {G.C.FILTER'''
+
+# Pity Skip - polished UI
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''{n=G.UIT.T, config={text = localize('b_cash_out')..": ", scale = 1, colour = G.C.UI.TEXT_LIGHT, shadow = true}},'''
+position = "at"
+payload = '''{n=G.UIT.T, config={text = rh_saved_run_round_text(), scale = 1, colour = G.C.UI.TEXT_LIGHT, shadow = true}},'''
+match_indent = true
+
+# Pity Skip - polished UI
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''{n=G.UIT.T, config={text = localize('$')..format_ui_value(config.dollars), scale = 1.2*scale, colour = G.C.WHITE, shadow = true, juice = true}}'''
+position = "at"
+payload = '''{n=G.UIT.T, config={text = rh_saved_run_money_text(format_ui_value(config.dollars)), scale = 1.2*scale, colour = G.C.WHITE, shadow = true, juice = true}}'''
+match_indent = true
+
+# Balatro Hevven - reset values at start of round
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "G.GAME.blind:set_blind(G.GAME.round_resets.blind)"
+position = "after"
+payload = '''
+G.GAME.current_round.rh_flow_pity_skip = false
+G.GAME.current_round.rh_flow_simple_tap = false
+G.GAME.current_round.rh_flow_good_parts = false
+G.GAME.current_round.rh_flow_good_parts_saved = false
+G.GAME.current_round.rh_flow_new_record = false
+G.GAME.current_round.rh_flow_new_record_to_beat = 0
+G.GAME.current_round.rh_flow_new_record_tag = false
+G.GAME.current_round.rh_flow_used = false
+'''
+match_indent = true
+
+# New Record - Checks high score to deliver the rare tag
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = "check_and_set_high_score('hand', hand_chips*mult)"
+position = "before"
+payload = '''
+rh_flow_check_for_new_record(hand_chips*mult)
+'''
+match_indent = true
+
+# You - Disables card from being discarded by player
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''
+    stop_use()
+    G.CONTROLLER.interrupt.focus = true
+    G.CONTROLLER:save_cardarea_focus('hand')
+'''
+position = "after"
+payload = '''
+for k, v in ipairs(G.hand.highlighted) do
+    if v.ability["rh_you_sticker"] then
+        G.hand:remove_from_highlighted(v, true)
+    end
+end
+'''
+match_indent = true
+
+# You - highlights the You card again after play
+[[patches]]
+[patches.pattern]
+target = "functions/common_events.lua"
+pattern = '''to:emplace(card, nil, stay_flipped)'''
+position = "after"
+payload = '''
+if card.ability["rh_you_sticker"] and to == G.hand then
+    to:add_to_highlighted(card,false)
+    card.ability.forced_selection = true
+end
+'''
+match_indent = true
+
+# You - highlights the You card again after discard
+[[patches]]
+[patches.pattern]
+target = "functions/state_events.lua"
+pattern = '''-- TARGET: effects after cards destroyed in discard'''
+position = "before"
+payload = '''
+for k, v in pairs(G.playing_cards) do
+    if v.ability["rh_you_sticker"] then 
+        G.hand.highlighted[#G.hand.highlighted+1] = v
+        v:highlight(true)
+        v.ability.forced_selection = true
+    end
+end
+'''
+match_indent = true

@@ -1,0 +1,13 @@
+{
+	"id": "BHevven",
+	"name": "Balatro Hevven",
+	"author": ["TheAlternateDoctor","missingnumber","NoahAmp"],
+	"description": "A set of additions all coming from Rhythm Heaven! Contains Jokers, Enhancements, and a brand new type of consumable, the Flow cards!",
+	"prefix": "rh",
+	"main_file": "Balatro-Hevven.lua",
+	"priority": 1000,
+	"badge_colour": "000000",
+	"badge_text_colour": "F8EC1B",
+	"version": "1.0",
+	"dependencies": ["3xCredits (==1.*~)"]
+}
