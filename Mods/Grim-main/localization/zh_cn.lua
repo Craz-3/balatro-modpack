@@ -2,1597 +2,1656 @@ return {
     descriptions = {
         Skill = {
             sk_grm_chime_1 = {
-                name = "Chime I",
+                name = "鸣钟 I",
                 text = {
-                    "{C:attention}-1{} Ante",
-                    "{C:inactive}(once per ante){}"
+                    "{C:attention}习得{}时，底注 {C:attention}-1{}",
                 }
             },
             sk_grm_chime_2 = {
-                name = "和協 II",
+                name = "鸣钟 II",
                 text = {
-                    "每{C:attention}4{}個底注會{C:attention}-1{}個底注",
-                    "{C:inactive}（每個底注只觸發一次）{}"
+                    "每经过 {C:attention}4{} 个底注，",
+                    "底注 {C:attention}-1{}",
+                    "{C:inactive}（每底注仅一次）{}"
                 }
             },
             sk_grm_chime_3 = {
-                name = "和協 III",
+                name = "鸣钟 III",
                 text = {
-                    "每{C:attention}3{}個底注會{C:attention}-1{}個底注",
-                    "{C:blue}-1{}出牌次數",
-                    "{C:inactive}（每個底注只觸發一次）{}"
+                    "每经过 {C:attention}3{} 个底注，",
+                    "底注 {C:attention}-1{}",
+                    "{C:blue}-1{} 出牌次数",
+                    "{C:inactive}（每底注仅一次）{}"
                 },
                 unlock = {
-                    "達到{E:1,C:attention}17{}級底注"
+                    "底注等级",
+                    "达到 {E:1,C:attention}17"
                 }
             },
             sk_grm_ease_1 = {
-                name = "緩和 I",
+                name = "缓和 I",
                 text = {
-                    "盲注要求分數減少{C:blue}10%{}",
+                    "盲注规模 {C:blue}x0.9{}",
                 }
             },
             sk_grm_ease_2 = {
-                name = "緩和 II",
+                name = "缓和 II",
                 text = {
-                    "盲注要求分數減少{C:blue}20%{}",
+                    "盲注规模 {C:blue}x0.8{}",
                 }
             },
             sk_grm_mystical_1 = {
                 name = "神秘 I",
                 text = {
-                    "所有{C:tarot}奧秘禮包{}",
-                    "有額外{C:attention}一個{}選擇及選項"
+                    "所有{C:tarot}秘仪包{}额外获得",
+                    "{C:attention}+1{} 选项和选择机会"
                 }
             },
             sk_grm_mystical_2 = {
                 name = "神秘 II",
                 text = {
-                    "所有{C:tarot}奧秘禮包{}及{C:tarot}塔羅牌{}",
-                    "的費用全免"
+                    "所有{C:tarot}秘仪包{}和{C:tarot}塔罗牌{}免费。"
                 }
             },
             sk_grm_mystical_3 = {
                 name = "神秘 III",
                 text = {
-                    "使用塔羅牌時，有{C:green}30%{}的機率",
-                    "產生一張{C:dark_edition}負片{}{C:tarot}愚者{}牌",
-                    "{C:inactive}（{C:tarot}愚者牌{C:inactive}除外）"
+                    "使用{C:tarot}塔罗牌{}时，有 {C:green}30%{} 几率",
+                    "创建一张{C:dark_edition}负片{}版本{C:tarot}愚者{}",
+                    "{C:inactive}（{C:tarot}愚者{C:inactive}除外）"
                 }
             },
             sk_grm_hexahedron_1 = {
-                name = "六面體 I",
+                name = "六面体 I",
                 text = {
-                    "重鎩的價格減少{C:money}$1",
+                    "刷新成本",
+                    "减少 {C:money}$1{}"
                 }
             },
             sk_grm_ocean_1 = {
                 name = "海洋 I",
                 text = {
-                    "手牌數量{C:attention}+1{}",
+                    "{C:attention}+1{} 手牌上限",
                 }
             },
             sk_grm_strike_1 = {
-                name = "Strike I",
+                name = "打击 I",
                 text = {
-                    "{C:red}+2{} base mult",
-                    "per {C:attention}ante{}"
+                    "每经过一个{C:attention}底注{}，",
+                    "获得 {C:red}+2{} 基础倍率"
                 }
             },
             sk_grm_strike_2 = {
-                name = "打擊 II",
+                name = "打击 II",
                 text = {
-                    "基礎籌碼{C:blue}+50{}",
+                    "{C:blue}+50{} 基础筹码",
                 }
             },
             sk_grm_strike_3 = {
-                name = "打擊 III",
+                name = "打击 III",
                 text = {
-                    "在計算局數分數時",
-                    "平均{C:blue}籌碼{}及{C:red}倍數{}",
-                    "盲注要求分數{C:red}X1.2{}",
+                    "平衡基础{C:blue}筹码{}和基础{C:red}倍率{}",
+                    "盲注规模 {C:red}X1.2{}",
                 },
                 unlock = {
-                    "升級一個{C:attention}牌型{}",
-                    "到{C:attention}40{}級或以上"
+                    "将任意{C:attention}牌组牌型{}等级",
+                    "提升至 {C:attention}40{} 或更高"
                 }
             },
             sk_grm_hexahedron_2 = {
-                name = "Hexahedron II",
+                name = "六面体 II",
                 text = {
-                    "{C:attention}2{} free {C:attention}Rerolls{}",
-                    "per shop"
+                    "每间商店提供 {C:attention}2{} 次",
+                    "免费{C:attention}刷新{}"
                 }
             },
             sk_grm_hexahedron_3 = {
-                name = "六面體 III",
+                name = "六面体 III",
                 text = {
-                    "每次在商店花費{C:money}$7{}在{C:green}重鎩",
-                    "會獲得{C:attention}一次{}免費{C:green}重鎩"
+                    "在商店中每花费 {C:money}$7{} 进行{C:green}刷新{}，",
+                    "获得 {C:attention}+1{} 次免费{C:green}刷新{}",
                 },
                 unlock = {
-                    "在{C:attention}商店{}裏{C:green}重鎩{}{C:attention}15{}次或以上"
+                    "在{C:attention}商店{}中{C:green}刷新{}",
+                    "{C:attention}15{} 次或更多"
                 }
             },
             sk_grm_ocean_2 = {
                 name = "海洋 II",
                 text = {
-                    "當剩下{C:attention}0{}次棄牌數時",
-                    "出牌次數{C:blue}+1{}",
+                    "在{C:attention}最后一次弃牌{}后，",
+                    "获得 {C:blue}+1{} 出牌次数"
                 }
             },
             sk_grm_ocean_3 = {
                 name = "海洋 III",
                 text = {
-                    "在{C:attention}第一次出牌{}時",
-                    "棄牌次數{C:red}+2{}",
+                    "在{C:attention}第一手牌{}时，",
+                    "额外获得 {C:red}+2{} 弃牌次数"
                 },
                 unlock = {
-                    "擁有{C:red}10{}次或以上棄牌次數"
+                    "拥有 {C:red}10{} 次或更多",
+                    "弃牌次数"
                 }
             },
             sk_grm_stake_1 = {
-                name = "賭注 I",
+                name = "筹码 I",
                 text = {
-                    "勝利所需底注{C:attention}+1{}",
-                    "手牌數量{C:attention}+1{}"
+                    "{C:attention}+1{} 胜利底注要求",
+                    "{C:attention}+1{} 手牌上限"
                 }
             },
             sk_grm_stake_2 = {
-                name = "賭注 II",
+                name = "筹码 II",
                 text = {
-                    "勝利所需底注{C:attention}+2{}",
-                    "小丑牌欄位{C:attention}+1{}"
+                    "{C:attention}+2{} 胜利底注要求",
+                    "{C:attention}+1{} 小丑槽位"
                 }
             },
             sk_grm_skillful_1 = {
-                name = "熟練 I",
+                name = "熟练 I",
                 text = {
-                    "{C:attention}回合{}結束時，{C:purple}+30{}經驗值"
+                    "{C:attention}回合{}结束时获得",
+                    "{C:purple}+30{} XP"
                 }
             },
             sk_grm_skillful_2 = {
-                name = "熟練 II",
+                name = "熟练 II",
                 text = {
-                    "{C:attention}出牌{}時，獲得相等於打出{C:attention}牌型{}的等級的經驗值",
-                    "{C:inactive}（最多{C:purple}40{C:inactive}）{}",
+                    "打出{C:attention}牌组牌型{}时，将该牌组",
+                    "的等级数加到 XP 中",
+                    "{C:inactive}（最高 {C:purple}40{C:inactive}）{}",
                 }
             },
             sk_grm_skillful_3 = {
-                name = "熟練 III",
+                name = "熟练 III",
                 text = {
-                    "所有經驗值的來源 {X:purple,C:white} X2 {}"
+                    "所有 XP 来源",
+                    "获得 {X:purple,C:white} X2 {} 倍率",
                 }
             },
             sk_grm_stake_3 = {
-                name = "賭注 III",
+                name = "筹码 III",
                 text = {
-                    "每個{C:attention}底注{}{C:blue}+30%{}盲注要求分數",
-                    "小丑牌欄位{C:attention}+3{}",
-                    "{C:inactive}（目前為{C:blue}#1#{C:inactive}）{}",
+                    "每个{C:attention}底注{}使盲注规模",
+                    "变为原来的 {C:blue}x1.3{} 倍。",
+                    "{C:attention}+3{} 小丑槽位",
+                    "{C:inactive}（当前 {C:blue}#1#{C:inactive}）{}",
                 }
             },
             sk_grm_ease_3 = {
-                name = "緩和 III",
+                name = "缓和 III",
                 text = {
-                    "如果已達到至少{C:attention}75%{}的要求分數",
-                    "可以防止死亡",
+                    "如果得分至少达到所需筹码的",
+                    "{C:attention}75%{}，则防止死亡",
                 }
             },
             sk_grm_motley_1 = {
-                name = "斑駮 I",
+                name = "杂色 I",
                 text = {
-                    "{C:attention}萬能牌{}不能被{C:attention}減益{}"
+                    "{C:attention}万能牌{}不会",
+                    "被{C:attention}削弱{}"
                 }
             },
             sk_grm_fortunate_1 = {
-                name = "運氣 I",
+                name = "幸运 I",
                 text = {
-                    "{C:attention}幸運之輪{}牌有可能產生",
-                    "{C:dark_edition}負片{}版本",
+                    "{C:attention}幸运大轮盘{}可以创建",
+                    "{C:dark_edition}负片{}版本"
                 }
             },
             sk_grm_fortunate_2 = {
-                name = "運氣 II",
+                name = "幸运 II",
                 text = {
-                    "{C:attention}幸運之輪{}牌不會產生",
-                    "{C:dark_edition}銀箔{}版本",
+                    "{C:attention}幸运大轮盘{}不会创建",
+                    "{C:dark_edition}闪箔{}版本"
                 },
                 unlock = {
-                    "使用{C:attention}幸運之輪{}牌來",
-                    "對一張{C:attention}小丑牌{}附上{C:dark_edition}負片{}版本"
+                    "使用{C:attention}幸运大轮盘{}",
+                    "为一个{C:attention}小丑牌{}添加{C:dark_edition}负片{}版本",
                 }
             },
             sk_grm_fortunate_3 = {
-                name = "運氣 III",
+                name = "幸运 III",
                 text = {
-                    "{C:attention}幸運之輪{}牌",
-                    "{C:green}必定{}會加上一個{C:attention}版本{}"
+                    "{C:attention}幸运大轮盘{} {C:green}必定{}会应用",
+                    "一个{C:attention}版本效果{}"
                 }
             },
             sk_grm_motley_2 = {
-                name = "斑駮 II",
+                name = "杂色 II",
                 text = {
-                    "{C:tarot}奧秘禮包{}會有",
-                    "兩張{C:tarot}戀人{}牌"
+                    "{C:tarot}秘仪包{}中必定包含",
+                    "{C:attention}1{} 张{C:tarot}恋人{}"
                 }
             },
             sk_grm_motley_3 = {
-                name = "斑駮 III",
+                name = "杂色 III",
                 text = {
-                    "{C:attention}加強牌{}會視為{C:attention}萬能牌{}",
-                    "所有{C:tarot}奧秘禮包{}有少{C:attention}一個{}選擇",
+                    "{C:attention}增强卡牌{}也被视为{C:attention}万能牌{}",
+                    "所有{C:tarot}秘仪包{}减少 {C:attention}-1{} 选项",
                 }
             },
             sk_grm_scarce_1 = {
                 name = "稀缺 I",
                 text = {
-                    "{C:attention}小丑牌{}及{C:attention}丑角禮包{}",
-                    "不再從{C:attention}商店{}中出現"
+                    "{C:attention}小丑牌{}和{C:attention}小丑包{}不会",
+                    "在{C:attention}商店{}中出现"
                 }
             },
             sk_grm_gravity_1 = {
-                name = "Gravity I",
+                name = "引力 I",
                 text = {
-                    "All {C:planet}Celestial Packs{} have",
-                    "{C:attention}+2{} options and {C:attention}+1{}",
-                    "choices"
+                    "所有{C:planet}天体包{}额外获得",
+                    "{C:attention}+2{} 选项和 {C:attention}+1{} 选择机会"
                 }
             },
             sk_grm_gravity_2 = {
-                name = "重力 II",
+                name = "引力 II",
                 text = {
-                    "如果打出的牌型是{C:attention}打得最多的牌型{}",
-                    "基礎倍數{X:red,C:white} X2 {}",
+                    "打出你{C:attention}最常打出的{} {C:attention}牌组牌型{}时，",
+                    "获得 {X:red,C:white} X2 {} 基础倍率"
                 }
             },
             sk_grm_gravity_3 = {
-                name = "重力 III",
+                name = "引力 III",
                 text = {
-                    "{C:attention}重新觸發{}已使用的{C:planet}行星牌{}"
+                    "{C:attention}重新触发{}已使用的",
+                    "{C:planet}星球牌{}"
                 }
             },
             sk_grm_ghost_1 = {
-                name = "幽靈 I",
+                name = "幽灵 I",
                 text = {
-                    "每獲得{C:purple}200{}經驗值時",
-                    "產生一張{C:spectral}幻靈牌{}",
-                    "手牌數量{C:red}-1{}",
-                    "{C:inactive}（必須有空位）"
+                    "每赚取 {C:purple}200{} XP，创建一个",
+                    "{C:spectral}光谱牌{}，同时 {C:red}-1{} 手牌上限",
+                    "{C:inactive}（需有空位）"
                 }
             },
             sk_grm_ghost_2 = {
-                name = "幽靈 II",
+                name = "幽灵 II",
                 text = {
-                    "離開{C:attention}商店{}後，獲得一個{C:attention}空靈標籤{}",
-                    "手牌數量{C:red}-2{}"
+                    "商店结束时获得一个{C:attention}灵异标签{}，",
+                    "{C:red}-2{} 手牌上限"
                 }
             },
             sk_grm_ghost_3 = {
-                name = "幽靈 III",
+                name = "幽灵 III",
                 text = {
-                    "所有{C:spectral}幻靈禮包{}有",
-                    "額外{C:attention}四個{}選項及額外{C:attention}兩張{}牌選擇",
-                    "所有經驗值來源 {X:purple,C:white} X0.5 {}",
+                    "所有{C:spectral}光谱包{}额外获得",
+                    "{C:attention}+4{} 选项和 {C:attention}+2{} 选择机会",
+                    "所有 XP 来源获得 {X:purple,C:white} X0.5 {} 倍率",
                 }
             },
             sk_grm_receipt_1 = {
-                name = "收據 I",
+                name = "收据 I",
                 text = {
-                    "每次{C:attention}兌現{}{C:money}$4{}會獲得{C:money}$1"
+                    "每在{C:attention}结算奖金{}时获得 {C:money}$4{}，",
+                    "额外赚取 {C:money}$1{}"
                 }
             },
             sk_grm_receipt_2 = {
-                name = "收據 II",
+                name = "收据 II",
                 text = {
-                    "{C:attention}禮券{}及{C:attention}擴充包{}",
-                    "在商店的價格減低{C:attention}30%{}"
+                    "商店里的{C:attention}礼券{}和{C:attention}补给包{}",
+                    "享有 {C:attention}7 折{}优惠"
                 }
             },
             sk_grm_receipt_3 = {
-                name = "Receipt III",
+                name = "收据 III",
                 text = {
-                    "Go up to {C:red}-$25{} in debt,",
-                    "remove all {C:red}debt{} when {C:attention}Boss{}",
-                    "{C:attention}Blind{} is defeated"
+                    "允许负债高达 {C:red}-$25{}，",
+                    "击败{C:attention}Boss盲注{}时消除所有{C:red}欠款{}"
                 }
             },
             sk_grm_dash_1 = {
-                name = "Dash I",
+                name = "冲刺 I",
                 text = {
-                    "{C:attention}Played{} cards return",
-                    "to {C:attention}deck{}"
+                    "{C:attention}打出{}的卡牌返回",
+                    "{C:attention}牌组{}"
                 }
             },
             sk_grm_dash_2 = {
-                name = "衝刺 II",
+                name = "冲刺 II",
                 text = {
-                    "出牌數量 {C:dark_edition}+1{}",
+                    "{C:dark_edition}+1{} 单次出牌上限",
                 }
             },
             sk_grm_cl_hoarder = {
-                name = "囤積者",
+                name = "积攒者",
                 text = {
-                    "手牌數量{C:red}-1{}",
-                    "您可以{C:green}包裝{}卡牌"
+                    "{C:red}-1{} 手牌上限",
+                    "你可以{C:green}打包（Pack）{}卡牌。"
                 },
                 unlock = {
-                    "擁有{C:purple}2,000{}或以上{C:attention}經驗值"
+                    "拥有 {C:purple}2,000{} 或",
+                    "更多 {C:attention}XP{}",
                 }
             },
             sk_grm_cl_astronaut = {
-                name = "太空人",
+                name = "宇航员",
                 text = {
-                    "{C:money}恆星牌{}及{C:blue}衛星牌{}",
-                    "會在{C:planet}天外禮包{}出現"
+                    "{C:money}恒星卡（Stellar）{}和{C:blue}月球卡（Lunar）{}",
+                    "可以出现在{C:planet}天体包{}中",
                 },
                 unlock = {
-                    "學到{C:planet}重力 III{}"
+                    "习得",
+                    "{C:planet}引力 III{}",
                 }
             },
             sk_grm_orbit_1 = {
-                name = "軌道 I",
+                name = "轨道 I",
                 text = {
-                    "{C:money}恆星牌{}及{C:blue}衛星牌{}",
-                    "會在{C:attention}商店{}出現",
+                    "{C:money}恒星卡（Stellar）{}和{C:blue}月球卡（Lunar）{}",
+                    "可以出现在{C:attention}商店{}中",
                 }
             },
             sk_grm_orbit_2 = {
-                name = "軌道 II",
+                name = "轨道 II",
                 text = {
-                    "{C:attention}鬩衛一{}及{C:attention}LP 944-20{}會出現",
+                    "{C:attention}迪丝诺美亚（Dysnomia）{}和 {C:attention}LP 944-20{}",
+                    "可以出现"
                 }
             },
             sk_grm_cl_alchemist = {
-                name = "煉金術士",
+                name = "炼金术师",
                 text = {
-                    "啟用{C:attention}元素{}及{C:green}狀態{}",
+                    "启用{C:attention}元素（Elements）{}和",
+                    "{C:green}状态（Statuses）{}",
                 },
                 unlock = {
-                    "擁有至少{E:1,C:attention}52張萬能牌{}到牌組裏"
+                    "牌组中至少拥有 {E:1,C:attention}52",
+                    "张{E:1,C:attention}万能牌{}"
                 }
             },
             sk_grm_cl_explorer = {
-                name = "探險者",
+                name = "探险家",
                 text = {
-                    "擊敗{C:attention}Boss盲注{}後，獲得一個{C:attention}格框標籤{}"
+                    "击败每个{C:attention}Boss盲注{}后，获得一个",
+                    "{C:attention}网格标签（Grid Tag）{}"
                 },
                 unlock = {
-                    "學到{C:attention}10個技能{}下，贏得比賽"
+                    "习得 {C:attention}10 个技能{}的情况下赢得比赛",
                 }
             },
             sk_grm_sticky_1 = {
-                name = "粘粘 I",
+                name = "粘性 I",
                 text = {
-                    "{C:attention}永久的小丑牌{}可以花費",
-                    "{C:purple}100 經驗值{}來出售"
+                    "出售{C:attention}永恒小丑{}需花费",
+                    "{C:purple}100 XP{}"
                 }
             },
             sk_grm_sticky_2 = {
-                name = "粘粘 II",
+                name = "粘性 II",
                 text = {
-                    "{C:attention}非保久的小丑牌{}會持續",
-                    "多{C:attention}3{}個回合"
+                    "{C:attention}易损小丑{}多持续",
+                    "{C:attention}3{} 回合"
                 }
             },
             sk_grm_sticky_3 = {
-                name = "粘粘 III",
+                name = "粘性 III",
                 text = {
-                    "{C:attention}租賃的小丑牌{}給予",
-                    "{C:money}$3{}而不會損失{C:red}$3{}"
+                    "{C:attention}租用小丑{}在回合结束时提供 {C:money}$3{}",
+                    "而非扣除 {C:red}-$3{}"
                 }
             },
             sk_grm_shelf_1 = {
-                name = "擱板 I",
+                name = "置物架 I",
                 text = {
-                    "商店欄位 {C:red}-1{}",
-                    "擴充包欄位 {C:attention}+2{}"
+                    "{C:red}-1{} 商店物品槽位",
+                    "{C:attention}+2{} 补给包槽位"
                 }
             },
             sk_grm_shelf_2 = {
-                name = "擱板 II",
+                name = "置物架 II",
                 text = {
-                    "每個商店的欄位 {C:attention}+2{}",
-                    "直到{C:attention}購買{}一個物品"
+                    "{C:attention}+2{} 商店物品槽位",
+                    "除非购买了某样物品，",
+                    "否则商店不会清空"
                 }
             },
             sk_grm_shelf_3 = {
-                name = "Shelf III",
+                name = "置物架 III",
                 text = {
-                    "{C:attention}+1{} voucher slot"
+                    "{C:attention}+1{} 礼券槽位"
                 }
             },
             sk_grm_prestige_1 = {
-                name = "威信 I",
+                name = "声望 I",
                 text = {
-                    "{C:attention}忘掉{}所有學到的技能",
-                    "{C:dark_edition}+1{}傳奇代幣",
-                    "一定要在此比賽中花費{C:purple}2,500{}經驗值",
-                    "{C:inactive}（目前已花費{C:purple}#1#{C:inactive}經驗值）"
+                    "{C:attention}遗忘{}所有其他技能",
+                    "{C:dark_edition}+1{} 传说代币",
+                    "且本局中至少已花费 {C:purple}2,500{} XP",
+                    "{C:inactive}（本局已花费 {C:purple}#1#{C:inactive} XP）"
                 },
                 unlock = {
-                    "學習一個{C:red}III級{}的技能"
+                    "习得一个 {C:red}III 阶{}技能",
                 }
             },
             sk_grm_prestige_2 = {
-                name = "Prestige II",
+                name = "声望 II",
                 text = {
-                    "{C:attention}Unlearn{} {C:purple}non-Prestige{} skills,",
-                    "Reduce all {C:attention}Skill{} {C:purple}XP{}",
-                    "costs by {C:attention}25%{}",
-                    "{C:dark_edition}+1{} Legendary Token",
+                    "{C:attention}遗忘{}所有 {C:purple}非声望{} 技能，",
+                    "所有{C:attention}技能{}的 {C:purple}XP{} 消耗减少 {C:attention}25%{}",
+                    "{C:dark_edition}+1{} 传说代币",
                 }
             },
             sk_grm_blind_breaker = {
-                name = "Blind Breaker",
+                name = "盲注破坏者",
                 text = {
-                    "After {C:attention}main scoring{}, Gives {X:red,C:white} ^0.2 {}",
-                    "Mult for each {C:blue}hand{} played",
-                    "{C:attention}previously{} this {C:attention}round{}",
-                    "{C:inactive}(Currently {X:red,C:white} ^#1# {C:inactive} Mult)"
+                    "在{C:attention}主要计分{}后，本轮此前每打出的一手",
+                    "{C:blue}牌{}都提供 {X:red,C:white} ^0.2 {} 倍率",
+                    "{C:inactive}（当前 {X:red,C:white} ^#1# {C:inactive} 倍率）"
                 }
             },
             sk_grm_spectral_shard = {
-                name = "幻靈碎片",
+                name = "光谱碎片",
                 text = {
-                    "{C:legendary,E:1}傳奇的{}{C:attention}小丑牌{}可能會",
-                    "出現在商店或擴充包中",
+                    "{C:legendary,E:1}传说小丑{} 可能会出现在",
+                    "商店和补给包中",
                 }
             },
             sk_grm_dexterity = {
-                name = "Dexterity",
+                name = "敏捷",
                 text = {
-                    "When {C:attention}Blind{} is selected,",
-                    "Gain {C:blue}+1{} hand per {C:purple}100{} XP held,",
+                    "选择{C:attention}盲注{}时，",
+                    "每持有 {C:purple}100{} XP 获得 {C:blue}+1{} 出牌次数"
                 }
             },
             sk_grm_holdover_1 = {
-                name = "Holdover I",
+                name = "结转 I",
                 text = {
-                    "Up to {C:attention}3{} unused {C:red}discards{}",
-                    "may be carried over to the",
-                    "{C:attention}next round{} at {C:attention}end of round{}",
-                    "{C:red}-1{} discards per round"
+                    "最多 {C:attention}3{} 次未使用的{C:red}弃牌次数{}",
+                    "可结转至{C:attention}下一回合{}",
+                    "每轮基础弃牌次数 {C:red}-1{}"
                 }
             },
             sk_grm_holdover_2 = {
-                name = "Holdover II",
+                name = "结转 II",
                 text = {
-                    "Up to {C:attention}2{} unused {C:blue}hands{}",
-                    "may be carried over to the",
-                    "{C:attention}next round{} at {C:attention}end of round{}",
+                    "最多 {C:attention}2{} 次未使用的{C:blue}出牌次数{}",
+                    "可结转至{C:attention}下一回合{}"
                 }
             },
             sk_grm_holdover_3 = {
-                name = "Holdover III",
+                name = "结转 III",
                 text = {
-                    "Double caps of",
-                    "{C:purple}Holdover{} skills",
+                    "倍增所有{C:purple}结转（Holdover）{}技能",
+                    "的上限"
                 }
             },
             sk_cry_ace_1 = {
                 name = "ACE I",
                 text = {
-                    "Reroll {C:cry_code,E:1}Crash's{} payload",
-                    "for this run",
+                    "重选本局中 {C:cry_code,E:1}Crash{} 的有效载荷",
                 }
             },
             sk_cry_ace_2 = {
                 name = "ACE II",
                 text = {
-                    "{C:tarot}The Fool{} can",
-                    "create {C:cry_code,E:1}Code Cards{}",
+                    "{C:tarot}愚者{} 现在可以创建 {C:cry_code,E:1}代码牌{}",
                 }
             },
             sk_cry_ace_3 = {
                 name = "ACE III",
                 text = {
-                    "All {C:cry_code,E:1}Program Packs{}",
-                    "contain {C:spectral}POINTER://{}",
+                    "所有 {C:cry_code,E:1}程序包{} 都包含",
+                    "{C:spectral}POINTER://{}",
                 }
             },
             sk_cry_m_1 = {
                 name = "M I",
                 text = {
-                    "{C:blue}+3{} base chips for each",
-                    "{C:attention}Pair{} played this run",
+                    "本局中每打出一个{C:attention}对子{}，",
+                    "获得 {C:blue}+3{} 基础筹码",
+                    "{C:inactive}（当前 {C:blue}+#1#{C:inactive}）"
                 }
             },
             sk_cry_m_2 = {
                 name = "M II",
                 text = {
-                    "Place {C:attention}Jolly Joker{} in {C:attention}shop{}",
-                    "at the start of each {C:attention}shop{}",
+                    "商店开始时，将一张 {C:attention}快乐小丑{} 放入商店",
                 }
             },
             sk_cry_m_3 = {
                 name = "M III",
                 text = {
-                    "Create {C:attention}Jolly Jimball{}",
-                    "{C:inactive}(Must have room)",
+                    "创建一张 {C:attention}快乐吉姆球{}",
+                    "{C:inactive}（需有空位）",
                 }
             },
             sk_cry_sticky_4 = {
-                name = "Sticky IV",
+                name = "粘性 IV",
                 text = {
-                    "{C:attention}Banana Cards{} have a",
-                    "{C:green}1 in 8{} chance to duplicate",
-                    "at end of {C:attention}round{}"
+                    "{C:attention}香蕉牌{} 在回合结束时",
+                    "有 {C:green}1/8{} 几率进行复制"
                 }
             },
             sk_poke_energetic_1 = {
-                name = "Energetic I",
+                name = "活力 I",
                 text = {
-                    "{C:pink}+1{} Energy Limit"
+                    "{C:pink}+1{} 能量上限"
                 },
             },
             sk_poke_energetic_2 = {
-                name = "Energetic II",
+                name = "活力 II",
                 text = {
-                    "{C:attention}Jokers{} with a {C:attention}type{} create",
-                    "the coresponding {C:pink}Energy{} card",
-                    "when {C:attention}sold{}",
-                    "{C:inactive}(Must have room)"
+                    "{C:attention}售出{}带有{C:attention}类型{}的{C:attention}小丑牌{}时，",
+                    "创建对应的{C:pink}能量卡{}",
+                    "{C:inactive}（需有空位）"
                 },
             },
             sk_poke_energetic_3 = {
-                name = "Energetic III",
+                name = "活力 III",
                 text = {
-                    "{C:attention}Jokers{} have {C:green}#1# in 5{} chance",
-                    "to gain a {C:dark_edition}Polychrome{} or",
-                    "{C:dark_edition}Negative{} edition when {C:pink}Energized{}",
+                    "小丑牌在{C:pink}充能（Energized）{}时有 {C:green}#1#/5{} 几率",
+                    "获得{C:dark_edition}多彩{}或{C:dark_edition}负片{}版本",
                 },
             },
             sk_mf_painted_1 = {
-                name = "Painted I",
+                name = "着色 I",
                 text = {
-                    "{C:colourcard}Colour{} cards gain {C:attention}2{}",
-                    "rounds when obtained",
+                    "{C:colourcard}颜色（Colour）{}牌引导时获得 {C:attention}2{}",
+                    "回合寿命",
                 },
             },
             sk_mf_painted_2 = {
-                name = "Painted II",
+                name = "着色 II",
                 text = {
-                    "{C:attention}Upgrade{} a random {C:colourcard}Colour{} card",
-                    "after defeating the {C:attention}Boss Blind{}",
+                    "击败{C:attention}Boss盲注{}后，{C:attention}升级{}一张",
+                    "随机{C:colourcard}颜色（Colour）{}牌",
                 },
             },
             sk_mf_painted_3 = {
-                name = "Painted III",
+                name = "着色 III",
                 text = {
-                    "{C:colourcard}Colour{} cards may",
-                    "be used twice",
+                    "{C:colourcard}颜色（Colour）{}牌可以",
+                    "使用两次",
                 },
             },
             sk_ortalab_decay_1 = {
-                name = "Decay I",
+                name = "衰变 I",
                 text = {
-                    "{C:planet}Planet{} cards, {C:planet}Celestial Packs{},",
-                    "{C:tarot}Tarot{} cards, and {C:tarot}Arcana Packs{}",
-                    "do not appear in {C:attention}shop{}"
+                    "{C:planet}星球牌{}、{C:planet}天体包{}、",
+                    "{C:tarot}塔罗牌{}和{C:tarot}秘仪包{}",
+                    "不再出现在{C:attention}商店{}中"
                 }
             },
             sk_ortalab_magica_1 = {
-                name = "Mágica I",
+                name = "魔法 I",
                 text = {
-                    "{C:loteria}Loteria{} cards can",
-                    "appear in {C:tarot}Arcana{} packs",
+                    "{C:loteria}洛特里亚（Loteria）{}牌可以",
+                    "出现在{C:tarot}秘仪{}包中",
                 }
             },
             sk_ortalab_magica_2 = {
-                name = "Mágica II",
+                name = "魔法 II",
                 text = {
-                    "All {C:loteria}Chalupa Packs{} have {X:attention,C:white} X2 {}",
-                    "options, choices, and cost",
+                    "所有 {C:loteria}窄船包（Chalupa Pack）{} 的选项、",
+                    "选择机会和成本均翻倍 {X:attention,C:white} X2 ",
                 }
             },
             sk_ortalab_magica_3 = {
-                name = "Mágica III",
+                name = "魔法 III",
                 text = {
-                    "{C:green}80%{} chance to create",
-                    "a {C:loteria}The Rooster{} when a",
-                    "{C:loteria}The Rooster{} is used",
-                    "{C:inactive}(Must have room)"
+                    "使用{C:loteria}公鸡{}时有 {C:green}80%{} 的几率",
+                    "再创建一张{C:loteria}公鸡{}",
+                    "{C:inactive}（需有空位）"
                 }
             },
             sk_ortalab_starry_1 = {
-                name = "Starry I",
+                name = "星光 I",
                 text = {
-                    "{C:attention}+1{} temporary levels to",
-                    "all {C:zodiac}Zodiacs{} left {C:attention}unactivated{}",
-                    "each {C:attention}round{}, at end of round.",
+                    "回合结束时，每张未激活的{C:zodiac}黄道带（Zodiac）{}牌",
+                    "永久获得 {C:attention}+1{} 临时等级",
                 }
             },
             sk_ortalab_starry_2 = {
-                name = "Starry II",
+                name = "星光 II",
                 text = {
-                    "{C:zodiac}Zodiac{} cards can",
-                    "appear in {C:planet}Celestial{} packs",
+                    "{C:zodiac}黄道带（Zodiac）{}牌可以",
+                    "出现在{C:planet}天体包{}中",
                 }
             },
             sk_ortalab_starry_3 = {
-                name = "Starry III",
+                name = "星光 III",
                 text = {
-                    "{C:zodiac}Zodiacs{} never decay"
+                    "{C:zodiac}黄道带（Zodiac）{}永远不会衰减"
                 }
             },
         },
         Other = {
             undiscovered_skill = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "學習這個技能",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "习得此技能以",
+                    "了解其作用"
                 }
             },
             undiscovered_area = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "使用這張牌",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "使用该卡牌以",
+                    "了解其作用"
                 }
             },
             undiscovered_lunar = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "購買或使用此牌",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "购买或使用此牌",
+                    "以了解其作用"
                 }
             },
             undiscovered_stellar = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "購買或使用此牌",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "购买或使用此牌",
+                    "以了解其作用"
                 }
             },
             undiscovered_elemental = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "購買或使用此牌",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "购买或使用此牌",
+                    "以了解其作用"
                 }
             },
             undiscovered_attack = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "受到此攻擊",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "遭遇此攻击",
+                    "以了解其作用"
                 }
             },
             undiscovered_loot = {
-                name = "未發現",
+                name = "未发现",
                 text = {
-                    "在無種子比賽中",
-                    "購買或使用此牌",
-                    "來了解它的功能"
+                    "在无种子的局中",
+                    "购买或使用此牌",
+                    "以了解其作用"
                 }
             },
             p_grm_loot_normal_1 = {
-                name = "戰利禮包",
+                name = "战利品包",
                 text = {
-                    "從{C:attention}#2#{}張{C:attention}戰利{}牌中",
-                    "選擇{C:attention}#1#{}張並馬上使用",
+                    "从最多 {C:attention}#2#{} 张 战利品（Loot）卡牌 中",
+                    "选择 {C:attention}#1#{} 张立即使用"
                 }
             },
             p_grm_ancient_normal_1 = {
-                name = "古老禮包",
+                name = "远古包",
                 text = {
-                    "從{C:attention}#2#{}張{C:attention}元素{}牌中",
-                    "選擇{C:attention}#1#{}張並馬上使用",
+                    "从最多 {C:attention}#2#{} 张 元素（Element）卡牌 中",
+                    "选择 {C:attention}#1#{} 张立即使用"
                 }
             },
             p_grm_ancient_normal_2 = {
-                name = "古老禮包",
+                name = "远古包",
                 text = {
-                    "從{C:attention}#2#{}張{C:attention}元素{}牌中",
-                    "選擇{C:attention}#1#{}張並馬上使用",
+                    "从最多 {C:attention}#2#{} 张 元素（Element）卡牌 中",
+                    "选择 {C:attention}#1#{} 张立即使用"
                 }
             },
             p_grm_ancient_jumbo_1 = {
-                name = "特大古老禮包",
+                name = "巨型远古包",
                 text = {
-                    "從{C:attention}#2#{}張{C:attention}元素{}牌中",
-                    "選擇{C:attention}#1#{}張並馬上使用",
+                    "从最多 {C:attention}#2#{} 张 元素（Element）卡牌 中",
+                    "选择 {C:attention}#1#{} 张立即使用"
                 }
             },
             p_grm_ancient_mega_1 = {
-                name = "特大古老禮包",
+                name = "超级远古包",
                 text = {
-                    "從{C:attention}#2#{}張{C:attention}元素{}牌中",
-                    "選擇{C:attention}#1#{}張並馬上使用",
+                    "从最多 {C:attention}#2#{} 张 元素（Element）卡牌 中",
+                    "选择 {C:attention}#1#{} 张立即使用"
                 }
             },
             p_grm_area_normal_1 = {
-                name = "區域禮包",
+                name = "区域包",
                 text = {
-                    "進入{C:attention}#2#{}個{C:green}區域{}中",
-                    "其中{C:attention}#1#{}個"
+                    "从最多 {C:attention}#2#{} 个 区域（Area） 中",
+                    "选择 {C:attention}#1#{} 个进入"
                 }
             },
             grm_turbo_sticker = {
-                name = "渦輪貼紙",
+                name = "涡轮贴纸",
                 text = {
-                    "使用過這張小丑牌",
-                    "來贏得{C:attention}渦輪賭注{}難度",
+                    "在{C:attention}涡轮筹码{}难度下",
+                    "使用此小丑获胜"
                 }
             },
             grm_bismuth_sticker = {
-                name = "鉍色貼紙",
+                name = "铋贴纸",
                 text = {
-                    "使用過這張小丑牌",
-                    "來贏得{C:attention}鉍色賭注{}難度",
+                    "在{C:attention}铋筹码{}难度下",
+                    "使用此小丑获胜"
                 }
             },
             ch_m_force_stake_xp2 = {
                 name = "",
                 text = {
-                    "每個底注 {s:0.8,C:purple}#1#{s:0.8} 經驗值"
+                    "{s:0.8,C:purple}#1#{s:0.8} XP 每底注"
                 }
             },
             flint = {
-                name = "燧石",
+                name = "打火石",
                 text = {
-                    "{C:attention}出牌{}時，獲得{C:red}+1{}倍數",
-                    "{C:red}效果會在棄牌時結束！{}"
+                    "{C:attention}打出{}时获得 {C:red}+1{} 倍率，",
+                    "{C:red}弃牌时失效！{}"
                 }
             },
             subzero = {
-                name = "零下",
+                name = "低于零度",
                 text = {
-                    "{C:attention}出牌{}後，下一次{C:attention}出牌{}",
-                    "會抽{C:attention}額外一張{}牌",
-                    "{C:red}效果會在計分時結束！{}"
+                    "{C:attention}打出{}此牌时，多抽 {C:attention}1{} 张卡牌",
+                    "{C:red}得分后失效！{}"
                 }
             },
             rocky = {
-                name = "盤陀",
+                name = "岩石",
                 text = {
-                    "{C:attention}計分{}的牌",
-                    "可永久獲得{C:blue}+3{}籌碼",
-                    "{C:red}效果會在得到那些牌時結束！{}"
+                    "{C:attention}得分{}卡牌永久获得 {C:blue}+3{} 筹码",
+                    "{C:red}持在手中时失效！{}"
                 }
             },
             gust = {
-                name = "陣風",
+                name = "阵风",
                 text = {
-                    "出牌數量 {C:dark_edition}+1{}",
-                    "{C:red}效果會在減益時結束！{}"
+                    "{C:dark_edition}+1{} 单次出牌上限",
+                    "{C:red}被削弱时失效！{}"
                 }
             },
             aether = {
-                name = "究極",
+                name = "终极",
                 text = {
-                    "狀態效果不會結束",
+                    "状态永远不会失效",
                 }
             },
             nullified = {
-                name = "無效",
+                name = "已失效",
                 text = {
-                    "馬上消除",
+                    "立即禁用效果",
                 }
             },
-            unlearned_skill = {
+            skill_req_heading = {
                 text = {
-                    "需要的經驗值：",
-                    "{C:purple}#1#{}經驗值",
+                    "需求：",
                 }
             },
-            unlearned_skill_free = {
+            met_skill_req = {
                 text = {
-                    "需要的經驗值：",
-                    "{C:purple}0{} 經驗值{C:inactive}(#1#){}",
+                    "{C:green}#1#{}",
                 }
             },
-            leg_unlearned_skill = {
+            unmet_skill_req = {
                 text = {
-                    "需要的代幣：",
-                    "{C:dark_edition}#1#{}傳說代幣",
+                    "{C:purple}#1#{}",
+                }
+            },
+            xp_req = {
+                text = {
+                    "{C:purple}#1#{} XP",
+                }
+            },
+            free_xp_req = {
+                text = {
+                    "{C:purple}0{} XP {C:inactive}(#1#){}",
+                }
+            },
+            token_req = {
+                text = {
+                    "{C:dark_edition}#1#{} 传说代币",
+                }
+            },
+            unknown_skill_ability = {
+                text = {
+                    "???"
                 }
             },
             star_tooltip = {
-                name = "恆星加成",
+                name = "恒星奖励",
                 text = {
-                    "倍數{C:mult}+#2#{}及",
-                    "籌碼{C:chips}+#1#{}",
+                    "{C:mult}+#2#{} 倍率 和",
+                    "{C:chips}+#1#{} 筹码",
                 }
             },
             ante_0_sticker = {
-                name = "底注0旗幟",
+                name = "底注 0 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 0{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_1_sticker = {
-                name = "底注1旗幟",
+                name = "底注 1 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 1{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_2_sticker = {
-                name = "底注2旗幟",
+                name = "底注 2 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 2{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_3_sticker = {
-                name = "底注3旗幟",
+                name = "底注 3 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 3{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_4_sticker = {
-                name = "底注4旗幟",
+                name = "底注 4 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 4{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_5_sticker = {
-                name = "底注5旗幟",
+                name = "底注 5 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 5{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_6_sticker = {
-                name = "底注6旗幟",
+                name = "底注 6 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 6{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_7_sticker = {
-                name = "底注7旗幟",
+                name = "底注 7 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 7{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_8_sticker = {
-                name = "底注8旗幟",
+                name = "底注 8 横幅",
                 text = {
-                    "在{C:attention}底注0{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}底注 8{}时习得此技能",
+                    "并获胜"
                 }
             },
             ante_9_sticker = {
-                name = "旗幟",
+                name = "横幅",
                 text = {
-                    "學得這個技能並贏得比賽"
+                    "习得此技能",
+                    "并获胜"
                 }
             },
             ["ante_-1_sticker"] = {
-                name = "負級旗幟",
+                name = "负片横幅",
                 text = {
-                    "在{C:attention}負級底注{}學得這個技能",
-                    "並贏得比賽",
+                    "在{C:attention}负数底注{}时习得此技能",
+                    "并获胜"
                 }
             },
             moon_level_desc = {
                 text = {
-                    "每張在手中的被減益的牌",
-                    "會給予 +#1#倍數",
+                    "手中持有的被削弱卡牌",
+                    "获得 +#1# 倍率",
                 }
             },
             callisto_level_desc = {
                 text = {
-                    "每張朝下抽出的牌",
-                    "在計分時給予 X#1# 倍數",
+                    "牌面朝下的卡牌",
+                    "在计分时提供 X#1# 倍率"
+                }
+            },
+            deimos_level_desc = {
+                text = {
+                    "击败决战盲注时，完整牌组中",
+                    "有 #1# 张牌被增强为",
+                    "#2#效果"
                 }
             },
             rhea_level_desc = {
                 text = {
-                    "不允許的牌型",
-                    "平均升級#1#次",
+                    "不被允许的手牌平均",
+                    "升级 #1# 次",
                 }
             },
             oberon_level_desc = {
                 text = {
-                    "打敗Boss盲注並擁有",
-                    "超過#2#%的所需分數",
-                    "會產生一個#1#",
+                    "击败 Boss 盲注且得分在所需筹码的",
+                    "#2#% 以内时，创建一个 #1#",
                 }
             },
             proteus_level_desc = {
                 text = {
-                    "退回Boss盲注中",
-                    "#1#%的金錢損失"
+                    "退还在 Boss 盲注期间损失的",
+                    "金钱的 #1#%"
                 }
             },
             dysnomia_level_desc = {
                 text = {
-                    "打敗Boss盲注後，產生{C:attention}#1#{}張",
-                    "帶有{C:money}$1{}{C:attention}售價{}的",
-                    "負片衛星，恆星或行星牌"
+                    "击败每个 Boss 盲注后，创建一个",
+                    "可选的 {C:attention}#1#{} 张负片月球、恒星或星球牌",
+                    "且其{C:attention}售价{}为 {C:money}$1{}"
                 }
             },
             common_metal = {
-                name = "常見",
+                name = "普通",
                 text = {
-                    "帶有常見加強效果的卡牌",
+                    "带有普通金属增强效果的卡牌"
                 }
             },
             precious_metal = {
-                name = "貴重",
+                name = "珍贵",
                 text = {
-                    "帶有貴重加強效果的卡牌"
+                    "带有珍贵金属增强效果的卡牌"
                 }
             },
             modern_metal = {
-                name = "摩登",
+                name = "现代",
                 text = {
-                    "帶有摩登加強效果的卡牌"
+                    "带有现代金属增强效果的卡牌",
                 }
+            },
+            rooster_alt = {
+                name = "公鸡",
+                text = {
+                    "创建一张本局中使用过的",
+                    "{C:loteria}洛特里亚{} 或 {C:Zodiac}黄道带{} 牌的副本",
+                    "{s:0.8,C:inactive}公鸡除外"
+                },
+
             }
         },
         Back = {
             b_grm_talent = {
-                name = "天賦牌組",
+                name = "天才牌组",
                 text = {
-                    "學習{C:attention}第一個{}技能不需要經驗值"
+                    "习得的{C:attention}第一个{}技能",
+                    "消耗 {C:attention}0{} XP",
                 }
             },
         },
         Stake = {
             stake_grm_turbo = {
-                name = "渦輪賭注",
+                name = "涡轮筹码",
                 text = {
-                    "打敗{C:attention}Boss盲注{}後",
-                    "獲得{C:purple}300{}經驗值"
+                    "击败每个{C:attention}Boss盲注{}后，",
+                    "赚取 {C:purple}+300{} XP"
                 },
             },
             stake_grm_bismuth = {
-                name = "鉍色賭注",
+                name = "铋筹码",
                 text = {
-                    
-                    "商店不會在打敗{C:attention}大盲注{}後出現",
+                    "每个{C:attention}大盲注{}后，",
+                    "不再出现商店"
                 },
             }
         },
         Joker = {
             j_grm_jack_of_all_trades = {
-                name = "萬事傑克",
+                name = "杂事通",
                 text = {
-                    "{C:attention}賣出{}這張牌來",
-                    "{C:attention}學習{}一個未學習的{C:attention}職業{}"
+                    "{C:attention}售出{}此卡以",
+                    "{C:attention}习得{}一个尚未习得的",
+                    "{C:attention}职业技能{}"
                 }
             },
             j_grm_cohesion = {
                 name = "凝聚力",
                 text = {
-                    "如果打出的牌包含{C:attention}#2#{}張的",
-                    "相同{C:green}狀態{}的計分牌",
-                    "給予倍數{C:red}+#1#{}"
+                    "如果手牌包含 {C:attention}#2#{} 张带有",
+                    "相同{C:green}状态{}的计分牌，",
+                    "获得 {C:red}+#1#{} 倍率"
                 }
             },
             j_grm_absolute_zero = {
-                name = "絕對零度",
+                name = "绝对零度",
                 text = {
-                    "{C:attention}零下牌{}會抽",
-                    "額外一張牌",
+                    "{C:attention}低于零度{}状态的卡牌",
+                    "会额外多抽一张牌",
                 }
             },
             j_grm_precious_joker = {
-                name = "貴重小丑",
+                name = "珍贵小丑",
                 text = {
-                    "每張在 {C:attention}牌組{}裏的",
-                    "{C:attention}貴重牌{}會在{C:attention}回合結束{}時",
-                    "給予{C:money}$#1#{}",
-                    "{C:inactive}（目前為{C:money}$#2#{C:inactive}）",
+                    "{C:attention}回合结束时{}，完整牌组中每有一张",
+                    "{C:attention}珍贵卡牌{}，就赚取 {C:money}$#1#{}",
+                    "{C:inactive}（当前 {C:money}$#2#{C:inactive}）",
                 }
             },
             j_grm_hyperspace = {
-                name = "超空間",
+                name = "超空间",
                 text = {
-                    "{X:red,C:white} X#1# {}倍數"
+                    "{X:red,C:white} X#1# {} 倍率"
                 }
             },
             j_grm_tourist = {
-                name = "遊客",
+                name = "游客",
                 text = {
-                    "這張牌會依",
-                    "每個已探索過的{C:attention}不同區域",
-                    "而獲得{X:mult,C:white} X#1# {}倍數",
-                    "{C:inactive}（目前為{X:mult,C:white} X#2# {C:inactive}倍數）",
+                    "每访问一个{C:attention}独特区域{}，",
+                    "此小丑便获得 {X:mult,C:white} X#1# {} 倍率",
+                    "{C:inactive}（当前 {X:mult,C:white} X#2# {C:inactive} 倍率）",
                 }
             },
             j_grm_brochure = {
-                name = "小冊子",
+                name = "手册",
                 text = {
-                    "{C:attention}區域禮包{}有",
-                    "額外{C:attention}+#1#{} 個選項"
+                    "{C:attention}区域包{}中增加",
+                    "{C:attention}+#1#{} 个选项",
                 }
             },
             j_grm_energy_bar = {
                 name = "能量棒",
                 text = {
-                    "{C:attention}回合{}結束後，獲得{C:purple}+#1#{}經驗值",
-                    "每次出牌時這張牌會損失{C:purple}#2#{}經驗值",
+                    "{C:attention}回合结束时{}获得 {C:purple}+#1#{} XP，",
+                    "每打出一手牌损失 {C:purple}#2#{} XP"
                 }
             },
             j_grm_showdown = {
-                name = "攤牌",
+                name = "决战",
                 text = {
-                    "{C:green}包裝牌{}會計入",
-                    "打出的{C:attention}牌型{}中"
+                    "{C:green}打包（Packed）{}的卡牌也计入",
+                    "所打出的{C:attention}牌组牌型{}中"
                 }
             },
             j_grm_jolly_jimball = {
-                name = "Jolly Jimball",
+                name = "欢乐吉姆球",
                 text = {
-                    "This Joker gains {X:mult,C:white} X#1# {} Mult",
-                    "per {C:attention}consecutive{} hand",
-                    "containing a {C:attention}#2#{}",
-                    "{C:inactive}(Currently {X:mult,C:white} X#3# {C:inactive} Mult)",
+                    "每连续打出一手包含{C:attention}#2#{}的牌，",
+                    "此小丑便获得 {X:mult,C:white} X#1# {} 倍率",
+                    "{C:inactive}（当前 {X:mult,C:white} X#3# {C:inactive} 倍率）",
                 },
             },
             j_grm_cosmic_credit = {
-                name = "Cosmic Credit",
+                name = "宇宙信用",
                 text = {
-                    "{X:purple,C:white} X#1# {} to all XP",
-                    "sources, {C:red}-#2#{} XP at {C:attention}end{}",
-                    "{C:attention}of round{}",
+                    "所有 XP 来源获得 {X:purple,C:white} X#1# {} 倍率，",
+                    "{C:attention}回合结束时{}扣除 {C:red}-#2#{} XP",
                 },
             },
             j_grm_apprentice = {
-                name = "Apprentice",
+                name = "学徒",
                 text = {
-                    "{C:purple}+#1#{} XP at {C:attention}end{}",
-                    "{C:attention}of round{}",
+                    "{C:attention}回合结束时{}获得 {C:purple}+#1#{} XP",
                 },
             },
         },
         Voucher = {
             v_grm_progress = {
-                name = "進步者",
+                name = "进阶",
                 text = {
-                    "每擁有{C:purple}#2#{}點經驗值",
-                    "會在回合結束時給予{C:purple}+#1#{}點經驗值",
-                    "{C:inactive}（最多{C:purple}#3#{C:inactive}經驗值）"
+                    "回合结束时，每持有 {C:purple}#2#{} XP，",
+                    "便获得 {C:purple}+#1#{} XP 利息",
+                    "{C:inactive}（最高 {C:purple}#3#{C:inactive} XP）"
                 }
             },
             v_grm_complete = {
-                name = "成功者",
+                name = "完成",
                 text = {
-                    "提升每個回合得到的",
-                    "{C:purple}經驗值{}利息的上限到{C:purple}#1#{}"
+                    "将每回合可赚取的 {C:purple}XP{} 利息",
+                    "上限提升至 {C:purple}#1#{}"
                 }
             },
         },
         Tarot = {
             c_grm_craft = {
-                name = "工藝",
+                name = "工艺",
                 text = {
-                    "加強{C:attention}#1#{}張",
-                    "所選的牌至{C:attention}#2#"
+                    "将 {C:attention}#1# 张选定牌",
+                    "增强为 {C:attention}#2#（金属卡）"
                 }
             }
         },
         Spectral = {
             c_grm_philosophy = {
-                name = "哲學",
+                name = "哲学",
                 text = {
-                    "{C:attention}新增{}{C:green}狀態效果{}到",
-                    "所有{C:attention}手牌中的卡牌{}",
+                    "为所有{C:attention}手牌{}添加",
+                    "一个随机{C:green}状态（Status）",
                 }
             },
             c_grm_moon_x = {
-                name = "衛星X",
+                name = "月球 X",
                 text = {
-                    "提升{C:attention}1{}級到",
-                    "每個{C:legendary,E:1}衛星等級",
+                    "将所有{C:legendary,E:1}月球等级{}",
+                    "提升 {C:attention}1{} 级"
                 }
             },
             c_grm_iron_core = {
-                name = "冷鐵核心",
+                name = "铁芯",
                 text = {
-                    "{C:legendary,E:1}提升{}{C:attention}3{}級到",
-                    "{C:attention}隨機的花色{}",
+                    "{C:legendary,E:1}升级{}一个",
+                    "{C:attention}随机花色{} {C:attention}3{} 级"
                 }
             },
         },
         Lunar = {
             c_grm_moon = {
-                name = "月球",
+                name = "月亮",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "{C:attention}被減益{}的卡牌在{C:attention}手牌中{}時",
-                    "會獲得{C:red}+#2#{}倍數"
+                    "等级 {C:attention}#1#{}",
+                    "持在手中的{C:attention}被削弱{}卡牌",
+                    "提供 {C:red}+#2#{} 倍率"
+                }
+            },
+            c_grm_deimos = {
+                name = "戴摩斯",
+                text = {
+                    "等级 {C:attention}#1#{}",
+                    "击败{C:blue}决战盲注{}时，将完整牌组中",
+                    "的 {C:attention}#2#{} 张牌增强为 {C:attention}#3#s"
                 }
             },
             c_grm_callisto = {
-                name = "木衛四",
+                name = "卡利斯托",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "{C:attention}朝下抽出{}的卡牌在計分時",
-                    "給予{X:red,C:white} X#2# {}倍數",
+                    "等级 {C:attention}#1#{}",
+                    "{C:attention}牌面朝下{}的卡牌在{C:attention}计分{}时",
+                    "提供 {X:red,C:white} X#2# {} 倍率"
                 }
             },
             c_grm_rhea = {
-                name = "土衛五",
+                name = "瑞亚",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "{C:attention}不允許{}的牌型",
-                    "有{C:green}#2#/#3#{}的機率",
-                    "提升{C:attention}#4#{}級",
-                    "否則提升{C:attention}#5#{} 級"
+                    "等级 {C:attention}#1#{}",
+                    "{C:attention}不被允许的{}牌组牌型有 ",
+                    "{C:green}#2#/#3#{} 几率升级 {C:attention}#4#{} 级，",
+                    "否则升级 {C:attention}#5#{} 级"
                 }
             },
             c_grm_oberon = {
-                name = "天衛四",
+                name = "奥伯伦",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "如果得到的分數為",
-                    "{C:attention}要求分數{}的{C:attention}#3#%{}",
-                    "打敗{C:attention}Boss盲注{}後，產生一個{C:attention}#2#{}",
+                    "等级 {C:attention}#1#{}",
+                    "击败{C:attention}Boss盲注{}且得分在所需筹码的",
+                    "{C:attention}#3#%{} 以内时，创建一个 {C:attention}#2#{}"
                 }
             },
             c_grm_proteus = {
-                name = "海衛八",
+                name = "普罗特斯",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "退還{C:money}#2#%{}在",
-                    "{C:attention}Boss盲注{}中損失的{C:money}金錢",
-                    "{C:inactive}（上捨入）{}",
+                    "等级 {C:attention}#1#{}",
+                    "退还在{C:attention}Boss盲注{}期间损失的",
+                    "{C:money}#2#%{} 金钱",
+                    "{C:inactive}（向上取整）{}",
                 }
             },
             c_grm_nix = {
-                name = "冥衛二",
+                name = "尼克斯",
                 text = {
-                    "{C:red}消除{}一個隨機的",
+                    "{C:red}废除（Nullify）{}一个随机",
                     "{C:attention}Boss盲注{}",
                 }
             },
             c_grm_dysnomia = {
-                name = "鬩衛一",
+                name = "迪丝诺美亚",
                 text = {
-                    "等級{C:attention}#1#{}",
-                    "打敗每個{C:attention}Boss盲注{}後",
-                    "產生{C:attention}#2#{}張只有{C:money}$1{}{C:attention}出售價值{}的",
-                    "{C:dark_edition}負片{}{C:blue}衛星{}，{C:money}恆星{}或{C:planet}行星{}牌",
+                    "等级 {C:attention}#1#{}",
+                    "击败每个{C:attention}Boss盲注{}后，创建一个 {C:attention}#2#{} 张",
+                    "{C:dark_edition}负片{}版本 {C:blue}月球{}、{C:money}恒星{} 或 {C:planet}星球{}牌，",
+                    "且其{C:attention}售价{}为 {C:money}$1{}"
                 }
             },
         },
         Stellar = {
             c_grm_sun = {
-                name = "太陽",
+                name = "太阳",
                 text = {
-                    "{C:attention}升級{}{C:hearts}#1#{}{C:attention}花色",
-                    "{C:mult}+#3#{}倍數及{C:chips}+#4#{}籌碼",
-                    "{C:inactive}（倍數{C:red}+#5#{}，籌碼{C:blue}+#6#{C:inactive}）",
-                    "{C:inactive}（等級{C:attention}#2#{C:inactive}）",
+                    "{C:attention}升级{} {C:hearts}红桃{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
                 }
             },
             c_grm_sirius = {
                 name = "天狼星",
                 text = {
-                    "{C:attention}升級{}{C:diamonds}#1#{}{C:attention}花色",
-                    "{C:mult}+#3#{}倍數及{C:chips}+#4#{}籌碼",
-                    "{C:inactive}（倍數{C:red}+#5#{}，籌碼{C:blue}+#6#{C:inactive}）",
-                    "{C:inactive}（等級{C:attention}#2#{C:inactive}）",
+                    "{C:attention}升级{} {C:diamonds}方块{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
                 }
             },
             c_grm_canopus = {
                 name = "老人星",
                 text = {
-                    "{C:attention}升級{}{C:spades}#1#{}{C:attention}花色",
-                    "{C:mult}+#3#{}倍數及{C:chips}+#4#{}籌碼",
-                    "{C:inactive}（倍數{C:red}+#5#{}，籌碼{C:blue}+#6#{C:inactive}）",
-                    "{C:inactive}（等級{C:attention}#2#{C:inactive}）",
+                    "{C:attention}升级{} {C:spades}黑桃{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
                 }
             },
             c_grm_alpha = {
-                name = "南門二",
+                name = "半人马座α",
                 text = {
-                    "{C:attention}升級{}{C:spades}#1#{}{C:attention}花色",
-                    "{C:mult}+#3#{}倍數及{C:chips}+#4#{}籌碼",
-                    "{C:inactive}（倍數{C:red}+#5#{}，籌碼{C:blue}+#6#{C:inactive}）",
-                    "{C:inactive}（等級{C:attention}#2#{C:inactive}）",
+                    "{C:attention}升级{} {C:spades}黑桃{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
+                }
+            },
+            c_grm_arcturus = {
+                name = "大角星",
+                text = {
+                    "{C:attention}升级{} {C:bunc_fleurons}梅花{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
+                }
+            },
+            c_grm_vega = {
+                name = "织女星",
+                text = {
+                    "{C:attention}升级{} {C:bunc_halberds}戟牌{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
                 }
             },
             c_grm_lp_944_20 = {
                 name = "LP 944-20",
                 text = {
-                    "{C:attention}不升級{}{C:inactive}任何花色？{}",
-                    "{C:mult}+#3#{}倍數及{C:chips}+#4#{}籌碼",
-                    "{C:inactive}（倍數{C:red}+#5#{}，籌碼{C:blue}+#6#{C:inactive}）",
-                    "{C:inactive}（等級{C:attention}#2#{C:inactive}）",
+                    "{C:attention}升级{} {C:inactive}空无？{}，使其提供",
+                    "{C:mult}+#3#{} 倍率 和 {C:chips}+#4#{} 筹码",
+                    "{C:inactive}（当前每张牌：{C:red}+#5#{}, {C:blue}+#6#{C:inactive}）",
+                    "{C:inactive}（等级 {C:attention}#2#{C:inactive}）",
                 }
             },
         },
         Elemental = {
             c_grm_m_lead = {
-                name = "鉛",
+                name = "铅",
                 text = {
-                    "加強{C:attention}#1#{}張",
-                    "所選的牌至{C:attention}#2#"
+                    "将 {C:attention}#1#{} 张选定牌",
+                    "增强为 {C:attention}铅卡（Lead Card）"
                 }
             },
             c_grm_m_radium = {
-                name = "鐳",
+                name = "镭",
                 text = {
-                    "加強所選的{C:attention}常見牌",
-                    "至{C:attention}#1#"
+                    "将一张选定的 {C:attention}普通卡牌",
+                    "增强为 {C:attention}镭卡（Radium Card）"
                 }
             },
             c_grm_m_gold = {
                 name = "金",
                 text = {
-                    "加強所選的{C:attention}常見牌",
-                    "至{C:attention}#1#"
+                    "将一张选定的 {C:attention}普通卡牌",
+                    "增强为 {C:attention}金卡（Gold Card）"
                 }
             },
             c_grm_m_platinum = {
-                name = "鉑",
+                name = "铂",
                 text = {
-                    "加強所選的{C:attention}常見牌",
-                    "至{C:attention}#1#"
+                    "将一张选定的 {C:attention}普通卡牌",
+                    "增强为 {C:attention}铂卡（Platinum Card）"
                 }
             },
             c_grm_m_fire = {
                 name = "火",
                 text = {
-                    "新增{C:attention}燧石{}{C:green}狀態",
-                    "到{C:attention}所選的卡牌上"
+                    "为一张{C:attention}选定卡牌{}添加",
+                    "{C:attention}打火石（Flint）{C:green}状态"
                 }
             },
             c_grm_m_water = {
                 name = "水",
                 text = {
-                    "新增{C:attention}零下{}{C:green}狀態",
-                    "到{C:attention}所選的卡牌上"
+                    "为一张{C:attention}选定卡牌{}添加",
+                    "{C:attention}低于零度（Subzero）{C:green}状态"
                 }
             },
             c_grm_m_rock = {
-                name = "石",
+                name = "岩",
                 text = {
-                    "新增{C:attention}盤陀{}{C:green}狀態",
-                    "到{C:attention}所選的卡牌上"
+                    "为一张{C:attention}选定卡牌{}添加",
+                    "{C:attention}岩石（Rocky）{C:green}状态"
                 }
             },
             c_grm_m_air = {
-                name = "氣",
+                name = "气",
                 text = {
-                    "新增{C:attention}陣風{}{C:green}狀態",
-                    "到{C:attention}所選的卡牌上"
+                    "为一张{C:attention}选定卡牌{}添加",
+                    "{C:attention}阵风（Gust）{C:green}状态"
                 }
             },
             c_grm_m_silver = {
-                name = "銀",
+                name = "银",
                 text = {
-                    "加強所選的{C:attention}常見牌",
-                    "至{C:attention}#1#"
+                    "将一张选定的 {C:attention}普通卡牌",
+                    "增强为 {C:attention}银卡（Silver Card）"
                 }
             },
             c_grm_m_iron = {
-                name = "鐵",
+                name = "铁",
                 text = {
-                    "加強{C:attention}#1#{}張",
-                    "所選的牌至{C:attention}#2#"
+                    "将 {C:attention}#1#{} 张选定牌",
+                    "增强为 {C:attention}铁卡（Iron Card）"
                 }
             },
         },
         Area = {
             c_grm_classic = {
-                name = "經典",
+                name = "经典",
                 text = {
-                    "返回至",
-                    "普通的牌局",
+                    "返回",
+                    "普通游戏模式",
                 }
             },
             c_grm_graveyard = {
-                name = "墓地",
+                name = "坟场",
                 text = {
-                    "{C:spectral}幻靈牌{}有機率",
-                    "出現在商店中",
+                    "{C:spectral}光谱牌{} 可能会出现在商店中"
                 }
             },
             c_grm_plains = {
                 name = "平原",
                 text = {
-                    "{C:attention}回合{}結束後",
-                    "每個剩餘的{C:blue}出牌次數{}會損失{C:money}$#1#{}",
-                    "每個剩餘的{C:red}棄牌次數{}會給予{C:money}+$#2#{}"
+                    "回合结束时，每剩余一次{C:blue}出牌次数{}损失 {C:money}-$#1#{}，",
+                    "每剩余一次{C:red}弃牌次数{}赚取 {C:money}+$#2#{}"
                 }
             },
             c_grm_market = {
-                name = "市集",
+                name = "市场",
                 text = {
-                    "{C:attention}+#1#{}商店欄位",
-                    "所有卡牌及擴充包",
-                    "在商店的價格提升{C:attention}#2#%{}"
+                    "{C:attention}+#1#{} 商店物品槽位",
+                    "商店中所有卡牌和补给包价格",
+                    "上调 {C:attention}#2#%{}"
                 }
             },
             c_grm_landfill = {
-                name = "堆填區",
+                name = "垃圾填埋场",
                 text = {
-                    "每個{C:attention}回合{}的棄牌次數{C:red}+#1#{}",
-                    "每個{C:attention}回合{}的出牌次數{C:blue}-#2#{}"
+                    "每轮 {C:red}+#1#{} 弃牌次数",
+                    "每轮 {C:blue}-#2#{} 出牌次数",
                 }
             },
             c_grm_metro = {
-                name = "城鎮",
+                name = "地铁",
                 text = {
-                    "獲得的經驗值{C:purple}+#1#%{}",
-                    "不能進入{C:attention}商店{}"
+                    "额外赚取 {C:purple}#1#%{} XP",
+                    "没有 {C:attention}商店{}"
                 }
             },
             c_grm_ghost_town = {
-                name = "鬼鎮",
+                name = "鬼镇",
                 text = {
-                    "在兌現時",
-                    "有{C:green}#1#/#2#{}的機率獲得{C:money}$#3#{}",
-                    "不再獲得經驗值"
+                    "结算奖金时有 {C:green}#1#/#2#{} 几率",
+                    "额外赚取 {C:money}$#3#{}",
+                    "不可赚取 XP",
                 }
             },
             c_grm_dungeon = {
-                name = "地牢",
+                name = "地下城",
                 text = {
-                    "每個{C:attention}Boss盲注{}",
-                    "都是{C:attention}終極Boss盲注{}"
+                    "每个 {C:attention}Boss盲注{} 都是",
+                    "一个 {C:attention}决战盲注（Showdown Blind）{}",
                 }
             },
             c_grm_tunnel = {
                 name = "隧道",
                 text = {
-                    "在{C:attention}第一次出牌{}中",
-                    "如果是{C:attention}最常出的牌型{}",
-                    "{C:attention}升級{}那個牌型。否則{C:attention}減半{}那個牌型的等級"
+                    "在单轮的{C:attention}第一手牌{}中，如果打出了你",
+                    "{C:attention}最常打出的手牌{}，则将其{C:attention}升级{}",
+                    "否则其等级{C:attention}减半{}"
                 }
             },
             c_grm_toxic_waste = {
-                name = "有毒廢棄物",
+                name = "有毒废物",
                 text = {
-                    "每個回合的棄牌次數{C:red}+#1#{}",
-                    "{C:attention}出牌{}時，棄牌次數{C:red}-#2#{}"
+                    "每轮 {C:red}+#1#{} 弃牌次数",
+                    "每次打出牌后，{C:red}-#2#{} 弃牌次数",
                 }
             },
             c_grm_midnight = {
                 name = "午夜",
                 text = {
-                    "卡牌{C:attention}有機率朝下抽出",
-                    "{C:attention}朝下抽出{}的卡牌在",
-                    "{C:attention}最後一次出牌{}給予{X:red,C:white} X#1# {}倍數"
+                    "抽牌时有 {C:green}30%{} 几率是{C:attention}牌面朝下{}的，",
+                    "{C:attention}牌面朝下{}的牌在{C:attention}最后一手牌{}中",
+                    "获得 {X:red,C:white} X#1# {} 倍率奖励",
                 }
             },
             c_grm_aether = {
-                name = "天界",
+                name = "以太",
                 text = {
-                    "所有卡牌及擴充包",
-                    "在商店中的價格降低{C:attention}#1#%{}",
-                    "獲得的經驗值{C:purple}+#2#%{}"
+                    "商店中所有卡牌和补给包",
+                    "打 {C:attention}#1# 折{}，额外赚取 {C:purple}#2#%{} XP"
                 }
             },
         },
         Attack = {
             c_grm_debuff = {
-                name = "減益",
+                name = "削弱者",
                 text = {
-                    "所有在手中的手牌",
-                    "會被{C:red}減益{}"
+                    "{C:red}削弱{}手中的卡牌"
                 }
             },
             c_grm_hide = {
-                name = "隱藏",
+                name = "隐藏",
                 text = {
                     "抽出的卡牌",
-                    "會{C:attention}朝下抽出{}"
+                    "{C:attention}牌面朝下{}"
                 }
             },
             c_grm_up = {
                 name = "上升",
                 text = {
-                    "提升盲注",
-                    "{C:attention}所需的分數{}"
+                    "提高",
+                    "{C:attention}盲注规模{}"
                 }
             },
             c_grm_ring = {
-                name = "強制",
+                name = "鸣响",
                 text = {
-                    "{C:attention}卡牌{}",
-                    "會被強制選定"
+                    "强制选中{C:attention}卡牌{}"
                 }
             },
             c_grm_snatch = {
-                name = "Snatch",
+                name = "掠夺",
                 text = {
-                    "{C:red}棄掉{}所有手中的牌",
+                    "{C:red}弃掉{}手中的卡牌"
                 }
             },
             c_grm_collapse = {
-                name = "崩潰",
+                name = "崩溃",
                 text = {
-                    "{C:red}降級{}一個",
-                    "{C:attention}牌型{}"
+                    "{C:red}降低{}一个",
+                    "{C:attention}牌组牌型{}等级"
                 }
             },
         },
         Loot = {
             c_grm_hand_refresh = {
-                name = "出牌重設",
+                name = "出牌刷新",
                 text = {
-                    "重設{C:blue}出牌次數{}",
+                    "刷新 {C:blue}出牌次数{}",
                 }
             },
             c_grm_discard_refresh = {
-                name = "棄牌重設",
+                name = "弃牌刷新",
                 text = {
-                    "重設{C:red}棄牌次數{}",
+                    "刷新 {C:red}弃牌次数{}",
                 }
             },
             c_grm_dollar_gain = {
-                name = "賺取金錢",
+                name = "美金获取",
                 text = {
-                    "獲得{C:money}$#1#{}",
+                    "{C:money}+$#1#{}",
                 }
             },
             c_grm_joker_create = {
-                name = "製造小丑牌",
+                name = "小丑制造机",
                 text = {
-                    "產生一張{C:green}罕見的{}{C:attention}小丑牌",
-                    "{C:inactive}（必須有空位）"
+                    "创建一个",
+                    "{C:green}不寻常{} {C:attention}小丑牌",
+                    "{C:inactive}（需有空位）"
                 }
             },
         },
         Blind = {
             bl_grm_monday = {
-                name = '月曜日',
-                text = { '每次出牌後', '抽出的牌會被減益' }
+                name = '周一',
+                text = { '每打出一手牌后，', '抽到的牌会被削弱' }
             },
             bl_grm_ganymede = {
-                name = '木衛三',
-                text = { '卡牌只會在每次', '棄牌後朝上抽出' }
+                name = '盖尼米得',
+                text = { '每次弃牌后，', '抽到的卡牌必定牌面朝上' }
             },
             bl_grm_titan = {
-                name = '土衛六',
-                text = { '只有最後一次出牌才計分' }
+                name = '泰坦',
+                text = { '仅允许打出', '最后一手牌' }
             },
             bl_grm_triton = {
-                name = '海衛一',
-                text = { '棄牌會把金錢', "設定至$-100" }
+                name = '特里同',
+                text = { '执行弃牌会将', "金钱设为 $-100" }
             },
             bl_grm_coral_well = {
-                name = '珊瑚紅水井',
-                text = { '所有棄牌次數', '會轉換成出牌次數' }
+                name = '珊瑚井',
+                text = { '将所有弃牌次数', '转为出牌次数' }
+            },
+            bl_grm_forgotten = {
+                name = '被遗忘者',
+                text = { '本轮中有 #1#/2 的技能', '会被削弱' }
             },
         },
         Enhanced = {
             m_grm_radium = {
-                name = '鐳卡牌',
+                name = '镭卡',
                 text = {
-                    "回合結束時",
-                    "如果這張牌在手牌中",
-                    "此牌會有{C:green}#2#/#3#{}的機率自我摧毀",
-                    "否則給予{C:purple}#1#{}經驗值"
+                    "回合结束时持在手中，有 {C:green}#2#/#3#{} ",
+                    "几率摧毁此牌，否则获得 {C:purple}+#1#{} XP"
                 }
             },
             m_grm_lead = {
-                name = '鉛卡牌',
+                name = '铅卡',
                 text = {
-                    "這張牌經常會洗到",
-                    "牌組較低的位置",
+                    "在洗牌时往往会",
+                    "排在牌组底部",
                 }
             },
             m_grm_platinum = {
-                name = '鉑卡牌',
+                name = '铂卡',
                 text = {
-                    "這張牌在手中時",
-                    "籌碼{C:blue}+#1#{}",
+                    "持在手中时提供",
+                    "{C:blue}+#1#{} 筹码"
                 }
             },
             m_grm_iron = {
-                name = '鐵卡牌',
+                name = '铁卡',
                 text = {
-                    "倍數{X:red,C:white} X#1# {}",
+                    "{X:red,C:white} X#1# {} 倍率",
                 }
             },
             m_grm_silver = {
-                name = '銀卡牌',
+                name = '银卡',
                 text = {
                     "{C:money}+$#1#{}",
                 }
             },
             m_grm_rpg = {
-                name = 'RPG卡牌',
+                name = 'RPG卡',
                 text = {
-                    "經驗值{C:purple}+#1#{}",
+                    "{C:purple}+#1#{} XP",
                 }
             },
         },
         Tag = {
             tag_grm_philosopher = {
-                name = "哲學者標籤",
+                name = "哲学家标签",
                 text = {
-                    "獲得一個免費的",
-                    "{C:attention}特大古老禮包"
+                    "获得一个免费的",
+                    "{C:attention}超级远古包"
                 }
             },
             tag_grm_grid = {
-                name = "格框標籤",
+                name = "网格标签",
                 text = {
-                    "獲得一個免費的",
-                    "{C:red}區域禮包"
+                    "获得一个免费的",
+                    "{C:red}区域包"
                 }
             },
             tag_grm_xp = {
-                name = "經驗值標籤",
+                name = "XP 标签",
                 text = {
-                    "經驗值{C:purple}+#1#{}"
+                    "{C:purple}+#1#{} XP"
                 }
             },
         }
     },
     misc = {
         dictionary = {
-            k_area = "區域",
-            b_area_cards = "區域牌",
-            k_lunar = "衛星",
-            b_lunar_cards = "衛星牌",
-            k_stellar = "恆星",
-            b_stellar_cards = "恆星牌",
-            k_elemental = "元素",
-            b_elemental_cards = "元素牌",
-            k_attack = "攻擊",
-            b_attack_cards = "攻擊牌",
-            k_loot = "戰利",
-            b_loot_cards = "戰利牌",
-            b_learn = "學習",
-            k_skill = "天赋",
-            k_class = "職業",
-            k_inactive = "未啟用",
-            nullified = "無效化！",
-            k_ex_expired = "失效！",
-            k_ex_decay = "衰變！",
-            lunar_stats = "衛星統計",
-            b_skill_tree_1 = "天赋",
-            b_other = "Other",
+            k_area = "区域",
+            b_area_cards = "区域卡",
+            k_lunar = "月球卡",
+            b_lunar_cards = "月球卡",
+            k_stellar = "恒星卡",
+            b_stellar_cards = "恒星卡",
+            k_elemental = "元素卡",
+            b_elemental_cards = "元素卡",
+            k_attack = "攻击",
+            b_attack_cards = "攻击卡",
+            k_loot = "战利品",
+            b_loot_cards = "战利品卡",
+            b_learn = "习得",
+            k_skill = "技能",
+            k_class = "职业",
+            k_inactive = "未激活",
+            nullified = "已失效！",
+            k_ex_expired = "已过期！",
+            k_ex_decay = "已衰减！",
+            lunar_stats = "月球统计",
+            b_skill_tree_1 = "技能",
             b_skill_tree_2 = "树",
-            b_skills = "天赋",
+            b_other = "其他",
+            b_skills = "技能",
             b_draw = "抽牌",
-            b_pack = "卡包",
-            k_new_area = "新區域！",
-            k_area_pack = "區域禮包",
-            k_loot_pack = "戰利禮包",
-            k_ancient_pack = "古老禮包",
-            boss_blind = "Boss Blind",
-            showdown_blind = "Showdown Blind",
-            k_skills_cap = "SKILLS",
-            ph_ease_3 = "Saved by Ease III",
+            b_pack = "打包",
+            k_new_area = "新区域！",
+            k_area_pack = "区域包",
+            k_loot_pack = "战利品包",
+            k_ancient_pack = "远古包",
+            unknown_skill_name = "???????",
+            b_hide_unavailiable_skills = "隐藏不可选技能",
+            region_classic = "经典",
+            region_metro = "大都会",
+            region_spooky = "阴森",
+            region_sewer = "下水道",
+            region_aether = "以太",
+            boss_blind = "Boss 盲注",
+            showdown_blind = "决战盲注",
+            k_skills_cap = "技能",
+            ph_ease_3 = "被 缓和 III 救了一命",
         },
         v_text = {
-            ch_c_no_hand_discard_reset = {"{C:blue}出牌次數{}及{C:red}棄牌次數{}不會自動重設"},
-            ch_c_blind_attack = {"盲注有可能會使用{C:attention}攻擊{}牌"},
-            ch_c_astro_blinds = {"只有{C:attention}太空人{}的盲注會出現"},
-            ch_c_force_astronaut = {"一定要使用{C:attention}太空人{}職業"},
-            ch_c_loot_pack = {"每個商店會有免費的{C:attention}戰利禮包{}"},
-            ch_m_force_stake_xp = {"每個底注經驗值{C:purple}+#1#{}"},
-            ch_c_all_rental = {"All Jokers are Rental"},
-            ch_c_rental_full_price = {"Rental Jokers cost {C:attention}Full Price{}"}
-
+            ch_c_no_hand_discard_reset = {"{C:blue}出牌次数{}和{C:red}弃牌次数{}不会自动重置。"},
+            ch_c_blind_attack = {"盲注可能会使用{C:attention}攻击{}牌"},
+            ch_c_astro_blinds = {"仅{C:attention}宇航员{}盲注会出现。"},
+            ch_c_force_astronaut = {"你必须作为{C:attention}宇航员{}职业进行游戏。"},
+            ch_c_loot_pack = {"每间商店都提供一个免费的{C:attention}战利品包{}。"},
+            ch_m_force_stake_xp = {"每底注 {C:purple}#1#{} XP"},
+            ch_c_all_rental = {"所有小丑牌都是租用的"},
+            ch_c_rental_full_price = {"租用小丑牌的价格为{C:attention}全价{}"}
         },
         v_dictionary = {
-            skill_xp = "經驗值：#1#",
-            legendary_tokens = "傳奇代幣：#1#",
-            gain_xp = "經驗值+#1#",
-            minus_xp = "經驗值-#1#",
-            area_indicator = "區域：#1#",
-            xp_interest = "每擁有#2#點經驗值給予#1#經驗值的利息(#3# max)"
+            skill_xp = "XP: #1#",
+            legendary_tokens = "传说代币: #1#",
+            gain_xp = "+#1# XP",
+            minus_xp = "-#1# XP",
+            area_indicator = "区域: #1#",
+            xp_interest = "每 #2# XP 获得 #1# 利息 (最高 #3#)"
         },
         challenge_names = {
-            c_astro_dungeon = "太空地牢",
-            c_bankruptcy = "Bankruptcy",
-            c_overflow = "Overflow",
+            c_astro_dungeon = "天体地下城",
+            c_bankruptcy = "破产",
+            c_overflow = "溢出",
         },
         labels = {
             skill = "技能"

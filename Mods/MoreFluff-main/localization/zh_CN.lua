@@ -1162,7 +1162,7 @@ return {
           "{C:inactive}({}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})"
         },
       },
-      c_mf_green_shape = {
+      c_mf_green = {
         name = "绿色 (形状)",
         text = {
           "每持有{C:attention}#4#{}回合创建一张",
@@ -1178,11 +1178,11 @@ return {
           "{C:inactive}(当前{C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})"
         },
       },
-      c_mf_pentagon = {
-        name = "五边形",
+      c_mf_lilac = {
+        name = "浅紫色 (形状)",
         text = {
           "每持有{C:attention}#4#{}回合创建一张",
-          "随机的{C:dark_edition}负片{}{C:red}诈骗牌{}",
+          "随机的{C:dark_edition}负片{}{C:tarot}塔罗牌{}",
           "{C:inactive}(当前{C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})"
         },
       },
@@ -1194,7 +1194,7 @@ return {
           "{C:inactive}(当前{C:attention}#1#{C:inactive}, {}[{C:attention}#2#{C:inactive}#3#{}]{C:inactive})"
         },
       },
-      c_mf_peach_shape = {
+      c_mf_peach = {
         name = "桃色 (形状)",
         text = {
           "每持有{C:attention}#4#{}回合创建一张",
