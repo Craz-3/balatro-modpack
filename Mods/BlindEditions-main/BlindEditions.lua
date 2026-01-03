@@ -10,12 +10,11 @@
 ------------MOD CODE -------------------------
 
 function SMODS.current_mod.process_loc_text()
-    G.localization.descriptions.BlindEdition = {}
 end
 
 SMODS.current_mod.custom_collection_tabs = function()
 	return { UIBox_button {
-        button = 'your_collection_blind_editions', label = {"Blind Editions"}, minw = 5, id = 'your_collection_blind_editions'
+        button = 'your_collection_blind_editions', label = {localize('ble_blind_editions', 'labels')}, minw = 5, id = 'your_collection_blind_editions'
     }}
 end
 
@@ -195,19 +194,11 @@ SMODS.BlindEdition {
     key = 'base',
     weight = 0,
     has_text = false,
-    loc_txt = {
-        name = "Base",
-        text = {"No Effect"}
-    },
 }
 
 SMODS.BlindEdition {
     key = 'foil',
     blind_shader = 'foil',
-    loc_txt = {
-        name = "Foil",
-        text = {"X#1# Blind Size"}
-    },
     blind_size_mult = 1.5,
     weight = 0.4,
     loc_vars = function(self, blind_on_deck)
@@ -222,10 +213,6 @@ SMODS.BlindEdition {
 SMODS.BlindEdition {
     key = 'holographic',
     blind_shader = 'holo',
-    loc_txt = {
-        name = "Holographic",
-        text = {"-#1# Hand Size"}
-    },
     weight = 0.3,
     loc_vars = function(self, blind_on_deck)
         return {1}
@@ -247,10 +234,6 @@ SMODS.BlindEdition {
     blind_shader = 'polychrome',
     weight = 0.2,
     dollars_mod = 3,
-    loc_txt = {
-        name = "Polychrome",
-        text = {"-#1# Hand"}
-    },
     set_blind = function(self, blind_on_deck)
             G.E_MANAGER:add_event(Event({trigger = 'immediate',func = function()
                 if G.GAME.current_round.hands_left > 1 then
@@ -285,13 +268,6 @@ SMODS.BlindEdition {
     key = 'negative',
     blind_shader = 'negative',
     weight = 0.01,
-    loc_txt = {
-        name = "Negative",
-        text = {
-            "X#1# Blind Size, +#2#",
-            "Joker Slot on win"
-        }
-    },
     blind_size_mult = 8,
     loc_vars = function(self, blind_on_deck)
         return {8, 1}
