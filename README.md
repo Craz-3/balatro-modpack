@@ -4,7 +4,10 @@
 
 ## 前置依赖
 
-使用本 Modpack 前，需要先安装 [Lovely Injector](https://github.com/ethangreen-dev/lovely-injector/releases/latest)（Mod 注入器），根据你的系统下载对应版本。
+使用本 Modpack 前，需要先安装 [Lovely Injector](https://github.com/ethangreen-dev/lovely-injector/releases/latest)（Mod 注入器）。
+
+- **Windows**: 下载 `lovely_injector_windows.zip`，将 `version.dll` 放入 Balatro 游戏根目录。
+- **Steam Deck**: 下载 `lovely_injector_windows.zip`（是的，Windows 版本），将 `version.dll` 放入游戏根目录，并在启动选项中添加：`WINEDLLOVERRIDES="version=n,b" %command%`。
 
 ## Mod 列表
 
@@ -139,19 +142,40 @@
 
 ## 安装方法
 
-### 克隆仓库（包含所有子模块）
+### 1. 安装 Lovely Injector
+
+参考上文 [前置依赖](#前置依赖) 部分安装 Lovely Injector。
+
+### 2. 定位 Mod 文件夹
+
+你需要找到 Balatro 的存储目录：
+
+- **Windows**: `%AppData%/Balatro/Mods`
+- **Steam Deck / Linux**: `~/.steam/steam/steamapps/compatdata/2379780/pfx/drive_c/users/steamuser/AppData/Roaming/Balatro/Mods`
+
+> [!TIP]
+> 如果 `Mods` 文件夹不存在，请手动创建一个。注意在 Linux 上文件夹名区分大小写。
+
+### 3. 克隆仓库
+
+进入上述 `Mods` 文件夹，在该目录下通过终端/Konsole 执行以下命令：
 
 ```bash
-git clone --recursive https://github.com/你的用户名/balatro-modpack.git
+git clone --recursive https://github.com/你的用户名/balatro-modpack.git .
 ```
 
-如果已经克隆但没有子模块内容：
+> [!IMPORTANT]
+> 注意末尾有一个英文句号 `.`，表示克隆到当前文件夹。如果你不想直接克隆到 `Mods` 根目录，也可以克隆到子目录，但请确保 Lovely 能正确识别。
+
+如果更新子模块时遇到问题，可以运行：
 
 ```bash
 git submodule update --init --recursive
 ```
 
-### 更新所有 Mod 到最新版本
+### 4. 更新所有 Mod
+
+想要将所有 Mod 更新到最新版本：
 
 ```bash
 git submodule update --remote --merge
